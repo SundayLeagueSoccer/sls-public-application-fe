@@ -1,5 +1,4 @@
-@import "../../assets/styles/functions.scss";
-@import "../../assets/styles/colors.scss";
+@use "../../assets/styles/" as *;
 
 //setting styles for dark and light mode
 .Dark {

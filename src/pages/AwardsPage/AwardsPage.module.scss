@@ -1,5 +1,4 @@
-@import "../../assets/styles/functions.scss";
-@import "../../assets/styles/colors.scss";
+@use "../../assets/styles/" as *;
 
 .AwardsPage {
   display: flex;
