@@ -5,7 +5,11 @@ const AwardsPage = () => {
   return (
     <>
       <AnimatedFadeInPage>
-        <main className={styles.AwardsPage}>AwardsPage</main>
+        <main className={styles.AwardsPage}>
+          <h1>AwardPage</h1>
+          <p>Awards</p>
+          <p>Awards333</p>
+        </main>
       </AnimatedFadeInPage>
     </>
   );

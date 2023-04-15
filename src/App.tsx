@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
@@ -15,7 +15,7 @@ import { AppContextProvider } from "./context/AppContext";
 // import StatisticsPage from "./pages/StatisticsPage/";
 // import AboutPage from "./pages/AboutPage/";
 
-//lazyLoading
+//lazyLoading for pages
 const LandingPage = lazy(() => import("./pages/LandingPage/"));
 const AwardsPage = lazy(() => import("./pages/AwardsPage/"));
 const PlayersPage = lazy(() => import("./pages/PlayersPage/"));
@@ -28,18 +28,16 @@ const App = () => {
     <>
       <AppContextProvider>
         <AnimatePresence mode="wait">
-          <Suspense fallback={<div>Loading...</div>}>
-            <Routes location={location} key={location.pathname}>
-              {/* public routes */}
-              <Route element={<PublicPageLayout />}>
-                <Route path="/" element={<LandingPage />} />
-                <Route path="/awards" element={<AwardsPage />} />
-                <Route path="/players" element={<PlayersPage />} />
-                <Route path="/statistics" element={<StatisticsPage />} />
-                <Route path="/about-us" element={<AboutPage />} />
-              </Route>
-            </Routes>
-          </Suspense>
+          <Routes location={location} key={location.pathname}>
+            {/* public routes */}
+            <Route element={<PublicPageLayout />}>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/awards" element={<AwardsPage />} />
+              <Route path="/players" element={<PlayersPage />} />
+              <Route path="/statistics" element={<StatisticsPage />} />
+              <Route path="/about-us" element={<AboutPage />} />
+            </Route>
+          </Routes>
         </AnimatePresence>
       </AppContextProvider>
     </>

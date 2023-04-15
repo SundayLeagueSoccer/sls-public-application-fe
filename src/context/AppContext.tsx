@@ -5,20 +5,35 @@ type AppContextProviderProps = {
 };
 
 type AppContextType = {
-  mobileSidebarOpen: boolean;
-  setMobileSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  mobileNavbarOpen: boolean;
+  toggleTheme: () => void;
+  darkMode: boolean;
+  toggleMobileNavbar: () => void;
 };
 
 export const AppContext = createContext({} as AppContextType);
 
 export const AppContextProvider = ({ children }: AppContextProviderProps) => {
-  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+  const [mobileNavbarOpen, setMobileNavbarOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(
+    window.matchMedia(`(prefers-color-scheme: dark)`).matches
+  );
+
+  const toggleTheme = () => {
+    setDarkMode((darkMode) => !darkMode);
+  };
+
+  const toggleMobileNavbar = () => {
+    setMobileNavbarOpen((mobileNavbarOpen) => !mobileNavbarOpen);
+  };
 
   return (
     <AppContext.Provider
       value={{
-        mobileSidebarOpen: mobileSidebarOpen,
-        setMobileSidebarOpen: setMobileSidebarOpen,
+        mobileNavbarOpen,
+        toggleTheme,
+        darkMode,
+        toggleMobileNavbar,
       }}
     >
       {children}
