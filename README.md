@@ -4,6 +4,12 @@ This is the main application for the public domain for Sunday League Soccer. The
 
 ## WEBSITE URL
 
+https://sunday-league-soccer-lagos.netlify.app/
+
+## FIGMA DESIGN FILE
+
+https://www.figma.com/file/DeZ2VtPr9HUneW3hVLWLzC/SLS?node-id=296%3A5860&t=CGEpmF57YLKv3o0u-1
+
 ### Technologies Used
 
 1. React

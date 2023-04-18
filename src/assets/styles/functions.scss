@@ -21,17 +21,18 @@
 */
 
 //mobile devices
-// On screens between 600px and 294px
+// On screens between 720px and 294px
 @mixin sm() {
-  @media (max-width: 600px) and (min-width: 294px) {
+  @media (max-width: 720px) and (min-width: 294px) {
     @content;
   }
 }
 
 //most tablets and phablet devices
 //on screens between 1280px and 601px
+//because of the macbook air, i adjusted this to 1279px-721px
 @mixin md() {
-  @media (max-width: 1280px) and (min-width: 601px) {
+  @media (max-width: 1279px) and (min-width: 721px) {
     @content;
   }
 }

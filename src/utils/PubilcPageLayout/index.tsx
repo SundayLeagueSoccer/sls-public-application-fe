@@ -12,8 +12,12 @@ const PublicPageLayout = () => {
       <main className={darkMode ? styles.Dark : styles.Light}>
         <div className={styles.PublicPageLayout}>
           <section className={styles.main_container}>
-            <Navbar />
-            <Outlet />
+            <div className={styles.Navbar_container}>
+              <Navbar />
+            </div>
+            <div className={styles.Outlet_container}>
+              <Outlet />
+            </div>
             <Footer />
           </section>
         </div>
