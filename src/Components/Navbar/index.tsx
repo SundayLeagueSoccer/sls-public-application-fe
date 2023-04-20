@@ -6,7 +6,8 @@ import lightModeIcon from "./images/lightModeIcon.png";
 import darkModeIcon from "./images/darkModeIcon.png";
 import lightHamburger from "./images/lightHamburger.png";
 import darkHamburger from "./images/darkHamburger.png";
-import closeBurger from "./images/closeBurger.png";
+import lightCloseBurger from "./images/lightCloseBurger.png";
+import darkCloseBurger from "./images/darkCloseBurger.png";
 
 const Navbar = () => {
   const { darkMode, toggleTheme, mobileNavbarOpen, toggleMobileNavbar } =
@@ -87,18 +88,17 @@ const Navbar = () => {
               onClick={() => toggleMobileNavbar()}
               className={styles.hamburger}
             >
-              <img
-                src={
-                  mobileNavbarOpen
-                    ? closeBurger
-                    : darkMode
-                    ? darkHamburger
-                    : lightHamburger
-                }
-                alt="hamburger-menu"
-              />
-
-              {/* <img src={closeBurger} alt="close-hamburger" /> */}
+              {mobileNavbarOpen ? (
+                <img
+                  src={darkMode ? darkCloseBurger : lightCloseBurger}
+                  alt="hamburger-menu"
+                />
+              ) : (
+                <img
+                  src={darkMode ? darkHamburger : lightHamburger}
+                  alt="hamburger-menu"
+                />
+              )}
             </div>
           </section>
         </div>
