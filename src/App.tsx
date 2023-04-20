@@ -9,14 +9,11 @@ import PublicPageLayout from "./utils/PubilcPageLayout";
 import { AppContextProvider } from "./context/AppContext";
 
 //Pages
-// import LandingPage from "./pages/LandingPage/";
-// import AwardsPage from "./pages/AwardsPage/";
-// import PlayersPage from "./pages/PlayersPage/";
-// import StatisticsPage from "./pages/StatisticsPage/";
-// import AboutPage from "./pages/AboutPage/";
+import SplashPage from "./pages/SplashPage/";
+import LandingPage from "./pages/LandingPage/";
 
 //lazyLoading for pages
-const LandingPage = lazy(() => import("./pages/LandingPage/"));
+// const LandingPage = lazy(() => import("./pages/LandingPage/"));
 const AwardsPage = lazy(() => import("./pages/AwardsPage/"));
 const PlayersPage = lazy(() => import("./pages/PlayersPage/"));
 const StatisticsPage = lazy(() => import("./pages/StatisticsPage/"));
@@ -29,9 +26,11 @@ const App = () => {
       <AppContextProvider>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<SplashPage />} />
+
             {/* public routes */}
             <Route element={<PublicPageLayout />}>
-              <Route path="/" element={<LandingPage />} />
+              <Route path="/home" element={<LandingPage />} />
               <Route path="/awards" element={<AwardsPage />} />
               <Route path="/players" element={<PlayersPage />} />
               <Route path="/statistics" element={<StatisticsPage />} />

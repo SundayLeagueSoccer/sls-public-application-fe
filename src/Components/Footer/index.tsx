@@ -8,7 +8,7 @@ const Footer = () => {
     useApp();
 
   const footerLinks = [
-    { link: "/", name: "Home" },
+    { link: "/home", name: "Home" },
     { link: "/awards", name: "Awards" },
     { link: "/about-us", name: "About" },
     { link: "/statistics", name: "Statistics" },
@@ -69,7 +69,7 @@ const Footer = () => {
                 <Link
                   to={elem.link}
                   key={elem.image}
-                  className={styles.single_Link}
+                  className={styles.socialMedia_link}
                 >
                   <img src={elem.image} alt={`${elem.image}icon`} />
                 </Link>

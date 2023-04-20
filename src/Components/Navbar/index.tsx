@@ -16,7 +16,7 @@ const Navbar = () => {
   let navHeaderRef = useRef<HTMLDivElement>(null);
 
   const navElements = [
-    { link: "/", name: "Home" },
+    { link: "/home", name: "Home" },
     { link: "/awards", name: "Awards" },
     { link: "/players", name: "Players" },
     { link: "/statistics", name: "Statistics" },
