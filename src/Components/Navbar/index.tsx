@@ -45,7 +45,14 @@ const Navbar = () => {
   return (
     <>
       <nav className={styles.Navbar}>
-        <div className={styles.Navbar_container} ref={navHeaderRef}>
+        <div
+          className={
+            darkMode
+              ? styles.Navbar_container_dark
+              : styles.Navbar_container_light
+          }
+          ref={navHeaderRef}
+        >
           <h1>Logo</h1>
 
           <section className={styles.NavLinks_Desktop}>
