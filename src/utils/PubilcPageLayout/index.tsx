@@ -3,9 +3,18 @@ import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
 import { Outlet } from "react-router-dom";
 import useApp from "../../hooks/useApp";
+import { useEffect } from "react";
 
 const PublicPageLayout = () => {
   const { darkMode } = useApp();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: -200,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   return (
     <>

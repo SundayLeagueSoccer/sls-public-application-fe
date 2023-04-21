@@ -1,13 +1,12 @@
 import styles from "./Footer.module.scss";
 import useApp from "../../hooks/useApp";
 import { Link } from "react-router-dom";
-import whatsapp_icon from "./images/twitter.png";
-import instagram_icon from "./images/twitter.png";
-import youtube_icon from "./images/twitter.png";
+import whatsapp_icon from "./images/whatsapp.png";
+import instagram_icon from "./images/instagram.png";
+import youtube_icon from "./images/youtube.png";
 
 const Footer = () => {
-  const { darkMode, toggleTheme, mobileNavbarOpen, toggleMobileNavbar } =
-    useApp();
+  const { darkMode } = useApp();
 
   const footerLinks = [
     { link: "/home", name: "Home" },

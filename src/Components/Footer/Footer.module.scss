@@ -132,6 +132,13 @@
       font-size: 16px;
       line-height: 24px;
       cursor: pointer;
+      transition: all ease 0.2s;
+    }
+
+    .single_Link_dark:hover,
+    .single_Link_light:hover {
+      transform: scaleX(1.1);
+      border-bottom: 2px solid #3167b8;
     }
 
     .single_Link_light {
@@ -141,6 +148,7 @@
       font-size: 16px;
       line-height: 24px;
       cursor: pointer;
+      transition: all ease 0.2s;
     }
   }
 
