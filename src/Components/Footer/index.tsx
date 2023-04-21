@@ -1,7 +1,9 @@
 import styles from "./Footer.module.scss";
 import useApp from "../../hooks/useApp";
 import { Link } from "react-router-dom";
-import twitter_icon from "./images/twitter.png";
+import whatsapp_icon from "./images/twitter.png";
+import instagram_icon from "./images/twitter.png";
+import youtube_icon from "./images/twitter.png";
 
 const Footer = () => {
   const { darkMode, toggleTheme, mobileNavbarOpen, toggleMobileNavbar } =
@@ -16,11 +18,15 @@ const Footer = () => {
   ];
 
   const socialMediaLinks = [
-    { link: "/", image: twitter_icon },
-    // { link: "/awards", image: "Awards" },
-    // { link: "/players", image: "Players" },
-    // { link: "/statistics", image: "Statistics" },
-    // { link: "/about-us", image: "About" },
+    { link: "https://wa.me/qr/OBTAOV36SJ7VI1", image: whatsapp_icon },
+    {
+      link: "https://instagram.com/sls.ng?igshid=ZDdkNTZiNTM=",
+      image: instagram_icon,
+    },
+    {
+      link: "https://www.youtube.com/channel/UCXo2dJMVLukdliFi7-HgNDQ",
+      image: youtube_icon,
+    },
   ];
 
   const getYear = () => {
@@ -68,6 +74,8 @@ const Footer = () => {
               return (
                 <Link
                   to={elem.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   key={elem.image}
                   className={styles.socialMedia_link}
                 >
