@@ -64,13 +64,13 @@
 
     .Outlet_container {
       //this matches the height of the navbar and required to make it fixed
-      top: pixRem(80);
+      margin-top: pixRem(80);
 
       @include md() {
-        top: pixRem(76);
+        margin-top: pixRem(76);
       }
       @include sm() {
-        top: pixRem(72);
+        margin-top: pixRem(72);
       }
     }
   }

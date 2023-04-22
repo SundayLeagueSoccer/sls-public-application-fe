@@ -1,0 +1,8 @@
+@use "../../../assets/styles/" as *;
+
+.AboutWhyUs {
+  display: flex;
+
+  @include sm() {
+  }
+}

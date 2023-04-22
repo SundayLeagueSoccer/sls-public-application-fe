@@ -1,0 +1,8 @@
+@use "../../../assets/styles/" as *;
+
+.AboutHistory {
+  display: flex;
+
+  @include sm() {
+  }
+}

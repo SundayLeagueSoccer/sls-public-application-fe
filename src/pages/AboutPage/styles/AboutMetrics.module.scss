@@ -1,0 +1,8 @@
+@use "../../../assets/styles/" as *;
+
+.AboutMetrics {
+  display: flex;
+
+  @include sm() {
+  }
+}
