@@ -12,14 +12,27 @@
 
   width: 100vw;
   // height: 90vh;
+  @include md() {
+    padding: 0 pixRem(72);
+  }
   @include sm() {
     background-image: url("../images/mobile_hero_background.png");
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: pixRem(56) pixRem(18) pixRem(42) pixRem(18);
   }
 
   .left {
     display: flex;
     flex-direction: column;
     row-gap: pixRem(26);
+    z-index: 2;
+
+    @include sm() {
+      text-align: center;
+      align-items: center;
+    }
 
     h1 {
       font-weight: 400;
@@ -30,18 +43,42 @@
       span {
         color: $tertiary;
       }
+
+      @include md() {
+        font-size: pixRem(40);
+        width: pixRem(420);
+      }
+      @include sm() {
+        font-size: pixRem(36);
+        width: pixRem(345);
+      }
     }
 
     h4 {
       font-weight: 400;
       font-size: pixRem(24);
-      line-height: 151.5%;
-      // width: pixRem(500);
+      width: pixRem(550);
+
+      @include md() {
+        font-size: pixRem(16);
+        width: pixRem(380);
+      }
+      @include sm() {
+        font-size: pixRem(18);
+        width: pixRem(320);
+      }
     }
 
     .hero_buttons {
       display: flex;
       column-gap: pixRem(32);
+
+      @include md() {
+        column-gap: pixRem(24);
+      }
+      @include sm() {
+        display: none;
+      }
 
       .players_stats,
       .sls_history {
@@ -53,6 +90,82 @@
         font-family: "Solway";
         font-weight: 700;
         font-size: 24px;
+        line-height: 24px;
+        text-align: center;
+        cursor: pointer;
+        transition: all ease 0.5s;
+
+        @include md() {
+          padding: 8px 0;
+          width: 128px;
+          border-radius: 7px;
+          font-size: 16px;
+        }
+      }
+
+      .sls_history {
+        background-color: $tertiary;
+        border: none;
+        color: white;
+      }
+
+      .players_stats:hover {
+        color: white;
+        background-color: $tertiary;
+      }
+
+      .sls_history:hover {
+        background-color: $primary;
+      }
+    }
+  }
+
+  .hero_image {
+    height: 650px;
+    width: auto;
+
+    @include md() {
+      height: 325px;
+    }
+    @include sm() {
+      display: none;
+    }
+  }
+
+  .mobile_hero_image {
+    display: none;
+
+    @include md() {
+      display: none;
+    }
+    @include sm() {
+      display: block;
+      height: 375px;
+      margin: 14px 0;
+    }
+  }
+
+  .mobile_hero_buttons {
+    display: none;
+
+    @include md() {
+      display: none;
+    }
+
+    @include sm() {
+      display: flex;
+      column-gap: pixRem(24);
+
+      .players_stats,
+      .sls_history {
+        background: none;
+        border: 1px solid $tertiary;
+        font-family: "Solway";
+        font-weight: 700;
+        padding: 10px 0;
+        width: 142px;
+        border-radius: 6px;
+        font-size: 16px;
         line-height: 24px;
         text-align: center;
         cursor: pointer;

@@ -16,7 +16,7 @@
 
     @include md() {
       padding: 0 pixRem(72);
-      height: pixRem(76);
+      height: pixRem(68);
     }
     @include sm() {
       padding: 0 pixRem(18);
