@@ -1,0 +1,78 @@
+@use "../../../assets/styles/" as *;
+
+.LandingPageHero {
+  background-image: url("../images/hero_background.png");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 pixRem(120);
+
+  width: 100vw;
+  // height: 90vh;
+  @include sm() {
+    background-image: url("../images/mobile_hero_background.png");
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    row-gap: pixRem(26);
+
+    h1 {
+      font-weight: 400;
+      font-size: pixRem(72);
+      line-height: 120%;
+      width: pixRem(600);
+
+      span {
+        color: $tertiary;
+      }
+    }
+
+    h4 {
+      font-weight: 400;
+      font-size: pixRem(24);
+      line-height: 151.5%;
+      // width: pixRem(500);
+    }
+
+    .hero_buttons {
+      display: flex;
+      column-gap: pixRem(32);
+
+      .players_stats,
+      .sls_history {
+        padding: 14px 0;
+        width: 192px;
+        background: none;
+        border-radius: 8px;
+        border: 1px solid $tertiary;
+        font-family: "Solway";
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 24px;
+        text-align: center;
+        cursor: pointer;
+        transition: all ease 0.5s;
+      }
+
+      .sls_history {
+        background-color: $tertiary;
+        border: none;
+        color: white;
+      }
+
+      .players_stats:hover {
+        color: white;
+        background-color: $tertiary;
+      }
+
+      .sls_history:hover {
+        background-color: $primary;
+      }
+    }
+  }
+}
