@@ -1,25 +1,24 @@
 import styles from "./LandingPage.module.scss";
 import AnimatedFadeInPage from "../../utils/AnimatedFadeInPage";
 import { useEffect, useState } from "react";
+import LandingPageHero from "./Components/LandingPageHero";
+import LandingPageCountDown from "./Components/LandingPageCountDown";
+import LandingPageFeatures from "./Components/LandingPageFeatures";
+import LandingPageGallery from "./Components/LandingPageGallery";
+import LandingPageHistory from "./Components/LandingPageHistory";
+import LandingPageSLSPlayers from "./Components/LandingPageSLSPlayers";
 
 const LandingPage = () => {
-  const [y, sety] = useState(window.innerHeight);
-  const [x, setx] = useState(window.innerWidth);
-
-  useEffect(() => {
-    var w = window.innerWidth;
-    var h = window.innerHeight;
-    setx(w);
-    sety(h);
-  }, [y, x]);
-
   return (
     <>
       <AnimatedFadeInPage>
         <main className={styles.LandingPage}>
-          <h1>LandingPage</h1>
-          <p>{`height ${y}`}</p>
-          <p>{`width ${x}`}</p>
+          <LandingPageHero />
+          <LandingPageCountDown />
+          <LandingPageHistory />
+          <LandingPageSLSPlayers />
+          <LandingPageFeatures />
+          <LandingPageGallery />
         </main>
       </AnimatedFadeInPage>
     </>

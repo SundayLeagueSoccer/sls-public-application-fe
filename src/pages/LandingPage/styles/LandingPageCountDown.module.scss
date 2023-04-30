@@ -1,0 +1,107 @@
+@use "../../../assets/styles/" as *;
+
+.LandingPageCountDown {
+  background: $secondary;
+  width: 100%;
+  padding: pixRem(62) pixRem(120) pixRem(42.5) pixRem(120);
+  display: flex;
+  flex-direction: column;
+
+  @include md() {
+    padding: pixRem(44) pixRem(72) pixRem(44) pixRem(72);
+  }
+  @include sm() {
+    padding: pixRem(22) pixRem(18) pixRem(24) pixRem(18);
+    background-image: url("../images/countdown_background_mobile.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .top_container_dark {
+    background-color: $darkModeBackground;
+  }
+
+  .top_container_light {
+    background-color: $lightModeBackground;
+  }
+
+  .top_container_dark,
+  .top_container_light {
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 0 0 0;
+    row-gap: pixRem(24);
+
+    h2 {
+      font-weight: 500;
+      font-size: 48px;
+      line-height: 120%;
+      color: $secondary;
+
+      @include md() {
+        font-size: 36px;
+      }
+      @include sm() {
+        font-size: 24px;
+      }
+    }
+
+    .figures_container {
+      display: flex;
+      justify-content: center;
+      column-gap: 24px;
+
+      h5 {
+        font-family: "Sora";
+        color: $darkModeFontPrimary;
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 40px;
+        background-color: $secondary;
+        padding: 4px 0 2px 0;
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+        text-align: center;
+        width: pixRem(62);
+
+        @include md() {
+          font-size: 26px;
+          line-height: 34px;
+          width: pixRem(58);
+        }
+        @include sm() {
+          font-size: 20px;
+          line-height: 28px;
+          width: pixRem(54);
+        }
+      }
+    }
+  }
+
+  .bottom_container {
+    display: flex;
+    justify-content: center;
+    column-gap: 24px;
+
+    h6 {
+      font-family: "Sora";
+      color: $darkModeFontPrimary;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      background-color: $secondary;
+      padding: 4px 0;
+      text-align: center;
+      width: pixRem(62);
+
+      @include md() {
+        width: pixRem(58);
+      }
+      @include sm() {
+        width: pixRem(54);
+      }
+    }
+  }
+}
