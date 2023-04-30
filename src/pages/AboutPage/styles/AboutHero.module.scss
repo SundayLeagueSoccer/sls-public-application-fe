@@ -1,8 +1,43 @@
 @use "../../../assets/styles/" as *;
 
 .AboutHero {
-  display: flex;
-
+    display: flex;
+    flex-direction: column;
+    gap: pixRem(18);
+    padding: pixRem(96) pixRem(130);
+    text-align: center;
+    background-image: url('../images/HeaderSectionLg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;   
+    width: 100vw;
+    
+    p, h1{
+      color: #ffffff;
+    }
+    
+    h1{
+      font-size: pixRem(48);
+    }
+    
+    h4{
+      color: $tertiary;
+      text-transform: capitalize;
+    
+    }
+ 
   @include sm() {
+    padding: pixRem(50);
+    gap: pixRem(10);
+
+    h1{
+      font-size: pixRem(40);
+    }
   }
 }
+
+
+
+
+
+

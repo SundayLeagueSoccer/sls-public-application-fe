@@ -2,7 +2,49 @@
 
 .AboutMetrics {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: pixRem(32);
+  padding: pixRem(32) pixRem(64) pixRem(64);
+  background-image: url('../images/MetricsSectionLg.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  max-width: 100vw;
+
+  .Metrics_NumberBox{
+    background-color: rgba(255, 255, 255, 0.4);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    padding: pixRem(32) pixRem(24);
+    border-radius: pixRem(8);
+    margin: pixRem(32) 0;
+    max-width: pixRem(320);
+    width: 100%;
+    letter-spacing: pixRem(1);
+    border: pixRem(0.5) solid #ffffff97;
+  }
+
+  .Metrics_NumberBox p{
+    color: #fff;
+    font-weight: 200;
+    font-size: pixRem(14)
+  }
+
+  .Metrics_NumberBox p:first-child{
+    font-size: pixRem(40);
+    font-weight: 500;
+  }
+  
+  .Metrics_NumberBox p:nth-child(2){
+    text-transform: capitalize;
+    margin: pixRem(10) 0 pixRem(5);
+    font-weight: 500;
+  }
 
   @include sm() {
+    flex-direction: column;
+    gap: pixRem(5);
   }
 }
