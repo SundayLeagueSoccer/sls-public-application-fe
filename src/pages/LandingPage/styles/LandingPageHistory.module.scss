@@ -4,6 +4,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: pixRem(120);
   background-image: url("../images/history_background.png");
   background-size: cover;
@@ -26,7 +27,7 @@
     display: flex;
     flex-direction: column;
     row-gap: pixRem(40);
-    width: 45%;
+    width: 48%;
 
     @include sm() {
       width: 100%;
@@ -184,6 +185,13 @@
     }
   }
 
+  .Carousel_Parent_Container {
+    width: 48%;
+    @include sm() {
+      width: 100%;
+    }
+  }
+
   .mobile_left_bottom {
     display: none;
 
@@ -236,7 +244,7 @@
 
         h6 {
           font-weight: 400;
-          font-size: 16px;
+          font-size: 14px;
           line-height: 170%;
           width: fit-content;
           color: $fontGrey;

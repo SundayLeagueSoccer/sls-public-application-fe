@@ -29,7 +29,10 @@ const LandingPageHistory = () => {
             <button>Read More</button>
           </div>
         </div>
-        <CarouselImages />
+        {/* <CarouselImages /> */}
+        <div className={styles.Carousel_Parent_Container}>
+          <CarouselImages />
+        </div>
         <div className={styles.mobile_left_bottom}>
           <div className={styles.mobile_left_bottom_info}>
             <div className={styles.mobile_left_bottom_info_text}>
