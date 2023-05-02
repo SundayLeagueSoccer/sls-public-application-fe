@@ -22,10 +22,14 @@ const LandingPageHero = () => {
             <button className={styles.sls_history}>SLS History</button>
           </div>
         </div>
-        <img src={hero_image} alt="hero-image" className={styles.hero_image} />
+        <img
+          src={hero_image}
+          alt="A picture Illustration of an avatar kicking a ball"
+          className={styles.hero_image}
+        />
         <img
           src={mobile_hero_image_2}
-          alt="hero-image"
+          alt="A picture Illustration of an avatar kicking a ball"
           className={styles.mobile_hero_image}
         />
         <div className={styles.mobile_hero_buttons}>

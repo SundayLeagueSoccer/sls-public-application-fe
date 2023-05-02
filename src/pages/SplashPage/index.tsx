@@ -25,7 +25,7 @@ const SplashPage = () => {
         >
           <img
             src={football}
-            alt="rolling-ball"
+            alt="Illustration of a Ball rolling for the splash screen"
             className={styles.landingloader}
           />
         </main>

@@ -85,7 +85,7 @@ const Navbar = () => {
               <div onClick={() => toggleTheme()} className={styles.theme_icon}>
                 <img
                   src={darkMode ? lightModeIcon : darkModeIcon}
-                  alt="website-theme-png"
+                  alt="Toggle Theme Button"
                 />
               </div>
             )}
@@ -98,12 +98,12 @@ const Navbar = () => {
               {mobileNavbarOpen ? (
                 <img
                   src={darkMode ? darkCloseBurger : lightCloseBurger}
-                  alt="hamburger-menu"
+                  alt="Hamburger Menu Button"
                 />
               ) : (
                 <img
                   src={darkMode ? darkHamburger : lightHamburger}
-                  alt="hamburger-menu"
+                  alt="Hamburger Menu Button"
                 />
               )}
             </div>

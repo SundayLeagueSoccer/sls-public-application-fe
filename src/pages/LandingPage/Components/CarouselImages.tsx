@@ -62,45 +62,27 @@ const CarouselImages = () => {
               className={styles.Carousel_Slide_Screen}
               style={carousel_Slide_Screen}
             >
-              <img src={images[0]} alt="" />
+              <img src={images[0]} alt="Players at SLS playing together." />
               <img
                 src={images[1]}
-                alt=""
+                alt="Players at SLS playing together."
                 ref={imageRef}
                 onLoad={handleImageLoad}
               />
-              <img src={images[2]} alt="" />
-              <img src={images[3]} alt="" />
+              <img src={images[2]} alt="Players at SLS playing together." />
+              <img src={images[3]} alt="Players at SLS playing together." />
             </div>
           </div>
         </div>
         <div className={styles.controls}>
-          <img src={previous_icon} alt="" onClick={() => goToPrev()} />
-          <img src={next_icon} alt="" onClick={() => goToNext()} />
+          <img
+            src={previous_icon}
+            alt="Previous Button"
+            onClick={() => goToPrev()}
+          />
+          <img src={next_icon} alt="Next Button" onClick={() => goToNext()} />
         </div>
       </article>
-
-      {/* <main className="Carousel">
-        <div className="Carousel_Container">
-          <div className="Carousel_Slide">
-            <div className="Carousel_Slide_papi" style={carousel_slide_screen}>
-              <img src={images[0]} alt="" />
-              <img
-                src={images[1]}
-                alt=""
-                ref={imageRef}
-                onLoad={handleImageLoad}
-              />
-              <img src={images[2]} alt="" />
-              <img src={images[3]} alt="" />
-            </div>
-          </div>
-        </div>
-        <div>
-          <button onClick={() => goToPrev()}>Prev</button>
-          <button onClick={() => goToNext()}>Next</button>
-        </div>
-      </main> */}
     </>
   );
 };

@@ -35,7 +35,7 @@ const Notification = ({
           <h5>{notificationHeader}</h5>
           <img
             src={close_icon}
-            alt="close_notification"
+            alt="Close Notification Icon"
             onClick={() => setNotification(false)}
           />
         </div>
