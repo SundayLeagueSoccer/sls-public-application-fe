@@ -2,7 +2,563 @@
 
 .AboutTestimonial {
   display: flex;
+  gap: pixRem(20);
+  width: 90vw;
+  padding: pixRem(80) 0;
+  @include md() {
+    padding: pixRem(50) 0;
+    padding-bottom: pixRem(0);
+  }
 
   @include sm() {
+    flex-direction: column;
+    padding: pixRem(50) 0;
+    padding-bottom: pixRem(0);
+    gap: pixRem(50);
+  }
+
+
+  .AboutTestimonial_Text,
+  .AboutTestimonial_Image {
+    width: 50%;
+
+    @include sm() {
+      width: 100%;
+    }
+  }
+
+  .AboutTestimonial_Text {
+    display: flex;
+    flex-direction: column;
+    gap: pixRem(20);
+
+    @include sm() {
+      text-align: center;
+    }
+
+    h4 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: pixRem(36);
+      color: $darkModeFontSecondary;
+
+      @include md() {
+        font-size: pixRem(18);
+        font-weight: 400;
+      }
+
+      @include sm() {
+        font-size: pixRem(18);
+        font-weight: 400;
+      }
+    }
+    h2 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: pixRem(48);
+      color: $darkModeFontSecondary;
+
+      @include md() {
+        font-size: pixRem(24);
+        font-weight: 400;
+      }
+
+      @include sm() {
+        font-size: pixRem(24);
+        font-weight: 400;
+      }
+    }
+    span {
+      color: $secondary;
+    }
+    p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: pixRem(20);
+      line-height: pixRem(40);
+      color: #696984;
+
+      @include md() {
+        font-size: pixRem(16);
+        line-height: pixRem(30);
+      }
+
+      @include sm() {
+        font-size: pixRem(16);
+        line-height: pixRem(30);
+      }
+    }
+  }
+
+  .AboutTestimonial_Image {
+    img {
+      width: 80%;
+      border-radius: pixRem(15);
+
+      @include sm() {
+        width: 70%;
+      }
+    }
+
+    .AboutTestimonial_WriteUp_def {
+      width: 90%;
+      background-color: #ffffff;
+      border-left: pixRem(10) solid $defenderprimary;
+      margin-left: pixRem(50);
+      position: relative;
+      bottom: pixRem(150);
+      padding: pixRem(30);
+      padding-left: pixRem(60);
+      border-radius: pixRem(15);
+      box-shadow: pixRem(1.5) pixRem(3) pixRem(47) rgba(41, 44, 124, 0.1);
+
+      @include md() {
+        padding-left: pixRem(30);
+        padding: pixRem(20);
+        right: pixRem(20);
+        bottom: pixRem(100);
+      }
+
+      @include sm() {
+        padding-left: pixRem(0);
+        padding: pixRem(20);
+        right: pixRem(20);
+        bottom: pixRem(100);
+      }
+
+
+      .AboutTestimonial_WriteUp_Text{
+        border-left: pixRem(1) solid #BDBDD1;
+        padding: 0 pixRem(15);
+
+        @include sm() {
+        }
+
+
+        p{
+          color: #5F5F7E;
+          font-weight: 400;
+          font-size: pixRem(16);
+          line-height: pixRem(25);
+          letter-spacing: pixRem(0.2);
+
+          @include md() {
+            font-size: pixRem(10);
+            line-height: pixRem(20);
+          }
+
+          @include sm() {
+            font-size: pixRem(10);
+            line-height: pixRem(20);
+          }
+        }
+      }
+      .AboutTestimonial_WriteUp_Author{
+        margin-top: pixRem(20);
+        padding: 0 pixRem(15);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include md() {
+          margin-top: pixRem(10);
+        }
+
+        @include sm() {
+          margin-top: pixRem(10);
+        }
+
+        h4{
+          color: #5F5F7E;
+          font-size: pixRem(20);
+          font-weight: 500;
+          line-height: pixRem(30);
+
+          @include md() {
+            font-size: pixRem(12);
+          }
+
+          @include sm() {
+            font-size: pixRem(12);
+          }
+        }
+
+        .AboutTestimonial_Profile{
+          display: flex;
+          align-items: center;
+          gap: pixRem(10);
+          cursor: pointer;
+
+          @include sm() {
+            gap: pixRem(5);
+          }
+
+
+          b{
+            color: $defenderprimary;
+            line-height: pixRem(24);
+            font-size: pixRem(16);
+            font-weight: 500;
+
+            @include md() {
+              font-size: pixRem(10);
+            }
+
+            @include sm() {
+              font-size: pixRem(10);
+            }
+          }
+
+          img{
+            width: pixRem(20);
+          }
+        }
+      }
+    }
+    .AboutTestimonial_WriteUp_amf {
+      width: 90%;
+      background-color: #ffffff;
+      border-left: pixRem(10) solid $midfielderPrimary;
+      margin-left: pixRem(50);
+      position: relative;
+      bottom: pixRem(150);
+      padding: pixRem(30);
+      padding-left: pixRem(60);
+      border-radius: pixRem(15);
+      box-shadow: pixRem(1.5) pixRem(3) pixRem(47) rgba(41, 44, 124, 0.1);
+
+      @include md() {
+        padding-left: pixRem(30);
+        padding: pixRem(20);
+        right: pixRem(20);
+        bottom: pixRem(100);
+      }
+
+      @include sm() {
+        padding-left: pixRem(0);
+        padding: pixRem(20);
+        right: pixRem(20);
+        bottom: pixRem(100);
+      }
+
+
+      .AboutTestimonial_WriteUp_Text{
+        border-left: pixRem(1) solid #BDBDD1;
+        padding: 0 pixRem(15);
+
+        @include sm() {
+        }
+
+
+        p{
+          color: #5F5F7E;
+          font-weight: 400;
+          font-size: pixRem(16);
+          line-height: pixRem(25);
+          letter-spacing: pixRem(0.2);
+
+          @include md() {
+            font-size: pixRem(10);
+            line-height: pixRem(20);
+          }
+
+          @include sm() {
+            font-size: pixRem(10);
+            line-height: pixRem(20);
+          }
+        }
+      }
+      .AboutTestimonial_WriteUp_Author{
+        margin-top: pixRem(20);
+        padding: 0 pixRem(15);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include md() {
+          margin-top: pixRem(10);
+        }
+
+        @include sm() {
+          margin-top: pixRem(10);
+        }
+
+        h4{
+          color: #5F5F7E;
+          font-size: pixRem(20);
+          font-weight: 500;
+          line-height: pixRem(30);
+
+          @include md() {
+            font-size: pixRem(12);
+          }
+
+          @include sm() {
+            font-size: pixRem(12);
+          }
+        }
+
+        .AboutTestimonial_Profile{
+          display: flex;
+          align-items: center;
+          gap: pixRem(10);
+          cursor: pointer;
+
+          @include sm() {
+            gap: pixRem(5);
+          }
+
+
+          b{
+            color: $midfielderPrimary;
+            line-height: pixRem(24);
+            font-size: pixRem(16);
+            font-weight: 500;
+
+            @include md() {
+              font-size: pixRem(10);
+            }
+
+            @include sm() {
+              font-size: pixRem(10);
+            }
+          }
+
+          img{
+            width: pixRem(20);
+          }
+        }
+      }
+    }
+    .AboutTestimonial_WriteUp_str {
+      width: 90%;
+      background-color: #ffffff;
+      border-left: pixRem(10) solid $strikerPrimary;
+      margin-left: pixRem(50);
+      position: relative;
+      bottom: pixRem(150);
+      padding: pixRem(30);
+      padding-left: pixRem(60);
+      border-radius: pixRem(15);
+      box-shadow: pixRem(1.5) pixRem(3) pixRem(47) rgba(41, 44, 124, 0.1);
+
+      @include md() {
+        padding-left: pixRem(30);
+        padding: pixRem(20);
+        right: pixRem(20);
+        bottom: pixRem(100);
+      }
+
+      @include sm() {
+        padding-left: pixRem(0);
+        padding: pixRem(20);
+        right: pixRem(20);
+        bottom: pixRem(100);
+      }
+
+
+      .AboutTestimonial_WriteUp_Text{
+        border-left: pixRem(1) solid #BDBDD1;
+        padding: 0 pixRem(15);
+
+        @include sm() {
+        }
+
+
+        p{
+          color: #5F5F7E;
+          font-weight: 400;
+          font-size: pixRem(16);
+          line-height: pixRem(25);
+          letter-spacing: pixRem(0.2);
+
+          @include md() {
+            font-size: pixRem(10);
+            line-height: pixRem(20);
+          }
+
+          @include sm() {
+            font-size: pixRem(10);
+            line-height: pixRem(20);
+          }
+        }
+      }
+      .AboutTestimonial_WriteUp_Author{
+        margin-top: pixRem(20);
+        padding: 0 pixRem(15);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include md() {
+          margin-top: pixRem(10);
+        }
+
+        @include sm() {
+          margin-top: pixRem(10);
+        }
+
+        h4{
+          color: #5F5F7E;
+          font-size: pixRem(20);
+          font-weight: 500;
+          line-height: pixRem(30);
+
+          @include md() {
+            font-size: pixRem(12);
+          }
+
+          @include sm() {
+            font-size: pixRem(12);
+          }
+        }
+
+        .AboutTestimonial_Profile{
+          display: flex;
+          align-items: center;
+          gap: pixRem(10);
+          cursor: pointer;
+
+          @include sm() {
+            gap: pixRem(5);
+          }
+
+
+          b{
+            color: $strikerPrimary;
+            line-height: pixRem(24);
+            font-size: pixRem(16);
+            font-weight: 500;
+
+            @include md() {
+              font-size: pixRem(10);
+            }
+
+            @include sm() {
+              font-size: pixRem(10);
+            }
+          }
+
+          img{
+            width: pixRem(20);
+          }
+        }
+      }
+    }
+    .AboutTestimonial_WriteUp_gol {
+      width: 90%;
+      background-color: #ffffff;
+      border-left: pixRem(10) solid $goalkeeperPrimary;
+      margin-left: pixRem(50);
+      position: relative;
+      bottom: pixRem(150);
+      padding: pixRem(30);
+      padding-left: pixRem(60);
+      border-radius: pixRem(15);
+      box-shadow: pixRem(1.5) pixRem(3) pixRem(47) rgba(41, 44, 124, 0.1);
+
+      @include md() {
+        padding-left: pixRem(30);
+        padding: pixRem(20);
+        right: pixRem(20);
+        bottom: pixRem(100);
+      }
+
+      @include sm() {
+        padding-left: pixRem(0);
+        padding: pixRem(20);
+        right: pixRem(20);
+        bottom: pixRem(100);
+      }
+
+
+      .AboutTestimonial_WriteUp_Text{
+        border-left: pixRem(1) solid #BDBDD1;
+        padding: 0 pixRem(15);
+
+        @include sm() {
+        }
+
+
+        p{
+          color: #5F5F7E;
+          font-weight: 400;
+          font-size: pixRem(16);
+          line-height: pixRem(25);
+          letter-spacing: pixRem(0.2);
+
+          @include md() {
+            font-size: pixRem(10);
+            line-height: pixRem(20);
+          }
+
+          @include sm() {
+            font-size: pixRem(10);
+            line-height: pixRem(20);
+          }
+        }
+      }
+      .AboutTestimonial_WriteUp_Author{
+        margin-top: pixRem(20);
+        padding: 0 pixRem(15);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include md() {
+          margin-top: pixRem(10);
+        }
+
+        @include sm() {
+          margin-top: pixRem(10);
+        }
+
+        h4{
+          color: #5F5F7E;
+          font-size: pixRem(20);
+          font-weight: 500;
+          line-height: pixRem(30);
+
+          @include md() {
+            font-size: pixRem(12);
+          }
+
+          @include sm() {
+            font-size: pixRem(12);
+          }
+        }
+
+        .AboutTestimonial_Profile{
+          display: flex;
+          align-items: center;
+          gap: pixRem(10);
+          cursor: pointer;
+
+          @include sm() {
+            gap: pixRem(5);
+          }
+
+
+          b{
+            color: $goalkeeperPrimary;
+            line-height: pixRem(24);
+            font-size: pixRem(16);
+            font-weight: 500;
+
+            @include md() {
+              font-size: pixRem(10);
+            }
+
+            @include sm() {
+              font-size: pixRem(10);
+            }
+          }
+
+          img{
+            width: pixRem(20);
+          }
+        }
+      }
+    }
   }
 }
