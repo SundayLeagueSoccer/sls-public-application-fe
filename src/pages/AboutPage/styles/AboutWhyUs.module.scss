@@ -86,10 +86,10 @@
         font-weight: 500;
 
         @include md() {
-            color: $darkModeFontSecondary;
-            font-size: pixRem(24);
-            font-style: normal;
-            font-weight: 400;
+          color: $darkModeFontSecondary;
+          font-size: pixRem(24);
+          font-style: normal;
+          font-weight: 400;
         }
       }
       span {
@@ -102,7 +102,7 @@
         font-weight: 400;
         letter-spacing: 0.02em;
 
-        @include md(){
+        @include md() {
           color: $darkModeFontSecondary;
           font-size: pixRem(16);
           line-height: pixRem(35);
@@ -125,7 +125,7 @@
           width: 15%;
           height: 15%;
 
-          @include sm(){
+          @include sm() {
             width: 40%;
             height: 40%;
           }
@@ -137,7 +137,7 @@
             font-size: pixRem(20);
             line-height: pixRem(24);
 
-            @include sm(){
+            @include sm() {
               font-size: pixRem(16);
             }
           }
@@ -146,13 +146,13 @@
             font-weight: 400;
             line-height: pixRem(30);
 
-            @include sm(){
+            @include sm() {
               color: $darkModeFontSecondary;
             }
           }
         }
 
-        @include md(){
+        @include md() {
           display: none;
         }
       }
