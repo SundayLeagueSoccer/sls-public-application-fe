@@ -1,564 +1,95 @@
 @use "../../../assets/styles/" as *;
 
 .AboutTestimonial {
+  width: 100%;
   display: flex;
-  gap: pixRem(20);
-  width: 90vw;
-  padding: pixRem(80) 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: pixRem(136) pixRem(120) pixRem(80) pixRem(120);
+
   @include md() {
-    padding: pixRem(50) 0;
-    padding-bottom: pixRem(0);
+    padding: pixRem(80) pixRem(72) pixRem(40) pixRem(72);
   }
-
   @include sm() {
+    padding: pixRem(80) pixRem(18);
     flex-direction: column;
-    padding: pixRem(50) 0;
-    padding-bottom: pixRem(0);
-    gap: pixRem(50);
+    align-items: flex-start;
+    justify-content: center;
+    row-gap: pixRem(52);
   }
 
-
-  .AboutTestimonial_Text,
-  .AboutTestimonial_Image {
-    width: 50%;
-
-    @include sm() {
-      width: 100%;
-    }
-  }
-
-  .AboutTestimonial_Text {
+  .left {
     display: flex;
     flex-direction: column;
-    gap: pixRem(20);
+    row-gap: pixRem(36);
+    width: 50%;
 
+    @include md() {
+      width: 45%;
+      row-gap: pixRem(32);
+    }
     @include sm() {
+      width: 100%;
       text-align: center;
+      row-gap: pixRem(30);
     }
 
-    h4 {
-      font-style: normal;
+    h3 {
       font-weight: 500;
-      font-size: pixRem(36);
-      color: $darkModeFontSecondary;
+      font-size: 36px;
+      line-height: 120%;
+      color: $fontGrey;
 
       @include md() {
-        font-size: pixRem(18);
-        font-weight: 400;
+        font-size: 24px;
       }
-
       @include sm() {
-        font-size: pixRem(18);
-        font-weight: 400;
+        font-size: 18px;
       }
     }
+
     h2 {
-      font-style: normal;
-      font-weight: 500;
-      font-size: pixRem(48);
-      color: $darkModeFontSecondary;
-
-      @include md() {
-        font-size: pixRem(24);
-        font-weight: 400;
-      }
-
-      @include sm() {
-        font-size: pixRem(24);
-        font-weight: 400;
-      }
-    }
-    span {
-      color: $secondary;
-    }
-    p {
-      font-style: normal;
       font-weight: 400;
-      font-size: pixRem(20);
-      line-height: pixRem(40);
-      color: #696984;
+      font-size: 48px;
+      line-height: 120%;
+      color: $fontGrey;
 
-      @include md() {
-        font-size: pixRem(16);
-        line-height: pixRem(30);
+      span {
+        color: $secondary;
       }
 
+      @include md() {
+        font-size: 30px;
+      }
       @include sm() {
-        font-size: pixRem(16);
-        line-height: pixRem(30);
+        font-size: 24px;
+      }
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 160%;
+      color: $fontGrey;
+
+      @include md() {
+        font-size: 18px;
+      }
+      @include sm() {
+        font-size: 16px;
       }
     }
   }
 
-  .AboutTestimonial_Image {
-    img {
-      width: 80%;
-      border-radius: pixRem(15);
+  .right {
+    width: 40%;
+    // border: solid blue 1px;
 
-      @include sm() {
-        width: 70%;
-      }
+    @include md() {
+      width: 45%;
     }
-
-    .AboutTestimonial_WriteUp_def {
-      width: 90%;
-      background-color: #ffffff;
-      border-left: pixRem(10) solid $defenderprimary;
-      margin-left: pixRem(50);
-      position: relative;
-      bottom: pixRem(150);
-      padding: pixRem(30);
-      padding-left: pixRem(60);
-      border-radius: pixRem(15);
-      box-shadow: pixRem(1.5) pixRem(3) pixRem(47) rgba(41, 44, 124, 0.1);
-
-      @include md() {
-        padding-left: pixRem(30);
-        padding: pixRem(20);
-        right: pixRem(20);
-        bottom: pixRem(100);
-      }
-
-      @include sm() {
-        padding-left: pixRem(0);
-        padding: pixRem(20);
-        right: pixRem(20);
-        bottom: pixRem(100);
-      }
-
-
-      .AboutTestimonial_WriteUp_Text{
-        border-left: pixRem(1) solid #BDBDD1;
-        padding: 0 pixRem(15);
-
-        @include sm() {
-        }
-
-
-        p{
-          color: #5F5F7E;
-          font-weight: 400;
-          font-size: pixRem(16);
-          line-height: pixRem(25);
-          letter-spacing: pixRem(0.2);
-
-          @include md() {
-            font-size: pixRem(10);
-            line-height: pixRem(20);
-          }
-
-          @include sm() {
-            font-size: pixRem(10);
-            line-height: pixRem(20);
-          }
-        }
-      }
-      .AboutTestimonial_WriteUp_Author{
-        margin-top: pixRem(20);
-        padding: 0 pixRem(15);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        @include md() {
-          margin-top: pixRem(10);
-        }
-
-        @include sm() {
-          margin-top: pixRem(10);
-        }
-
-        h4{
-          color: #5F5F7E;
-          font-size: pixRem(20);
-          font-weight: 500;
-          line-height: pixRem(30);
-
-          @include md() {
-            font-size: pixRem(12);
-          }
-
-          @include sm() {
-            font-size: pixRem(12);
-          }
-        }
-
-        .AboutTestimonial_Profile{
-          display: flex;
-          align-items: center;
-          gap: pixRem(10);
-          cursor: pointer;
-
-          @include sm() {
-            gap: pixRem(5);
-          }
-
-
-          b{
-            color: $defenderprimary;
-            line-height: pixRem(24);
-            font-size: pixRem(16);
-            font-weight: 500;
-
-            @include md() {
-              font-size: pixRem(10);
-            }
-
-            @include sm() {
-              font-size: pixRem(10);
-            }
-          }
-
-          img{
-            width: pixRem(20);
-          }
-        }
-      }
-    }
-    .AboutTestimonial_WriteUp_amf {
-      width: 90%;
-      background-color: #ffffff;
-      border-left: pixRem(10) solid $midfielderPrimary;
-      margin-left: pixRem(50);
-      position: relative;
-      bottom: pixRem(150);
-      padding: pixRem(30);
-      padding-left: pixRem(60);
-      border-radius: pixRem(15);
-      box-shadow: pixRem(1.5) pixRem(3) pixRem(47) rgba(41, 44, 124, 0.1);
-
-      @include md() {
-        padding-left: pixRem(30);
-        padding: pixRem(20);
-        right: pixRem(20);
-        bottom: pixRem(100);
-      }
-
-      @include sm() {
-        padding-left: pixRem(0);
-        padding: pixRem(20);
-        right: pixRem(20);
-        bottom: pixRem(100);
-      }
-
-
-      .AboutTestimonial_WriteUp_Text{
-        border-left: pixRem(1) solid #BDBDD1;
-        padding: 0 pixRem(15);
-
-        @include sm() {
-        }
-
-
-        p{
-          color: #5F5F7E;
-          font-weight: 400;
-          font-size: pixRem(16);
-          line-height: pixRem(25);
-          letter-spacing: pixRem(0.2);
-
-          @include md() {
-            font-size: pixRem(10);
-            line-height: pixRem(20);
-          }
-
-          @include sm() {
-            font-size: pixRem(10);
-            line-height: pixRem(20);
-          }
-        }
-      }
-      .AboutTestimonial_WriteUp_Author{
-        margin-top: pixRem(20);
-        padding: 0 pixRem(15);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        @include md() {
-          margin-top: pixRem(10);
-        }
-
-        @include sm() {
-          margin-top: pixRem(10);
-        }
-
-        h4{
-          color: #5F5F7E;
-          font-size: pixRem(20);
-          font-weight: 500;
-          line-height: pixRem(30);
-
-          @include md() {
-            font-size: pixRem(12);
-          }
-
-          @include sm() {
-            font-size: pixRem(12);
-          }
-        }
-
-        .AboutTestimonial_Profile{
-          display: flex;
-          align-items: center;
-          gap: pixRem(10);
-          cursor: pointer;
-
-          @include sm() {
-            gap: pixRem(5);
-          }
-
-
-          b{
-            color: $midfielderPrimary;
-            line-height: pixRem(24);
-            font-size: pixRem(16);
-            font-weight: 500;
-
-            @include md() {
-              font-size: pixRem(10);
-            }
-
-            @include sm() {
-              font-size: pixRem(10);
-            }
-          }
-
-          img{
-            width: pixRem(20);
-          }
-        }
-      }
-    }
-    .AboutTestimonial_WriteUp_str {
-      width: 90%;
-      background-color: #ffffff;
-      border-left: pixRem(10) solid $strikerPrimary;
-      margin-left: pixRem(50);
-      position: relative;
-      bottom: pixRem(150);
-      padding: pixRem(30);
-      padding-left: pixRem(60);
-      border-radius: pixRem(15);
-      box-shadow: pixRem(1.5) pixRem(3) pixRem(47) rgba(41, 44, 124, 0.1);
-
-      @include md() {
-        padding-left: pixRem(30);
-        padding: pixRem(20);
-        right: pixRem(20);
-        bottom: pixRem(100);
-      }
-
-      @include sm() {
-        padding-left: pixRem(0);
-        padding: pixRem(20);
-        right: pixRem(20);
-        bottom: pixRem(100);
-      }
-
-
-      .AboutTestimonial_WriteUp_Text{
-        border-left: pixRem(1) solid #BDBDD1;
-        padding: 0 pixRem(15);
-
-        @include sm() {
-        }
-
-
-        p{
-          color: #5F5F7E;
-          font-weight: 400;
-          font-size: pixRem(16);
-          line-height: pixRem(25);
-          letter-spacing: pixRem(0.2);
-
-          @include md() {
-            font-size: pixRem(10);
-            line-height: pixRem(20);
-          }
-
-          @include sm() {
-            font-size: pixRem(10);
-            line-height: pixRem(20);
-          }
-        }
-      }
-      .AboutTestimonial_WriteUp_Author{
-        margin-top: pixRem(20);
-        padding: 0 pixRem(15);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        @include md() {
-          margin-top: pixRem(10);
-        }
-
-        @include sm() {
-          margin-top: pixRem(10);
-        }
-
-        h4{
-          color: #5F5F7E;
-          font-size: pixRem(20);
-          font-weight: 500;
-          line-height: pixRem(30);
-
-          @include md() {
-            font-size: pixRem(12);
-          }
-
-          @include sm() {
-            font-size: pixRem(12);
-          }
-        }
-
-        .AboutTestimonial_Profile{
-          display: flex;
-          align-items: center;
-          gap: pixRem(10);
-          cursor: pointer;
-
-          @include sm() {
-            gap: pixRem(5);
-          }
-
-
-          b{
-            color: $strikerPrimary;
-            line-height: pixRem(24);
-            font-size: pixRem(16);
-            font-weight: 500;
-
-            @include md() {
-              font-size: pixRem(10);
-            }
-
-            @include sm() {
-              font-size: pixRem(10);
-            }
-          }
-
-          img{
-            width: pixRem(20);
-          }
-        }
-      }
-    }
-    .AboutTestimonial_WriteUp_gol {
-      width: 90%;
-      background-color: #ffffff;
-      border-left: pixRem(10) solid $goalkeeperPrimary;
-      margin-left: pixRem(50);
-      position: relative;
-      bottom: pixRem(150);
-      padding: pixRem(30);
-      padding-left: pixRem(60);
-      border-radius: pixRem(15);
-      box-shadow: pixRem(1.5) pixRem(3) pixRem(47) rgba(41, 44, 124, 0.1);
-
-      @include md() {
-        padding-left: pixRem(30);
-        padding: pixRem(20);
-        right: pixRem(20);
-        bottom: pixRem(100);
-      }
-
-      @include sm() {
-        padding-left: pixRem(0);
-        padding: pixRem(20);
-        right: pixRem(20);
-        bottom: pixRem(100);
-      }
-
-
-      .AboutTestimonial_WriteUp_Text{
-        border-left: pixRem(1) solid #BDBDD1;
-        padding: 0 pixRem(15);
-
-        @include sm() {
-        }
-
-
-        p{
-          color: #5F5F7E;
-          font-weight: 400;
-          font-size: pixRem(16);
-          line-height: pixRem(25);
-          letter-spacing: pixRem(0.2);
-
-          @include md() {
-            font-size: pixRem(10);
-            line-height: pixRem(20);
-          }
-
-          @include sm() {
-            font-size: pixRem(10);
-            line-height: pixRem(20);
-          }
-        }
-      }
-      .AboutTestimonial_WriteUp_Author{
-        margin-top: pixRem(20);
-        padding: 0 pixRem(15);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        @include md() {
-          margin-top: pixRem(10);
-        }
-
-        @include sm() {
-          margin-top: pixRem(10);
-        }
-
-        h4{
-          color: #5F5F7E;
-          font-size: pixRem(20);
-          font-weight: 500;
-          line-height: pixRem(30);
-
-          @include md() {
-            font-size: pixRem(12);
-          }
-
-          @include sm() {
-            font-size: pixRem(12);
-          }
-        }
-
-        .AboutTestimonial_Profile{
-          display: flex;
-          align-items: center;
-          gap: pixRem(10);
-          cursor: pointer;
-
-          @include sm() {
-            gap: pixRem(5);
-          }
-
-
-          b{
-            color: $goalkeeperPrimary;
-            line-height: pixRem(24);
-            font-size: pixRem(16);
-            font-weight: 500;
-
-            @include md() {
-              font-size: pixRem(10);
-            }
-
-            @include sm() {
-              font-size: pixRem(10);
-            }
-          }
-
-          img{
-            width: pixRem(20);
-          }
-        }
-      }
+    @include sm() {
+      width: 100%;
     }
   }
 }

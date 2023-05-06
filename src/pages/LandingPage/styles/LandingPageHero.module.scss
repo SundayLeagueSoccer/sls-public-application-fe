@@ -10,7 +10,7 @@
   justify-content: space-between;
   padding: 0 pixRem(120);
 
-  width: 100vw;
+  width: 100%;
   // height: 90vh;
   @include md() {
     padding: 0 pixRem(72);
