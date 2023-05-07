@@ -2,7 +2,7 @@ type ForwardIconProp = {
   fillColor: string | undefined;
 };
 
-const ForwardIcon = ({ fillColor }: ForwardIconProp) => {
+const ForwardIconLink = ({ fillColor }: ForwardIconProp) => {
   return (
     <>
       <svg
@@ -24,4 +24,4 @@ const ForwardIcon = ({ fillColor }: ForwardIconProp) => {
   );
 };
 
-export default ForwardIcon;
+export default ForwardIconLink;

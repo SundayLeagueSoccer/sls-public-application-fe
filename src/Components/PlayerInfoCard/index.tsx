@@ -8,7 +8,7 @@ import twitter_icon from "./images/white_twitter_icon.png";
 import facebook_icon from "./images/white_twitter_icon.png";
 import instagram_icon from "./images/white_twitter_icon.png";
 import { Link } from "react-router-dom";
-import ForwardIcon from "./svgs/forwardIcon";
+import ForwardIconLink from "./svgs/ForwardIconLink";
 
 type social = {
   facebook?: string;
@@ -118,7 +118,7 @@ const PlayerInfoCard = ({
                 })}
               </div>
               <button className={styles.PlayerCard_details_popUp}>
-                <ForwardIcon fillColor={triangleColor} />
+                <ForwardIconLink fillColor={triangleColor} />
               </button>
             </div>
           </div>
