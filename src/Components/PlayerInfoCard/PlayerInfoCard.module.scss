@@ -1,4 +1,4 @@
-@use "../../../assets/styles/" as *;
+@use "../../assets/styles/" as *;
 
 .PlayerInfoCard_container {
   width: 200px;
@@ -31,14 +31,63 @@
       height: 70%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: space-between;
+      row-gap: 8px;
+      // justify-content: flex-start;
+      // align-items: center;
       background-color: aqua;
       z-index: 60;
+      padding: pixRem(8);
 
       background: rgba(255, 255, 255, 0.3);
       border: 0.714583px solid rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(8.575px);
+
+      h3 {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 20px;
+        color: #ffffff;
+      }
+
+      .PlayerCard_details_info {
+        row-gap: 7px;
+
+        h4,
+        p {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 16px;
+          color: #ffffff;
+        }
+      }
+
+      .PlayerCard_details_bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .PlayerCard_details_socials {
+          display: flex;
+          column-gap: 8px;
+          transition: all ease-in 0.5s;
+
+          .socialMedia_link:hover {
+            transform: scale(1.1);
+          }
+        }
+
+        .PlayerCard_details_popUp {
+          border: none;
+          background: none;
+          cursor: pointer;
+          transition: all ease-in 0.5s;
+        }
+
+        .PlayerCard_details_popUp:hover {
+          transform: scale(1.05);
+        }
+      }
     }
   }
 
@@ -58,6 +107,13 @@
       width: 80%;
       height: auto;
     }
+  }
+
+  .playerCard_ornament {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    z-index: 2;
   }
 
   .playerCard_triangle {
