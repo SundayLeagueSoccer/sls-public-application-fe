@@ -2,18 +2,18 @@
 
 .AboutWhyUs {
   display: flex;
-  gap: pixRem(20);
-  width: 90vw;
-  padding: pixRem(50) 0;
+  column-gap: pixRem(20);
+  width: 100%;
+  padding: pixRem(100) 0;
 
-  .AboutWhyUs_header {
+  .AboutWhyUs_Mobile {
     display: none;
 
     @include sm() {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
+      margin-bottom: pixRem(30);
     }
 
     h4 {
@@ -49,23 +49,24 @@
     }
   }
 
-  .AboutWhyUs_text,
-  .AboutWhyUs_image {
+  .AboutWhyUs_Right,
+  .AboutWhyUs_Left {
     width: 50%;
 
     @include sm() {
       width: 100%;
     }
   }
-  .AboutWhyUs_text {
+  .AboutWhyUs_Right {
     display: flex;
     flex-direction: column;
-    gap: pixRem(20);
+    row-gap: pixRem(20);
 
     .AboutWhyUs_header {
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      row-gap: pixRem(30);
+      
       h4 {
         color: $darkModeFontSecondary;
         font-weight: 500;
@@ -98,7 +99,7 @@
       p {
         color: $darkModeFontSecondary;
         font-size: pixRem(20);
-        line-height: pixRem(35);
+        line-height: pixRem(30);
         font-weight: 400;
         letter-spacing: 0.02em;
 
@@ -118,7 +119,7 @@
     .About_mission_vision {
       .inner_mission_vision {
         display: flex;
-        gap: pixRem(10);
+        column-gap: pixRem(10);
         margin: pixRem(20) 0;
 
         img {
@@ -144,7 +145,7 @@
           p {
             font-size: pixRem(16);
             font-weight: 400;
-            line-height: pixRem(30);
+            line-height: pixRem(25);
 
             @include sm() {
               color: $darkModeFontSecondary;
@@ -158,7 +159,7 @@
       }
     }
   }
-  .AboutWhyUs_image {
+  .AboutWhyUs_Left {
     img {
       width: 100%;
     }
