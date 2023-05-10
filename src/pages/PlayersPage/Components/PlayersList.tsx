@@ -1,30 +1,67 @@
 import styles from "../styles/PlayersList.module.scss";
 import { PlayerPageContext } from "../context/PlayersPageContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import PlayerInfoCard from "../../../Components/PlayerInfoCard";
+import axios from "../../../api/axios";
+import Loader from "../Loader";
 
 const PlayersList = () => {
-  const { selectedPlayersTab } = useContext(PlayerPageContext);
-  const components = [];
+  const { setAllPlayers, playersToDisplay, setPlayersToDisplay } =
+    useContext(PlayerPageContext);
 
-  for (let i = 0; i < 20; i++) {
-    components.push(
-      <PlayerInfoCard
-        key={i}
-        playerPosition={i % 2 === 0 ? "Midfielder" : "Defender"}
-        playerText={"I live for this game called football."}
-        playerName={"Iyanu"}
-        playerSocials={[{ facebook: "google.com" }]}
-        playerLink={"ppp"}
-      />
-    );
-  }
+  // const [players, setPlayers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    let isMounted = true;
+    const controller = new AbortController();
+
+    const getAllPlayers = async () => {
+      try {
+        const response = await axios.get("/players", {
+          signal: controller.signal,
+        });
+        setLoading(false);
+        isMounted && setAllPlayers(response.data);
+        isMounted && setPlayersToDisplay(response.data);
+      } catch (error: any) {
+        setLoading(false);
+        if (error && error.message) {
+          setError(error.message);
+        } else {
+          setError("An error occurred.");
+        }
+      }
+    };
+
+    getAllPlayers();
+
+    return () => {
+      isMounted = false;
+      controller.abort();
+    };
+  }, []);
 
   return (
     <>
-      <section className={styles.PlayersList}>
-        {components.map((component) => component)}
-      </section>
+      {loading ? (
+        <Loader />
+      ) : (
+        <section className={styles.PlayersList}>
+          {playersToDisplay.map((player) => {
+            return (
+              <PlayerInfoCard
+                key={player.name}
+                playerPosition={player.favoritePosition}
+                playerText={player.playerQuote}
+                playerName={player.name}
+                playerSocials={player.socialMedia}
+              />
+            );
+          })}
+        </section>
+      )}
     </>
   );
 };
