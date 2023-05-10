@@ -1,0 +1,46 @@
+@use "../../../assets/styles/" as *;
+
+.darkLine {
+  width: 100%;
+  border-bottom: 1px #33363a solid;
+}
+
+.lightLine {
+  width: 100%;
+  border-bottom: 1px #eaecf0 solid;
+}
+
+.PlayersPageNavbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  // column-gap: 16px;
+  font-family: "Solway";
+
+  button {
+    border: none;
+    background: none;
+    font-family: "Solway";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 8px 64px;
+    cursor: pointer;
+    border-bottom: 4px solid transparent;
+    transition: all ease 0.4s;
+  }
+
+  button:hover {
+    background: $primaryHover;
+    color: $tertiary;
+    border-bottom: 4px solid $tertiary;
+    font-weight: 500;
+  }
+
+  .activeTab {
+    background: $primaryHover;
+    color: $tertiary;
+    border-bottom: 4px solid $tertiary;
+    font-weight: 500;
+  }
+}

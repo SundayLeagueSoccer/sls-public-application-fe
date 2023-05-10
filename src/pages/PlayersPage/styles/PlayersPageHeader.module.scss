@@ -1,0 +1,64 @@
+@use "../../../assets/styles/" as *;
+
+.PlayersPageHeader {
+  background-image: url("../images/HeaderSectionLg.png");
+  background-size: cover;
+  background-position: center;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: pixRem(96) pixRem(120);
+  row-gap: pixRem(28);
+  text-align: center;
+
+  @include md() {
+    padding: pixRem(66) pixRem(72);
+  }
+  @include sm() {
+    padding: pixRem(56) pixRem(18) pixRem(80) pixRem(18);
+    row-gap: pixRem(18);
+  }
+
+  .mainText {
+    display: flex;
+    flex-direction: column;
+    row-gap: pixRem(16);
+
+    h2 {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 24px;
+      color: $extended;
+      @include sm() {
+        font-size: 16px;
+      }
+    }
+
+    h1 {
+      font-weight: 500;
+      font-size: 48px;
+      line-height: 60px;
+      color: #ffffff;
+      @include sm() {
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 120%;
+      }
+    }
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #ffffff;
+    width: 80%;
+    @include sm() {
+      font-size: 18px;
+      width: 100%;
+    }
+  }
+}
