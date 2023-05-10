@@ -1,0 +1,41 @@
+@use "../../../assets/styles/" as *;
+
+.Loader {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  column-gap: 16px;
+  row-gap: 24px;
+
+  justify-items: center; /* center items horizontally */
+  align-items: center; /* center items vertically */
+  padding: pixRem(42) 0;
+
+  @include md() {
+    grid-template-columns: 33% 33% 33%;
+  }
+  @include sm() {
+    grid-template-columns: 100%;
+  }
+
+  .DummyLoader {
+    width: 200px;
+    height: 280px;
+    border-radius: 8px;
+    background: linear-gradient(162.71deg, #acacac 11.64%, #676767 92.19%);
+    animation: pulse 1s ease-in-out infinite;
+    transition: all ease 1s;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background: linear-gradient(162.71deg, #9e0a0a 11.64%, #05bc61 92.19%);
+  }
+  50% {
+    background: linear-gradient(162.71deg, #c7b424 11.64%, #361fcb 92.19%);
+  }
+  100% {
+    background: linear-gradient(162.71deg, #9e0a0a 11.64%, #05bc61 92.19%);
+  }
+}

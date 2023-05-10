@@ -20,8 +20,7 @@ type PlayerInfoCardProp = {
   playerPosition: "Midfielder" | "Defender" | "Goal Keeper" | "Striker";
   playerText: string;
   playerName: string;
-  playerSocials?: social[];
-  playerLink?: string;
+  playerSocials?: social;
   playerImage?: string;
 };
 
@@ -30,7 +29,6 @@ const PlayerInfoCard = ({
   playerText,
   playerName,
   playerSocials,
-  playerLink,
   playerImage,
 }: PlayerInfoCardProp) => {
   let triangleColor;
@@ -71,51 +69,45 @@ const PlayerInfoCard = ({
             </div>
             <div className={styles.PlayerCard_details_bottom}>
               <div className={styles.PlayerCard_details_socials}>
-                {playerSocials?.map((socialLink) => {
-                  return (
-                    <>
-                      {socialLink.facebook ? (
-                        <Link
-                          to={socialLink.facebook}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          key={socialLink.facebook}
-                          className={styles.socialMedia_link}
-                        >
-                          <img src={facebook_icon} alt={`facebook Button`} />
-                        </Link>
-                      ) : (
-                        <></>
-                      )}
-                      {socialLink.twitter ? (
-                        <Link
-                          to={socialLink.twitter}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          key={socialLink.twitter}
-                          className={styles.socialMedia_link}
-                        >
-                          <img src={twitter_icon} alt={`twitter Button`} />
-                        </Link>
-                      ) : (
-                        <></>
-                      )}
-                      {socialLink.instagram ? (
-                        <Link
-                          to={socialLink.instagram}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          key={socialLink.instagram}
-                          className={styles.socialMedia_link}
-                        >
-                          <img src={instagram_icon} alt={`instagram Button`} />
-                        </Link>
-                      ) : (
-                        <></>
-                      )}
-                    </>
-                  );
-                })}
+                {playerSocials?.facebook ? (
+                  <Link
+                    to={playerSocials?.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={playerSocials?.facebook}
+                    className={styles.socialMedia_link}
+                  >
+                    <img src={facebook_icon} alt={`facebook Button`} />
+                  </Link>
+                ) : (
+                  <></>
+                )}
+                {playerSocials?.twitter ? (
+                  <Link
+                    to={playerSocials?.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={playerSocials?.twitter}
+                    className={styles.socialMedia_link}
+                  >
+                    <img src={twitter_icon} alt={`twitter Button`} />
+                  </Link>
+                ) : (
+                  <></>
+                )}
+                {playerSocials?.instagram ? (
+                  <Link
+                    to={playerSocials?.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={playerSocials?.instagram}
+                    className={styles.socialMedia_link}
+                  >
+                    <img src={instagram_icon} alt={`instagram Button`} />
+                  </Link>
+                ) : (
+                  <></>
+                )}
               </div>
               <button className={styles.PlayerCard_details_popUp}>
                 <ForwardIconLink fillColor={triangleColor} />
