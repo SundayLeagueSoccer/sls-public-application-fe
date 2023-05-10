@@ -14,7 +14,7 @@
 
   .AboutPage_Features {
     width: 100%;
-    background-image: url("./images/feaures_background_desktop.png");
+    background-image: url("./images/features_background_desktop.png");
     background-size: cover;
     background-position: center;
 
@@ -23,8 +23,7 @@
     }
 
     @include sm() {
-      background-image: url();
-      background-image: url("");
+      background-image: url("./images/features_background_mobile.png");
     }
   }
 }
