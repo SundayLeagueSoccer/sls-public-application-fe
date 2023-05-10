@@ -82,12 +82,15 @@ const Navbar = () => {
             {mobileNavbarOpen ? (
               <></>
             ) : (
-              <div onClick={() => toggleTheme()} className={styles.theme_icon}>
+              <button
+                onClick={() => toggleTheme()}
+                className={styles.theme_icon}
+              >
                 <img
                   src={darkMode ? lightModeIcon : darkModeIcon}
                   alt="Toggle Theme Button"
                 />
-              </div>
+              </button>
             )}
 
             {/* hamburger */}
