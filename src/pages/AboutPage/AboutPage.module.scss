@@ -14,18 +14,16 @@
 
   .AboutPage_Features {
     width: 100%;
-    padding: 0 pixRem(120);
     background-image: url("./images/feaures_background_desktop.png");
     background-size: cover;
     background-position: center;
 
     @include md() {
-      padding: 0 pixRem(72);
+
     }
 
     @include sm() {
       background-image: url();
-      padding: 0 pixRem(18);
       background-image: url("");
     }
   }
