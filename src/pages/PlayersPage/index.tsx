@@ -1,12 +1,26 @@
 import styles from "./PlayersPage.module.scss";
 import AnimatedFadeInPage from "../../utils/AnimatedFadeInPage";
+import PlayersPageHeader from "./Components/PlayersPageHeader";
+import PlayersPagePaginationControls from "./Components/PlayersPagePaginationControls";
+import PlayersList from "./Components/PlayersList";
+import PlayersPageNavbar from "./Components/PlayersPageNavbar";
+import PlayerPageContext from "./context/PlayersPageContext";
 
 const PlayersPage = () => {
   return (
     <>
-      <AnimatedFadeInPage>
-        <main className={styles.PlayersPage}>PlayersPage</main>
-      </AnimatedFadeInPage>
+      <PlayerPageContext>
+        <AnimatedFadeInPage>
+          <main className={styles.PlayersPage}>
+            <PlayersPageHeader />
+            <div className={styles.Players_containers}>
+              <PlayersPageNavbar />
+              <PlayersList />
+            </div>
+            <PlayersPagePaginationControls />
+          </main>
+        </AnimatedFadeInPage>
+      </PlayerPageContext>
     </>
   );
 };
