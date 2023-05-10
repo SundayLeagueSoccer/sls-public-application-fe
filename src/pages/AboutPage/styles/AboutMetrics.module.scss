@@ -1,8 +1,131 @@
 @use "../../../assets/styles/" as *;
 
 .AboutMetrics {
-  display: flex;
+  text-align: center;
+ 
+  
+  .Metrics_Container{
+    z-index: 1;
+    display: flex;
+   align-items: center;
+   justify-content: space-between;
+    background-image: url('../images/MetricsLg.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    gap: pixRem(32);
+    padding: pixRem(32) pixRem(64);  
+    max-width: 80vw;
+    width: 100%;
+    margin: 0 auto pixRem(64);
+    position: relative;
+  }
+
+  .Metrics_NumberBox{
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    padding: pixRem(32) pixRem(24);
+    border-radius: pixRem(8);
+    margin: pixRem(32) 0;
+    max-width: pixRem(341);
+    width: 100%;
+    height: 232px;
+    letter-spacing: pixRem(1);
+    border: pixRem(0.5) solid #ffffff97;
+    overflow: hidden;
+  }
+
+  .Metrics_NumberBox p{
+    color: #fff;
+    font-weight: 200;
+    font-size: pixRem(16)
+  }
+
+  .Metrics_NumberBox p:first-child{
+    font-size: pixRem(60);
+    font-weight: 500;
+  }
+  
+  .Metrics_NumberBox p:nth-child(2){
+    text-transform: capitalize;
+    margin: pixRem(10) 0 pixRem(5);
+    font-size: pixRem(18);
+    font-weight: 500;
+  }
+  
+  .Metrics_design{
+    position: absolute;
+    left: 0;
+    top: pixRem(420);
+    z-index: -1;
+  }
+  
+  .Metrics_design_sm{
+    display: none;
+  }
+
+  .Metrics_design_sm_two{
+    display: none;
+  }
+
+  .Metrics_design_sm_three{
+    display: none;
+  }
+
+  .Metrics_design_two{
+    position: absolute;
+    right: 0;
+    top: pixRem(700);
+    z-index: 0;
+  }
 
   @include sm() {
-  }
+    .Metrics_Container{
+      display: flex;
+      flex-direction: column;
+      max-width: 90vw;
+      background-image: url('../images/MetricsSm.png');
+      margin: pixRem(64) auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .Metrics_NumberBox{
+      z-index: 1;
+      margin: 0;
+      width: pixRem(287);
+      height: 220px;
+      padding: pixRem(32) pixRem(24);  
+    }
+  
+    .Metrics_NumberBox p:first-child{
+      font-size: pixRem(48);
+      font-weight: 500;
+    }
+
+    .Metrics_design_sm{
+      display: block;
+      position: absolute;
+      left: 0;
+      top: pixRem(398);
+      z-index: 0;
+    }
+
+    .Metrics_design_sm_two{
+      display: block;
+      position: absolute;
+      right: 0;
+      top: pixRem(900);
+      z-index: 0;
+    }
+    
+    .Metrics_design{
+      display: none;
+    }
+  
+    .Metrics_design_two{
+      display: none;
+    }
+}
+
 }

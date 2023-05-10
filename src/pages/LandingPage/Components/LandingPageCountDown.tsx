@@ -14,12 +14,22 @@ const LandingPageCountDown = () => {
 
     //day of week
     const dayOfWeek = currentTime.getDay();
-    const daysToSunday = 7 - dayOfWeek;
+    let daysToSunday: number;
+    if (currentTime.getHours() > 15) {
+      daysToSunday = 7 - dayOfWeek - 1;
+    } else {
+      daysToSunday = 7 - dayOfWeek;
+    }
     SetDaysToMatch(daysToSunday.toString().padStart(2, "0"));
 
     //hour of day
     const hourOfDay = currentTime.getHours();
-    const hoursToFourPm = 15 - hourOfDay;
+    let hoursToFourPm: number;
+    if (currentTime.getHours() > 15) {
+      hoursToFourPm = 24 - (currentTime.getHours() - 15);
+    } else {
+      hoursToFourPm = 15 - hourOfDay;
+    }
     SetHoursToMatch(hoursToFourPm.toString().padStart(2, "0"));
 
     //hour of minutes

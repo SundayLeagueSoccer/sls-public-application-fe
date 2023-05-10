@@ -1,8 +1,95 @@
 @use "../../../assets/styles/" as *;
 
 .AboutTestimonial {
+  width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: pixRem(136) pixRem(120) pixRem(80) pixRem(120);
 
+  @include md() {
+    padding: pixRem(80) pixRem(72) pixRem(40) pixRem(72);
+  }
   @include sm() {
+    padding: pixRem(80) pixRem(18);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    row-gap: pixRem(52);
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    row-gap: pixRem(36);
+    width: 50%;
+
+    @include md() {
+      width: 45%;
+      row-gap: pixRem(32);
+    }
+    @include sm() {
+      width: 100%;
+      text-align: center;
+      row-gap: pixRem(30);
+    }
+
+    h3 {
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 120%;
+      color: $fontGrey;
+
+      @include md() {
+        font-size: 24px;
+      }
+      @include sm() {
+        font-size: 18px;
+      }
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 120%;
+      color: $fontGrey;
+
+      span {
+        color: $secondary;
+      }
+
+      @include md() {
+        font-size: 30px;
+      }
+      @include sm() {
+        font-size: 24px;
+      }
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 160%;
+      color: $fontGrey;
+
+      @include md() {
+        font-size: 18px;
+      }
+      @include sm() {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .right {
+    width: 40%;
+    // border: solid blue 1px;
+
+    @include md() {
+      width: 45%;
+    }
+    @include sm() {
+      width: 100%;
+    }
   }
 }

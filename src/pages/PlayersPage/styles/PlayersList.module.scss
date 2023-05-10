@@ -1,0 +1,20 @@
+@use "../../../assets/styles/" as *;
+
+.PlayersList {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  column-gap: 16px;
+  row-gap: 24px;
+
+  justify-items: center; /* center items horizontally */
+  align-items: center; /* center items vertically */
+  padding: pixRem(42) 0;
+
+  @include md() {
+    grid-template-columns: 33% 33% 33%;
+  }
+  @include sm() {
+    grid-template-columns: 100%;
+  }
+}

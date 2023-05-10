@@ -15,9 +15,12 @@ const AboutPage = () => {
         <main className={styles.AboutPage}>
           <AboutHero />
           <AboutMetrics />
-          <AboutHistory />
-          <AboutWhyUs />
-          <AboutTestimonial />
+          {/* Henry I already applied the background for these 3 sections */}
+          <div className={styles.AboutPage_Features}>
+            <AboutHistory />
+            <AboutWhyUs />
+            <AboutTestimonial />
+          </div>
         </main>
       </AnimatedFadeInPage>
     </>

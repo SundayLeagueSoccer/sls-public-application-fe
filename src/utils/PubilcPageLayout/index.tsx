@@ -22,7 +22,9 @@ const PublicPageLayout = () => {
         <div className={styles.PublicPageLayout}>
           <section className={styles.main_container}>
             <div className={styles.Navbar_container}>
-              <Navbar />
+              <div className={styles.Navbar_Child_Container}>
+                <Navbar />
+              </div>
             </div>
             <div className={styles.Outlet_container}>
               <Outlet />

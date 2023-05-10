@@ -2,7 +2,169 @@
 
 .AboutWhyUs {
   display: flex;
+  gap: pixRem(20);
+  width: 90vw;
+  padding: pixRem(50) 0;
+
+  .AboutWhyUs_header {
+    display: none;
+
+    @include sm() {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    h4 {
+      @include sm() {
+        color: $darkModeFontSecondary;
+        font-weight: 400;
+        font-style: normal;
+        font-size: pixRem(18);
+      }
+    }
+
+    h2 {
+      @include sm() {
+        color: $darkModeFontSecondary;
+        font-size: pixRem(24);
+        font-style: normal;
+        font-weight: 400;
+      }
+    }
+    span {
+      @include sm() {
+        color: $secondary;
+      }
+    }
+    p {
+      @include sm() {
+        color: $darkModeFontSecondary;
+        font-size: pixRem(16);
+        line-height: pixRem(35);
+        font-weight: 400;
+        letter-spacing: 0.02em;
+      }
+    }
+  }
+
+  .AboutWhyUs_text,
+  .AboutWhyUs_image {
+    width: 50%;
+
+    @include sm() {
+      width: 100%;
+    }
+  }
+  .AboutWhyUs_text {
+    display: flex;
+    flex-direction: column;
+    gap: pixRem(20);
+
+    .AboutWhyUs_header {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      h4 {
+        color: $darkModeFontSecondary;
+        font-weight: 500;
+        font-size: pixRem(36);
+
+        @include md() {
+          color: $darkModeFontSecondary;
+          font-weight: 400;
+          font-style: normal;
+          font-size: pixRem(18);
+        }
+      }
+
+      h2 {
+        color: $darkModeFontSecondary;
+        font-size: pixRem(48);
+        font-style: normal;
+        font-weight: 500;
+
+        @include md() {
+          color: $darkModeFontSecondary;
+          font-size: pixRem(24);
+          font-style: normal;
+          font-weight: 400;
+        }
+      }
+      span {
+        color: $secondary;
+      }
+      p {
+        color: $darkModeFontSecondary;
+        font-size: pixRem(20);
+        line-height: pixRem(35);
+        font-weight: 400;
+        letter-spacing: 0.02em;
+
+        @include md() {
+          color: $darkModeFontSecondary;
+          font-size: pixRem(16);
+          line-height: pixRem(35);
+          font-weight: 400;
+          letter-spacing: 0.02em;
+        }
+      }
+
+      @include sm() {
+        display: none;
+      }
+    }
+    .About_mission_vision {
+      .inner_mission_vision {
+        display: flex;
+        gap: pixRem(10);
+        margin: pixRem(20) 0;
+
+        img {
+          width: 15%;
+          height: 15%;
+
+          @include sm() {
+            width: 40%;
+            height: 40%;
+          }
+        }
+        .mission_text {
+          h6 {
+            color: $fontGreyIsolated;
+            font-weight: 500;
+            font-size: pixRem(20);
+            line-height: pixRem(24);
+
+            @include sm() {
+              font-size: pixRem(16);
+            }
+          }
+          p {
+            font-size: pixRem(16);
+            font-weight: 400;
+            line-height: pixRem(30);
+
+            @include sm() {
+              color: $darkModeFontSecondary;
+            }
+          }
+        }
+
+        @include md() {
+          display: none;
+        }
+      }
+    }
+  }
+  .AboutWhyUs_image {
+    img {
+      width: 100%;
+    }
+  }
 
   @include sm() {
+    flex-direction: column;
   }
 }
