@@ -16,8 +16,8 @@ const PlayersPage = () => {
             <div className={styles.Players_containers}>
               <PlayersPageNavbar />
               <PlayersList />
+              <PlayersPagePaginationControls />
             </div>
-            <PlayersPagePaginationControls />
           </main>
         </AnimatedFadeInPage>
       </PlayerPageContext>

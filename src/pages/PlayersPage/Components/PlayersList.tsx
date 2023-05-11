@@ -9,9 +9,9 @@ const PlayersList = () => {
   const { setAllPlayers, playersToDisplay, setPlayersToDisplay } =
     useContext(PlayerPageContext);
 
-  // const [players, setPlayers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -23,10 +23,12 @@ const PlayersList = () => {
           signal: controller.signal,
         });
         setLoading(false);
+        setSuccess(true);
         isMounted && setAllPlayers(response.data);
         isMounted && setPlayersToDisplay(response.data);
       } catch (error: any) {
         setLoading(false);
+        setSuccess(false);
         if (error && error.message) {
           setError(error.message);
         } else {
@@ -45,6 +47,7 @@ const PlayersList = () => {
 
   return (
     <>
+      {!loading && !success ? <Loader /> : <div></div>}
       {loading ? (
         <Loader />
       ) : (

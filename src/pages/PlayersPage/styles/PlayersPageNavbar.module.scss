@@ -12,10 +12,11 @@
 
 .PlayersPageNavbar {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
   justify-content: center;
-  // column-gap: 16px;
   font-family: "Solway";
+  border: 1px yellow solid;
 
   button {
     border: none;
@@ -28,6 +29,11 @@
     cursor: pointer;
     border-bottom: 4px solid transparent;
     transition: all ease 0.4s;
+    width: 100%;
+
+    @include md() {
+      padding: 8px 20px;
+    }
   }
 
   button:hover {

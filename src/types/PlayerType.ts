@@ -23,7 +23,7 @@ export type playerType = {
   alias: string;
   playerQuote: string;
   positions: string[];
-  favoritePosition: "Midfielder" | "Defender" | "Goal Keeper" | "Striker";
+  favoritePosition: "Midfielder" | "Defender" | "Goal Keeper" | "Forward";
   image: imageType;
   socialMedia: socialMediaType;
   stats: {
