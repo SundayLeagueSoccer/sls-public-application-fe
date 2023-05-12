@@ -25,17 +25,23 @@ const PlayersPageNavbar = () => {
     setSelectedPlayersTab,
     allPlayers,
     setPlayersToDisplay,
+    setcurrentPage,
+    setPaginationLimit,
   } = useContext(PlayerPageContext);
 
   useEffect(() => {
     if (selectedPlayersTab === "All Players") {
       setPlayersToDisplay(allPlayers);
+      setPaginationLimit(Math.floor(allPlayers.length / 12) + 1);
+      setcurrentPage(1);
       return;
     }
     const chosenPlayers: playerType[] = allPlayers.filter(
       (player) => player.favoritePosition === selectedPlayersTab.slice(0, -1)
     );
     setPlayersToDisplay(chosenPlayers);
+    setPaginationLimit(Math.floor(chosenPlayers.length / 12) + 1);
+    setcurrentPage(1);
   }, [selectedPlayersTab]);
 
   return (

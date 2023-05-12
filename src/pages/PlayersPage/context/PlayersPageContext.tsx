@@ -21,6 +21,10 @@ type PlayersPageContextType = {
   setAllPlayers: React.Dispatch<React.SetStateAction<playerType[]>>;
   playersToDisplay: playerType[];
   setPlayersToDisplay: React.Dispatch<React.SetStateAction<playerType[]>>;
+  currentPage: number;
+  setcurrentPage: React.Dispatch<React.SetStateAction<number>>;
+  paginationLimit: number;
+  setPaginationLimit: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export const PlayerPageContext = createContext({} as PlayersPageContextType);
@@ -34,6 +38,8 @@ export default function PlayerPageContextProvider({
   const [allPlayers, setAllPlayers] = useState<playerType[]>([]);
   const [playersToDisplay, setPlayersToDisplay] =
     useState<playerType[]>(allPlayers);
+  const [currentPage, setcurrentPage] = useState(1);
+  const [paginationLimit, setPaginationLimit] = useState(10);
 
   return (
     <PlayerPageContext.Provider
@@ -44,6 +50,10 @@ export default function PlayerPageContextProvider({
         setAllPlayers,
         playersToDisplay,
         setPlayersToDisplay,
+        currentPage,
+        setcurrentPage,
+        paginationLimit,
+        setPaginationLimit,
       }}
     >
       {children}

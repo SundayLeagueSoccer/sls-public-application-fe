@@ -7,19 +7,22 @@
   width: 100%;
   // height: 100vh;
   // justify-content: center;
-  // align-items: center;
+  align-items: center;
 
   @include sm() {
   }
 
   .Players_containers {
     width: 100%;
-    background-image: url("./images/playersList_bg_desktop.png");
+    background-image: url("./images/playersPage_bg_desktop.png");
     background-size: cover;
     background-position: center;
 
     padding: pixRem(100) pixRem(120);
 
+    @include md() {
+      padding: pixRem(44) pixRem(72);
+    }
     @include sm() {
       padding: pixRem(30) pixRem(18);
     }

@@ -2,6 +2,8 @@ import styles from "../styles/LandingPageHero.module.scss";
 import hero_image from "../images/hero_image.png";
 import mobile_hero_image from "../images/mobile_hero_image.png";
 import mobile_hero_image_2 from "../images/mobile_hero_image_2.png";
+import hero_ball_test from "../images/hero ball player test.svg";
+import high_res_hero from "../images/hgih res ball kicker.png";
 
 const LandingPageHero = () => {
   return (
@@ -23,7 +25,9 @@ const LandingPageHero = () => {
           </div>
         </div>
         <img
-          src={hero_image}
+          // src={hero_image}
+          // src={high_res_hero}
+          src={hero_ball_test}
           alt="A picture Illustration of an avatar kicking a ball"
           className={styles.hero_image}
         />

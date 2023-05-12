@@ -17,7 +17,7 @@ type social = {
 };
 
 type PlayerInfoCardProp = {
-  playerPosition: "Midfielder" | "Defender" | "Goal Keeper" | "Striker";
+  playerPosition: "Midfielder" | "Defender" | "Goal Keeper" | "Forward";
   playerText: string;
   playerName: string;
   playerSocials?: social;
@@ -46,7 +46,7 @@ const PlayerInfoCard = ({
       triangleColor = "#3aac8a";
       ornamentImage = green_ornament;
     }
-    if (_playerPosition === "Striker") {
+    if (_playerPosition === "Forward") {
       triangleColor = "#01b3ce";
       ornamentImage = cyan_ornament;
     }
