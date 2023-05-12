@@ -1,7 +1,7 @@
 @use "../../../assets/styles/" as *;
 
 .LandingPageHero {
-  background-image: url("../images/hero_background.png");
+  background-image: url("../images/bg_hero_desktop.svg");
   background-size: cover;
   background-position: center;
 
@@ -10,13 +10,12 @@
   justify-content: space-between;
   padding: 0 pixRem(120);
 
-  width: 100vw;
-  // height: 90vh;
+  width: 100%;
   @include md() {
     padding: 0 pixRem(72);
   }
   @include sm() {
-    background-image: url("../images/mobile_hero_background.png");
+    background-image: url("../images/bg_hero_mobile.svg");
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -93,6 +92,7 @@
         text-align: center;
         cursor: pointer;
         transition: all ease 0.5s;
+        text-decoration: none;
 
         @include md() {
           padding: 8px 0;
@@ -124,7 +124,7 @@
     width: auto;
 
     @include md() {
-      height: 325px;
+      height: 450px;
     }
     @include sm() {
       display: none;
@@ -169,6 +169,7 @@
         text-align: center;
         cursor: pointer;
         transition: all ease 0.5s;
+        text-decoration: none;
       }
 
       .sls_history {

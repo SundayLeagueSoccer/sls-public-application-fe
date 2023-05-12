@@ -1,0 +1,64 @@
+@use "../../../assets/styles/" as *;
+
+.Testimonial_Parent_Container {
+  width: 100%;
+  aspect-ratio: 1/1.0725;
+
+  .Testimonial {
+    width: 100%;
+    position: relative;
+
+    img {
+      width: 75%;
+      aspect-ratio: 4/5;
+      height: auto;
+    }
+
+    .Details {
+      position: absolute;
+      width: 90%;
+      aspect-ratio: 2.5/1;
+      bottom: -13%;
+      left: 10%;
+      border-radius: 12px;
+
+      padding: pixRem(28);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include sm() {
+        padding: pixRem(18);
+      }
+
+      p {
+        width: 100%;
+        padding-left: pixRem(28);
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 160%;
+        color: $fontGreyLighter;
+        border-left: 0.447265px solid #bdbdd1;
+
+        @include sm() {
+          padding-left: pixRem(18);
+          font-size: 10px;
+        }
+      }
+
+      h5 {
+        width: 100%;
+        padding-left: pixRem(28);
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+        color: $fontGreyLighter;
+
+        @include sm() {
+          padding-left: pixRem(18);
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

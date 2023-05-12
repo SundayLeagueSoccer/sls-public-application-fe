@@ -1,0 +1,51 @@
+@use "../../../assets/styles/" as *;
+
+.darkLine {
+  width: 100%;
+  border-bottom: 1px #33363a solid;
+}
+
+.lightLine {
+  width: 100%;
+  border-bottom: 1px #eaecf0 solid;
+}
+
+.PlayersPageNavbar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  justify-content: center;
+  font-family: "Solway";
+
+  button {
+    border: none;
+    background: none;
+    font-family: "Solway";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 8px 56px;
+    cursor: pointer;
+    border-bottom: 4px solid transparent;
+    transition: all ease 0.4s;
+    width: 100%;
+
+    @include md() {
+      padding: 8px 20px;
+    }
+  }
+
+  button:hover {
+    background: $primaryHover;
+    color: $tertiary;
+    border-bottom: 4px solid $tertiary;
+    font-weight: 500;
+  }
+
+  .activeTab {
+    background: $primaryHover;
+    color: $tertiary;
+    border-bottom: 4px solid $tertiary;
+    font-weight: 500;
+  }
+}

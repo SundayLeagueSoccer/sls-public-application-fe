@@ -2,12 +2,29 @@
 
 .PlayersPage {
   display: flex;
+  flex-direction: column;
   font-family: "Solway", serif;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
+  width: 100%;
+  // height: 100vh;
+  // justify-content: center;
   align-items: center;
 
   @include sm() {
+  }
+
+  .Players_containers {
+    width: 100%;
+    background-image: url("./images/bg_playersList_desktop.svg");
+    background-size: cover;
+    background-position: center;
+
+    padding: pixRem(100) pixRem(120);
+
+    @include md() {
+      padding: pixRem(44) pixRem(72);
+    }
+    @include sm() {
+      padding: pixRem(30) pixRem(18);
+    }
   }
 }

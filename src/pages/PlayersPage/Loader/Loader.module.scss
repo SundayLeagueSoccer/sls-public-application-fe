@@ -1,0 +1,102 @@
+@use "../../../assets/styles/" as *;
+
+.Loader {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  row-gap: 24px;
+
+  justify-items: center;
+  align-items: center;
+  padding: pixRem(42) 0;
+  border: red 1px solid;
+
+  @include md() {
+    grid-template-columns: 33% 33% 33%;
+    justify-items: center;
+    align-items: center;
+  }
+  @include sm() {
+    grid-template-columns: 100%;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .DummyLoader {
+    width: 200px;
+    height: 280px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: linear-gradient(135deg, #f0f0f0, #b8b5b5);
+
+    .container {
+      width: 100%;
+      height: 75%;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        hsl(200, 20%, 70%)
+      );
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      border-radius: 8px;
+
+      .textBox {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        border-radius: 8px;
+        row-gap: 20px;
+        padding: 10% 0;
+
+        background-color: rgba(255, 255, 255, 0.822);
+        border: 0.714583px solid rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(8.575px);
+
+        .mainText {
+          width: 80%;
+          height: 20%;
+          border-radius: 5px;
+          background-color: rgba(255, 255, 255, 0.822);
+          animation: pulse 1s linear infinite alternate;
+          opacity: 0.7;
+        }
+
+        .container_secondary {
+          width: 100%;
+          height: 80%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          row-gap: 5px;
+
+          .subText {
+            width: 80%;
+            height: 10%;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.822);
+            animation: pulse 1s linear infinite alternate;
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
