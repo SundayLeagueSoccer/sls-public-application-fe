@@ -12,7 +12,7 @@
   flex-direction: column;
 
   @include md() {
-    padding: pixRem(44) pixRem(72) pixRem(44) pixRem(72);
+    padding: pixRem(40) pixRem(72) pixRem(32) pixRem(72);
   }
   @include sm() {
     padding: pixRem(22) pixRem(18) pixRem(24) pixRem(18);

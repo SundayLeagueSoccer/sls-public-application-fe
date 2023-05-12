@@ -22,6 +22,7 @@ type PlayerInfoCardProp = {
   playerName: string;
   playerSocials?: social;
   playerImage?: string;
+  interactive?: boolean;
 };
 
 const PlayerInfoCard = ({
@@ -30,6 +31,7 @@ const PlayerInfoCard = ({
   playerName,
   playerSocials,
   playerImage,
+  interactive = true,
 }: PlayerInfoCardProp) => {
   let triangleColor;
   let ornamentImage;
@@ -57,6 +59,18 @@ const PlayerInfoCard = ({
     backgroundColor: triangleColor,
   };
 
+  const disableLink = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+    return;
+  };
+
+  const doNothing = () => {
+    console.log("lll");
+  };
+  const openModal = () => {};
+
   return (
     <>
       <div className={styles.PlayerInfoCard_container}>
@@ -76,6 +90,9 @@ const PlayerInfoCard = ({
                     rel="noopener noreferrer"
                     key={playerSocials?.facebook}
                     className={styles.socialMedia_link}
+                    onClick={
+                      !interactive ? (e) => disableLink(e) : () => doNothing()
+                    }
                   >
                     <img src={facebook_icon} alt={`facebook Button`} />
                   </Link>
@@ -89,6 +106,9 @@ const PlayerInfoCard = ({
                     rel="noopener noreferrer"
                     key={playerSocials?.twitter}
                     className={styles.socialMedia_link}
+                    onClick={
+                      !interactive ? (e) => disableLink(e) : () => doNothing()
+                    }
                   >
                     <img src={twitter_icon} alt={`twitter Button`} />
                   </Link>
@@ -102,6 +122,9 @@ const PlayerInfoCard = ({
                     rel="noopener noreferrer"
                     key={playerSocials?.instagram}
                     className={styles.socialMedia_link}
+                    onClick={
+                      !interactive ? (e) => disableLink(e) : () => doNothing()
+                    }
                   >
                     <img src={instagram_icon} alt={`instagram Button`} />
                   </Link>
@@ -109,7 +132,10 @@ const PlayerInfoCard = ({
                   <></>
                 )}
               </div>
-              <button className={styles.PlayerCard_details_popUp}>
+              <button
+                className={styles.PlayerCard_details_popUp}
+                onClick={!interactive ? () => doNothing() : () => openModal()}
+              >
                 <ForwardIconLink fillColor={triangleColor} />
               </button>
             </div>

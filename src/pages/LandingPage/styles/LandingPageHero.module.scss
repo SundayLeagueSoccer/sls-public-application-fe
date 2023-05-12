@@ -92,6 +92,7 @@
         text-align: center;
         cursor: pointer;
         transition: all ease 0.5s;
+        text-decoration: none;
 
         @include md() {
           padding: 8px 0;
@@ -123,7 +124,7 @@
     width: auto;
 
     @include md() {
-      height: 325px;
+      height: 450px;
     }
     @include sm() {
       display: none;
@@ -168,6 +169,7 @@
         text-align: center;
         cursor: pointer;
         transition: all ease 0.5s;
+        text-decoration: none;
       }
 
       .sls_history {

@@ -4,6 +4,7 @@ import mobile_hero_image from "../images/mobile_hero_image.png";
 import mobile_hero_image_2 from "../images/mobile_hero_image_2.png";
 import hero_ball_test from "../images/hero ball player test.svg";
 import high_res_hero from "../images/hgih res ball kicker.png";
+import { Link } from "react-router-dom";
 
 const LandingPageHero = () => {
   return (
@@ -20,8 +21,12 @@ const LandingPageHero = () => {
             {/* <h4>Game on Champions!</h4> */}
           </div>
           <div className={styles.hero_buttons}>
-            <button className={styles.players_stats}>Players Stats</button>
-            <button className={styles.sls_history}>SLS History</button>
+            <Link to={"/statistics"} className={styles.players_stats}>
+              Players Stats
+            </Link>
+            <Link to={"/about-us"} className={styles.sls_history}>
+              SLS History
+            </Link>
           </div>
         </div>
         <img
@@ -37,8 +42,12 @@ const LandingPageHero = () => {
           className={styles.mobile_hero_image}
         />
         <div className={styles.mobile_hero_buttons}>
-          <button className={styles.players_stats}>Players Stats</button>
-          <button className={styles.sls_history}>SLS History</button>
+          <Link to={"/statistics"} className={styles.players_stats}>
+            Players Stats
+          </Link>
+          <Link to={"/about-us"} className={styles.sls_history}>
+            SLS History
+          </Link>
         </div>
       </section>
     </>
