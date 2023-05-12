@@ -156,7 +156,7 @@
         }
       }
 
-      button {
+      .read_more_btn_desktop {
         padding: 14px 0;
         width: 176px;
         border-radius: 8px;
@@ -170,6 +170,7 @@
         background-color: $tertiary;
         border: none;
         color: white;
+        text-decoration: none;
 
         @include md() {
           padding: 8px 0;
@@ -251,7 +252,7 @@
         }
       }
 
-      button {
+      .read_more_btn_mobile {
         background-color: $tertiary;
         border: none;
         color: white;
@@ -265,6 +266,7 @@
         text-align: center;
         cursor: pointer;
         transition: all ease 0.5s;
+        text-decoration: none;
 
         button:hover {
           background-color: $primary;
