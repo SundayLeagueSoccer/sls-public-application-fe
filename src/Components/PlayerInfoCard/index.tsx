@@ -5,8 +5,8 @@ import cyan_ornament from "./images/cyan_ornament.png";
 import green_ornament from "./images/green_ornament.png";
 import orange_ornament from "./images/orange_ornament.png";
 import twitter_icon from "./images/white_twitter_icon.png";
-import facebook_icon from "./images/white_twitter_icon.png";
-import instagram_icon from "./images/white_twitter_icon.png";
+import facebook_icon from "./images/white_facebook_icon.png";
+import instagram_icon from "./images/white_instagram_icon.png";
 import { Link } from "react-router-dom";
 import ForwardIconLink from "./svgs/ForwardIconLink";
 
