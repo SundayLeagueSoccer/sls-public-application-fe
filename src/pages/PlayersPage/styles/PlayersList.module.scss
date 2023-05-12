@@ -5,23 +5,23 @@
   min-height: pixRem(1280);
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  column-gap: 16px;
   row-gap: 24px;
-  height: 1000px;
-  border: red 1px solid;
+  // height: 1000px;
 
-  justify-items: center; /* center items horizontally */
-  align-items: center; /* center items vertically */
+  justify-items: center;
+  // align-items: center;
   padding: pixRem(42) 0 pixRem(100) 0;
 
   @include md() {
     grid-template-columns: 33% 33% 33%;
     justify-items: center;
     align-items: center;
+    min-height: pixRem(920);
   }
   @include sm() {
     grid-template-columns: 100%;
     justify-items: center;
     align-items: center;
+    min-height: pixRem(920);
   }
 }

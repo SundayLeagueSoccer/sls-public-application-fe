@@ -4,46 +4,72 @@ import { useContext, useEffect, useState } from "react";
 import PlayerInfoCard from "../../../Components/PlayerInfoCard";
 import axios from "../../../api/axios";
 import Loader from "../Loader";
+import { dummyPlayers } from "../dummyPlayers";
 
 const PlayersList = () => {
-  const { setAllPlayers, playersToDisplay, setPlayersToDisplay } =
-    useContext(PlayerPageContext);
+  const {
+    setAllPlayers,
+    playersToDisplay,
+    setPlayersToDisplay,
+    setPaginationLimit,
+    currentPage,
+  } = useContext(PlayerPageContext);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
-    let isMounted = true;
-    const controller = new AbortController();
-
-    const getAllPlayers = async () => {
-      try {
-        const response = await axios.get("/players", {
-          signal: controller.signal,
-        });
-        setLoading(false);
-        setSuccess(true);
-        isMounted && setAllPlayers(response.data);
-        isMounted && setPlayersToDisplay(response.data);
-      } catch (error: any) {
-        setLoading(false);
-        setSuccess(false);
-        if (error && error.message) {
-          setError(error.message);
-        } else {
-          setError("An error occurred.");
-        }
-      }
+    const dummyUseEffect = () => {
+      setAllPlayers(dummyPlayers);
+      setLoading(false);
+      setSuccess(true);
+      setError("");
+      setPlayersToDisplay(dummyPlayers);
     };
 
-    getAllPlayers();
+    dummyUseEffect();
 
-    return () => {
-      isMounted = false;
-      controller.abort();
+    const handlePageList = () => {
+      const totalPlayers = playersToDisplay.length;
+      setPaginationLimit(Math.floor(totalPlayers / 12) + 1);
     };
-  }, []);
+
+    handlePageList();
+  });
+
+  // useEffect(() => {
+  //   let isMounted = true;
+  //   const controller = new AbortController();
+
+  //   const getAllPlayers = async () => {
+  //     try {
+  //       const response = await axios.get("/players", {
+  //         signal: controller.signal,
+  //       });
+  //       setLoading(false);
+  //       setSuccess(true);
+  //       setError("");
+  //       isMounted && setAllPlayers(response.data);
+  //       isMounted && setPlayersToDisplay(response.data);
+  //     } catch (error: any) {
+  //       setLoading(false);
+  //       setSuccess(false);
+  //       if (error && error.message) {
+  //         setError(error.message);
+  //       } else {
+  //         setError("An error occurred.");
+  //       }
+  //     }
+  //   };
+
+  //   getAllPlayers();
+
+  //   return () => {
+  //     isMounted = false;
+  //     controller.abort();
+  //   };
+  // }, []);
 
   return (
     <>
@@ -52,17 +78,19 @@ const PlayersList = () => {
         <Loader />
       ) : (
         <section className={styles.PlayersList}>
-          {playersToDisplay.map((player) => {
-            return (
-              <PlayerInfoCard
-                key={player.name}
-                playerPosition={player.favoritePosition}
-                playerText={player.playerQuote}
-                playerName={player.name}
-                playerSocials={player.socialMedia}
-              />
-            );
-          })}
+          {playersToDisplay
+            .slice(currentPage * 12 - 12, currentPage * 12)
+            .map((player) => {
+              return (
+                <PlayerInfoCard
+                  key={player.name}
+                  playerPosition={player.favoritePosition}
+                  playerText={player.playerQuote}
+                  playerName={player.name}
+                  playerSocials={player.socialMedia}
+                />
+              );
+            })}
         </section>
       )}
     </>

@@ -4,6 +4,10 @@
   background: $secondary;
   width: 100%;
   padding: pixRem(62) pixRem(120) pixRem(42.5) pixRem(120);
+
+  background-image: url("../images/countdown_section_background_desktop.svg");
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
 

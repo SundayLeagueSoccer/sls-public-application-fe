@@ -2,28 +2,56 @@ import styles from "../styles/PlayersPagePaginationControls.module.scss";
 import useApp from "../../../hooks/useApp";
 import BackwardIconLink from "../../../assets/svgs/BarckwardIconLink";
 import ForwardIconLink from "../../../assets/svgs/ForwardIconLink";
+import { PlayerPageContext } from "../context/PlayersPageContext";
+import { useContext, useEffect, useState } from "react";
 
 const PlayersPagePaginationControls = () => {
   const { darkMode } = useApp();
-  const currentPage = false;
+  const { currentPage, setcurrentPage, paginationLimit } =
+    useContext(PlayerPageContext);
+  const currentPageDummy = false;
 
-  const pageNumbers = ["1", "2", "3", "4", "5"];
+  const pageNumbers: number[] = [];
+  for (let i = 1; i < paginationLimit + 1; i++) {
+    pageNumbers.push(i);
+  }
+
+  const handlePaginate = (requestedPage: number) => {
+    setcurrentPage(requestedPage);
+  };
+
+  const handleGoToNextPage = () => {
+    const isLastPage = currentPage >= paginationLimit;
+    if (!isLastPage) {
+      setcurrentPage((currentPage) => currentPage + 1);
+    }
+  };
+
+  const handleGoToPreiousPage = () => {
+    if (currentPage > 1) {
+      setcurrentPage((currentPage) => currentPage - 1);
+    }
+  };
+
+  console.log(currentPage);
+  console.log(paginationLimit);
+
   return (
     <>
       <section className={styles.PaginationControls}>
         <div className={darkMode ? styles.dark_line : styles.light_line}></div>
         <div className={styles.controls_mobile}>
-          <button>
+          <button onClick={() => handleGoToPreiousPage()}>
             <BackwardIconLink fillColor={"#344054"} />
             <p>Previous</p>
           </button>
-          <button>
+          <button onClick={() => handleGoToNextPage()}>
             <p>Next</p>
             <ForwardIconLink fillColor={"#344054"} />
           </button>
         </div>
         <div className={styles.controls_desktop}>
-          <button>
+          <button onClick={() => handleGoToPreiousPage()}>
             <BackwardIconLink fillColor={darkMode ? "#d0d5dd" : "#344054"} />
             <p>Previous</p>
           </button>
@@ -32,13 +60,14 @@ const PlayersPagePaginationControls = () => {
               <p
                 tabIndex={0}
                 key={num}
-                className={currentPage ? styles.pageNumberActive : ""}
+                className={currentPage === num ? styles.pageNumberActive : ""}
+                onClick={() => handlePaginate(num)}
               >
                 {num}
               </p>
             ))}
           </div>
-          <button>
+          <button onClick={() => handleGoToNextPage()}>
             <p>Next</p>
             <ForwardIconLink fillColor={darkMode ? "#d0d5dd" : "#344054"} />
           </button>

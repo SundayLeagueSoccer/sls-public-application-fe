@@ -16,7 +16,6 @@
   grid-template-columns: 20% 20% 20% 20% 20%;
   justify-content: center;
   font-family: "Solway";
-  border: 1px yellow solid;
 
   button {
     border: none;
@@ -25,7 +24,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    padding: 8px 64px;
+    padding: 8px 56px;
     cursor: pointer;
     border-bottom: 4px solid transparent;
     transition: all ease 0.4s;

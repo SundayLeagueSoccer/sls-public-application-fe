@@ -1,7 +1,8 @@
 @use "../../../assets/styles/" as *;
 
 .LandingPageHero {
-  background-image: url("../images/hero_background.png");
+  // background-image: url("../images/hero_background.png");
+  background-image: url("../images/testheroBG.svg");
   background-size: cover;
   background-position: center;
 
@@ -11,7 +12,6 @@
   padding: 0 pixRem(120);
 
   width: 100%;
-  // height: 90vh;
   @include md() {
     padding: 0 pixRem(72);
   }
