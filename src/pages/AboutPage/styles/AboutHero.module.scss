@@ -3,8 +3,8 @@
 .AboutHero {
     display: flex;
     flex-direction: column;
-    gap: pixRem(18);
-    padding: pixRem(96) pixRem(130);
+    // gap: pixRem(18);
+    padding: pixRem(96) pixRem(112);
     text-align: center;
     background-image: url('../images/HeaderSectionLg.png');
     background-position: center;
@@ -14,20 +14,38 @@
     p, h1{
       color: #ffffff;
     }
-    
-    .heading{
-      font-size: pixRem(48);
-      font-weight: 500;
+
+    .container{
+      display: flex;
+      flex-direction: column;
+      padding: 0 pixRem(32);
+      align-items: center;
+      justify-content: center;
+      gap: pixRem(32);
     }
-    
+
     .subheading{
       color: #3F8CFF;
       font-size: pixRem(24);
       text-transform: capitalize;    
     }
- 
+    
+    .heading{
+      font-size: pixRem(48);
+      font-weight: 500;
+    }
+
+    .support_text{
+      padding: 0 pixRem(35.5);
+      font-weight: 400;
+      // line-height: pixRem(30);
+      // font-size: pixRem(20);
+    }
+    
+    
   @include sm() {
-    padding: pixRem(50);
+    
+    padding: pixRem(80) pixRem(20);
     gap: pixRem(10);
 
     h1{

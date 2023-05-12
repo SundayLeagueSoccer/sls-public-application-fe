@@ -52,7 +52,14 @@
   } 
 
   @include sm() {
-    flex-direction: column;
-    gap: pixRem(5);
+    
+    .container{
+      display: flex;
+      flex-direction: column;
+      padding: pixRem(64);
+      align-items: center;
+      gap: pixRem(32);
+     justify-content: center;
+    }
   }
 }
