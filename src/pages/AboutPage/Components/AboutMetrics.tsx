@@ -9,13 +9,15 @@ const AboutMetrics = () => {
   return (
     <>
       <section className={styles.AboutMetrics}>
-      {metricsContent.map(({number, title, desc}, index) => (
+         <div className={styles.container}>
+         {metricsContent.map(({number, title, desc}, index) => (
           <div key={index} className={styles.Metrics_NumberBox}>
-            <p>{index !== 1? `${number}+` : number}</p>
-            <p>{title}</p>
-            <p>{desc}</p>
+            <p className={styles.number}>{index !== 1? `${number}+` : number}</p>
+            <p className={styles.title}>{title}</p>
+            <p className={styles.desc}>{desc}</p>
           </div>
           ))}
+         </div>
       </section>
     </>
   );

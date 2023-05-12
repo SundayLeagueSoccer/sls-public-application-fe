@@ -1,47 +1,55 @@
 @use "../../../assets/styles/" as *;
 
 .AboutMetrics {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: pixRem(32);
-  padding: pixRem(32) pixRem(64) pixRem(64);
+  padding: 0 pixRem(112) pixRem(96);
   background-image: url('../images/MetricsSectionLg.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  max-width: 100vw;
 
-  .Metrics_NumberBox{
-    background-color: rgba(255, 255, 255, 0.4);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    padding: pixRem(32) pixRem(24);
-    border-radius: pixRem(8);
-    margin: pixRem(32) 0;
-    max-width: pixRem(320);
-    width: 100%;
-    letter-spacing: pixRem(1);
-    border: pixRem(0.5) solid #ffffff97;
-  }
 
-  .Metrics_NumberBox p{
+  p{
     color: #fff;
-    font-weight: 200;
-    font-size: pixRem(14)
-  }
-
-  .Metrics_NumberBox p:first-child{
-    font-size: pixRem(40);
-    font-weight: 500;
   }
   
-  .Metrics_NumberBox p:nth-child(2){
-    text-transform: capitalize;
-    margin: pixRem(10) 0 pixRem(5);
-    font-weight: 500;
+  .container{
+    display: flex;
+    padding: pixRem(64);
+    align-items: center;
+    gap: pixRem(32);
+   justify-content: center;
   }
+
+  .Metrics_NumberBox{
+    display: flex;
+    flex-direction: column;
+    gap: pixRem(20);
+    background-color: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    padding: pixRem(32) pixRem(24);
+    border-radius: pixRem(8);
+    width: pixRem(341.33);
+    border: pixRem(0.5) solid #ffffff97;
+    
+    .number{  
+      font-weight: 500;
+      font-size: pixRem(60);
+      letter-spacing: -0.02em
+    }
+  
+    .title{
+      font-size: pixRem(18);
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+    
+    .desc{
+      font-size: pixRem(16);
+      font-weight: 400;
+    }
+  } 
 
   @include sm() {
     flex-direction: column;

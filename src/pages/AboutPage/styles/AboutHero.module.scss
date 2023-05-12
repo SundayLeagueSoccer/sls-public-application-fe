@@ -10,20 +10,20 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;   
-    width: 100vw;
     
     p, h1{
       color: #ffffff;
     }
     
-    h1{
+    .heading{
       font-size: pixRem(48);
+      font-weight: 500;
     }
     
-    h4{
-      color: $tertiary;
-      text-transform: capitalize;
-    
+    .subheading{
+      color: #3F8CFF;
+      font-size: pixRem(24);
+      text-transform: capitalize;    
     }
  
   @include sm() {
