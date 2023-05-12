@@ -1,8 +1,5 @@
 import styles from "../styles/AboutMetrics.module.scss";
-import MetricsDesign from '../images/MetricsDesign.png'
-import MetricsDesignSm from '../images/MetricDesignSm.png'
-import MetricsDesignSmTwo from '../images/MetricDesignSm(2).png'
-import MetricsDesignTwo from '../images/MetricDesign(2).png'
+
 
 const AboutMetrics = () => {
   const metricsContent = [
