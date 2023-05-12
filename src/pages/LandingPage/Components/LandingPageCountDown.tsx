@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 
 const LandingPageCountDown = () => {
   const { darkMode } = useApp();
-  const [daysToMatch, SetDaysToMatch] = useState<string>();
-  const [hoursToMatch, SetHoursToMatch] = useState<string>();
-  const [minutesToMatch, setMinutesToMatch] = useState<string>();
-  const [secondsToMatch, setSecondsToMatch] = useState<string>();
+  const [daysToMatch, SetDaysToMatch] = useState<string>("");
+  const [hoursToMatch, SetHoursToMatch] = useState<string>("");
+  const [minutesToMatch, setMinutesToMatch] = useState<string>("");
+  const [secondsToMatch, setSecondsToMatch] = useState<string>("");
 
   const countdownTimer = () => {
     const currentTime = new Date();
@@ -66,10 +66,24 @@ const LandingPageCountDown = () => {
           </div>
         </div>
         <div className={styles.bottom_container}>
-          <h6>Days</h6>
-          <h6>Hours</h6>
-          <h6>Mins</h6>
-          <h6>Secs</h6>
+          <h6>
+            {+daysToMatch.charAt(daysToMatch.length - 1) < 2 ? "Day" : "Days"}
+          </h6>
+          <h6>
+            {+hoursToMatch.charAt(hoursToMatch.length - 1) < 2
+              ? "Hour"
+              : "Hours"}
+          </h6>
+          <h6>
+            {+minutesToMatch.charAt(minutesToMatch.length - 1) < 2
+              ? "Min"
+              : "Mins"}
+          </h6>
+          <h6>
+            {+secondsToMatch.charAt(secondsToMatch.length - 1) < 2
+              ? "Sec"
+              : "Secs"}
+          </h6>
         </div>
       </section>
     </>
