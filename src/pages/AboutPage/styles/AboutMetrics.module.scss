@@ -1,131 +1,75 @@
 @use "../../../assets/styles/" as *;
 
 .AboutMetrics {
-  text-align: center;
- 
+  padding: 0 pixRem(112) pixRem(96);
+  background-image: url('../images/MetricsSectionLg.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center; 
+
+
+  p{
+    color: #ffffff;
+  }
   
-  .Metrics_Container{
-    z-index: 1;
+  .container{
     display: flex;
-   align-items: center;
-   justify-content: space-between;
-    background-image: url('../images/MetricsLg.png');
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
+    padding: pixRem(64);
+    align-items: center;
     gap: pixRem(32);
-    padding: pixRem(32) pixRem(64);  
-    max-width: 80vw;
-    width: 100%;
-    margin: 0 auto pixRem(64);
-    position: relative;
+   justify-content: center;
   }
 
   .Metrics_NumberBox{
-    background-color: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    gap: pixRem(20);
+    background-color: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     padding: pixRem(32) pixRem(24);
     border-radius: pixRem(8);
-    margin: pixRem(32) 0;
-    max-width: pixRem(341);
-    width: 100%;
-    height: 232px;
-    letter-spacing: pixRem(1);
-    border: pixRem(0.5) solid #ffffff97;
-    overflow: hidden;
-  }
-
-  .Metrics_NumberBox p{
-    color: #fff;
-    font-weight: 200;
-    font-size: pixRem(16)
-  }
-
-  .Metrics_NumberBox p:first-child{
-    font-size: pixRem(60);
-    font-weight: 500;
-  }
-  
-  .Metrics_NumberBox p:nth-child(2){
-    text-transform: capitalize;
-    margin: pixRem(10) 0 pixRem(5);
-    font-size: pixRem(18);
-    font-weight: 500;
-  }
-  
-  .Metrics_design{
-    position: absolute;
-    left: 0;
-    top: pixRem(420);
-    z-index: -1;
-  }
-  
-  .Metrics_design_sm{
-    display: none;
-  }
-
-  .Metrics_design_sm_two{
-    display: none;
-  }
-
-  .Metrics_design_sm_three{
-    display: none;
-  }
-
-  .Metrics_design_two{
-    position: absolute;
-    right: 0;
-    top: pixRem(700);
-    z-index: 0;
-  }
-
-  @include sm() {
-    .Metrics_Container{
-      display: flex;
-      flex-direction: column;
-      max-width: 90vw;
-      background-image: url('../images/MetricsSm.png');
-      margin: pixRem(64) auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .Metrics_NumberBox{
-      z-index: 1;
-      margin: 0;
-      width: pixRem(287);
-      height: 220px;
-      padding: pixRem(32) pixRem(24);  
-    }
-  
-    .Metrics_NumberBox p:first-child{
-      font-size: pixRem(48);
+    width: pixRem(341);
+    border: pixRem(1) solid rgba(255, 255, 255, 0.5);
+    
+    .number{  
       font-weight: 500;
+      font-size: pixRem(60);
+      letter-spacing: -0.02em
     }
-
-    .Metrics_design_sm{
-      display: block;
-      position: absolute;
-      left: 0;
-      top: pixRem(398);
-      z-index: 0;
-    }
-
-    .Metrics_design_sm_two{
-      display: block;
-      position: absolute;
-      right: 0;
-      top: pixRem(900);
-      z-index: 0;
+  
+    .title{
+      font-size: pixRem(18);
+      font-weight: 500;
+      text-transform: capitalize;
     }
     
-    .Metrics_design{
-      display: none;
+    .desc{
+      font-size: pixRem(16);
+      font-weight: 400;
     }
-  
-    .Metrics_design_two{
-      display: none;
-    }
-}
+  } 
 
+  @include sm() {
+    padding: pixRem(64) pixRem(20);
+    background-image: url('../images/MetricsSectionSm.png');
+    
+    .container{
+      display: flex;
+      flex-direction: column;
+      padding: pixRem(32) pixRem(24);
+      align-items: center;
+      gap: pixRem(32);
+     justify-content: center;
+    }
+
+    .Metrics_NumberBox{     
+      width: pixRem(287);
+      
+      .number{  
+        font-size: pixRem(48);
+      }    
+    } 
+  }
 }

@@ -1,8 +1,5 @@
 import styles from "../styles/AboutMetrics.module.scss";
-import MetricsDesign from '../images/MetricsDesign.png'
-import MetricsDesignSm from '../images/MetricDesignSm.png'
-import MetricsDesignSmTwo from '../images/MetricDesignSm(2).png'
-import MetricsDesignTwo from '../images/MetricDesign(2).png'
+
 
 const AboutMetrics = () => {
   const metricsContent = [
@@ -13,21 +10,15 @@ const AboutMetrics = () => {
   return (
     <>
       <section className={styles.AboutMetrics}>
-          <div className={
-            styles.Metrics_Container
-          }>
-          {metricsContent.map(({number, title, desc}, index) => (
-        <div key={index} className={styles.Metrics_NumberBox}>
-            <p>{index !== 1? `${number}+` : number}</p>
-            <p>{title}</p>
-            <p>{desc}</p>
+         <div className={styles.container}>
+         {metricsContent.map(({number, title, desc}, index) => (
+          <div key={index} className={styles.Metrics_NumberBox}>
+            <p className={styles.number}>{index !== 1? `${number}+` : number}</p>
+            <p className={styles.title}>{title}</p>
+            <p className={styles.desc}>{desc}</p>
           </div>
           ))}
-          </div>
-          <img className={styles.Metrics_design_sm} src={MetricsDesignSm} alt="a background design"/>
-          <img className={styles.Metrics_design_sm_two} src={MetricsDesignSmTwo} alt="a background design"/>
-          <img className={styles.Metrics_design} src={MetricsDesign} alt="a background design"/>
-          <img className={styles.Metrics_design_two} src={MetricsDesignTwo} alt="a background design"/>
+         </div>
       </section>
     </>
   );
