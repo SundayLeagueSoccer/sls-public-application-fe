@@ -5,39 +5,41 @@ import OurHistoryPicture from "../images/ourHistoryPicture.png";
 import OurHistoryPictureTwo from "../images/ourHistoryPicture(2).png";
 import OurHistoryPictureThree from "../images/ourHistoryDesignSm(3).png";
 import Plus from "../images/plus.svg";
+import CarouselImages from "../../LandingPage/Components/CarouselImages";
 
 const AboutHistory = () => {
   return (
     <>
       <section className={styles.AboutHistory}>
-        <img className={styles.imageOne} src={backgroundDesignTwo} alt="" />
-        <img className={styles.imageTwo} src={backgroundDesign} alt="" />
-        <h2>Our History</h2>
-          <h2>
+        <div className={styles.Mobile_Header}>
+          <h3>Our History</h3>
+          <h1>
             <span>SLS</span> WAS ESTABLISHED IN 2021
-          </h2>
-          
-          <div className={styles.content_container}>
-           
-           <div className={styles.writeUp}>
-           <div className={styles.yearsPlayed}>
-             <div>
-              <p>
-                02{" "}
-                <img
-                  className={styles.plus_sign}
-                  src={Plus}
-                  alt="a plus icon"
-                />
-              </p>
-              <p>years of gaming</p>
+          </h1>
+        </div>
+        <div className={styles.AboutHistory_Content}>
+          <div className={styles.AboutHistory_Left}>
+            <div className={styles.Left_Header}>
+              <h3>Our History</h3>
+              <h1>
+                <span>SLS</span> WAS ESTABLISHED IN 2021
+              </h1>
             </div>
-            <p>
-              spawned in 2021 in response to the effects & aftermath of the
-              COVID-19 lockdown, where obesity, physical unfitness & lack of
-              social interaction were on the rise.
-            </p>
-          </div>
+            <div className={styles.Left_Capital}>
+              <div className={styles.Left_Capital_Left}>
+                <h1>
+                  02<span>+</span>
+                </h1>
+                <p>years of gaming </p>
+              </div>
+              <div className={styles.Left_Capital_Right}>
+                <span>
+                  spawned in 2021 in response to the effects & aftermath of the
+                  COVID-19 lockdown, where obesity, physical unfitness & lack of
+                  social interaction were on the rise.
+                </span>
+              </div>
+            </div>
             <p>
               We all agreed that we needed to break out of our boring routines
               and kick-start some excitement by playing football together on
@@ -47,15 +49,14 @@ const AboutHistory = () => {
               social circles. It's the highlight of our week, and we wouldn't
               miss it for the world!
             </p>
-           </div>
-
-            <div className={styles.our_history_img}>
-              <img src={OurHistoryPicture} alt="a group of footballers" />
-            <img src={OurHistoryPictureTwo} alt="a football field"/>
-            </div>
-
           </div>
-            <img src={OurHistoryPictureThree} className={styles.our_history_sm} alt='our history design'/>
+          <div className={styles.AboutHistory_Right}>
+            <CarouselImages />
+            <div className={styles.ImageUnderCarousel}>
+              <img src={OurHistoryPictureTwo} alt="OurHistoryPicture" />
+            </div>
+          </div>
+        </div>
       </section>
     </>
   );
