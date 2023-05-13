@@ -30,7 +30,6 @@ const CarouselImages = () => {
   };
 
   const goToNext = () => {
-    console.log("fired");
     const isLastSlide = counter === images.length - 1;
     const newIndex = isLastSlide ? 0 : counter + 1;
     setCounter(newIndex);

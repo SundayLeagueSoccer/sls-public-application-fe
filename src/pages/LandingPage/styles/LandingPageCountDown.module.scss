@@ -4,15 +4,19 @@
   background: $secondary;
   width: 100%;
   padding: pixRem(62) pixRem(120) pixRem(42.5) pixRem(120);
+
+  background-image: url("../images/bg_countdown_desktop.svg");
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
 
   @include md() {
-    padding: pixRem(44) pixRem(72) pixRem(44) pixRem(72);
+    padding: pixRem(40) pixRem(72) pixRem(32) pixRem(72);
   }
   @include sm() {
     padding: pixRem(22) pixRem(18) pixRem(24) pixRem(18);
-    background-image: url("../images/countdown_background_mobile.png");
+    background-image: url("../images/bg_countdown_mobile.svg");
     background-size: cover;
     background-position: center;
   }

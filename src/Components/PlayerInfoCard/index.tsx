@@ -5,8 +5,8 @@ import cyan_ornament from "./images/cyan_ornament.png";
 import green_ornament from "./images/green_ornament.png";
 import orange_ornament from "./images/orange_ornament.png";
 import twitter_icon from "./images/white_twitter_icon.png";
-import facebook_icon from "./images/white_twitter_icon.png";
-import instagram_icon from "./images/white_twitter_icon.png";
+import facebook_icon from "./images/white_facebook_icon.png";
+import instagram_icon from "./images/white_instagram_icon.png";
 import { Link } from "react-router-dom";
 import ForwardIconLink from "./svgs/ForwardIconLink";
 
@@ -17,12 +17,12 @@ type social = {
 };
 
 type PlayerInfoCardProp = {
-  playerPosition: "Midfielder" | "Defender" | "Goal Keeper" | "Striker";
+  playerPosition: "Midfielder" | "Defender" | "Goal Keeper" | "Forward";
   playerText: string;
   playerName: string;
-  playerSocials?: social[];
-  playerLink?: string;
+  playerSocials?: social;
   playerImage?: string;
+  interactive?: boolean;
 };
 
 const PlayerInfoCard = ({
@@ -30,8 +30,8 @@ const PlayerInfoCard = ({
   playerText,
   playerName,
   playerSocials,
-  playerLink,
   playerImage,
+  interactive = true,
 }: PlayerInfoCardProp) => {
   let triangleColor;
   let ornamentImage;
@@ -48,7 +48,7 @@ const PlayerInfoCard = ({
       triangleColor = "#3aac8a";
       ornamentImage = green_ornament;
     }
-    if (_playerPosition === "Striker") {
+    if (_playerPosition === "Forward") {
       triangleColor = "#01b3ce";
       ornamentImage = cyan_ornament;
     }
@@ -58,6 +58,18 @@ const PlayerInfoCard = ({
   const TriangleStyle = {
     backgroundColor: triangleColor,
   };
+
+  const disableLink = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+    return;
+  };
+
+  const doNothing = () => {
+    console.log("lll");
+  };
+  const openModal = () => {};
 
   return (
     <>
@@ -71,53 +83,59 @@ const PlayerInfoCard = ({
             </div>
             <div className={styles.PlayerCard_details_bottom}>
               <div className={styles.PlayerCard_details_socials}>
-                {playerSocials?.map((socialLink) => {
-                  return (
-                    <>
-                      {socialLink.facebook ? (
-                        <Link
-                          to={socialLink.facebook}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          key={socialLink.facebook}
-                          className={styles.socialMedia_link}
-                        >
-                          <img src={facebook_icon} alt={`facebook Button`} />
-                        </Link>
-                      ) : (
-                        <></>
-                      )}
-                      {socialLink.twitter ? (
-                        <Link
-                          to={socialLink.twitter}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          key={socialLink.twitter}
-                          className={styles.socialMedia_link}
-                        >
-                          <img src={twitter_icon} alt={`twitter Button`} />
-                        </Link>
-                      ) : (
-                        <></>
-                      )}
-                      {socialLink.instagram ? (
-                        <Link
-                          to={socialLink.instagram}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          key={socialLink.instagram}
-                          className={styles.socialMedia_link}
-                        >
-                          <img src={instagram_icon} alt={`instagram Button`} />
-                        </Link>
-                      ) : (
-                        <></>
-                      )}
-                    </>
-                  );
-                })}
+                {playerSocials?.facebook ? (
+                  <Link
+                    to={playerSocials?.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={playerSocials?.facebook}
+                    className={styles.socialMedia_link}
+                    onClick={
+                      !interactive ? (e) => disableLink(e) : () => doNothing()
+                    }
+                  >
+                    <img src={facebook_icon} alt={`facebook Button`} />
+                  </Link>
+                ) : (
+                  <></>
+                )}
+                {playerSocials?.twitter ? (
+                  <Link
+                    to={playerSocials?.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={playerSocials?.twitter}
+                    className={styles.socialMedia_link}
+                    onClick={
+                      !interactive ? (e) => disableLink(e) : () => doNothing()
+                    }
+                  >
+                    <img src={twitter_icon} alt={`twitter Button`} />
+                  </Link>
+                ) : (
+                  <></>
+                )}
+                {playerSocials?.instagram ? (
+                  <Link
+                    to={playerSocials?.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={playerSocials?.instagram}
+                    className={styles.socialMedia_link}
+                    onClick={
+                      !interactive ? (e) => disableLink(e) : () => doNothing()
+                    }
+                  >
+                    <img src={instagram_icon} alt={`instagram Button`} />
+                  </Link>
+                ) : (
+                  <></>
+                )}
               </div>
-              <button className={styles.PlayerCard_details_popUp}>
+              <button
+                className={styles.PlayerCard_details_popUp}
+                onClick={!interactive ? () => doNothing() : () => openModal()}
+              >
                 <ForwardIconLink fillColor={triangleColor} />
               </button>
             </div>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "../styles/LandingPageHistory.module.scss";
 import CarouselImages from "./CarouselImages";
 
@@ -26,7 +27,9 @@ const LandingPageHistory = () => {
                 social interaction were on the rise.
               </h6>
             </div>
-            <button>Read More</button>
+            <Link to={"/about-us"} className={styles.read_more_btn_desktop}>
+              Read More
+            </Link>
           </div>
         </div>
         {/* <CarouselImages /> */}
@@ -47,7 +50,9 @@ const LandingPageHistory = () => {
               social interaction were on the rise...
             </h6>
           </div>
-          <button>Read More</button>
+          <Link to={"/about-us"} className={styles.read_more_btn_mobile}>
+            Read More
+          </Link>
         </div>
       </section>
     </>
