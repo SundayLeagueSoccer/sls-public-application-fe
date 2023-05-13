@@ -1,151 +1,293 @@
 @use "../../../assets/styles/" as *;
 
 .AboutHistory {
-  margin: pixRem(32) auto;
-  z-index: 1;
-  width: 80vw;
+  width: 100%;
+  padding: pixRem(100) pixRem(120);
 
-  .imageOne{
-    width: pixRem(700);
-    position: absolute;
-    top: pixRem(880);
-    left: 0;
-    z-index: 0;
+  @include md(){
+    padding: pixRem(65) pixRem(72);
   }
 
-  p, h2 {
-    color: $fontGrey;
+  @include sm(){
+    padding: pixRem(50) pixRem(18);
   }
 
-  .writeUp{
-    max-width: 65%;
-    order: 1;
-  }
-  
-  h2:nth-child(4) {
-    margin: pixRem(18) 0;
-    font-size: pixRem(48);
-    color: $fontGrey;
-  }
+  .Mobile_Header {
+    display: none;
 
-  h2:nth-child(4) > span{
-    color: $secondary;
-   }
-
-  .imageTwo{
-    width: pixRem(400);
-    position: absolute;
-    top: pixRem(1350);
-    right: 0;
-    z-index: 0;
-  }  
-  
-  h2:first-child{
-    color: $fontGrey;
-    font-size: pixRem(36);
-    margin: 0 0 pixRem(15);
-  }  
-  
- .yearsPlayed{
-  display: flex;
-  gap: pixRem(20);
-  align-items: center;
-  margin: pixRem(10) 0 pixRem(30);
-
-  div > p:first-child{
-    font-size: pixRem(96);
-    display: flex;
-    align-items: center; 
-    width: pixRem(360);   
-    color: $fontGrey;
-  }
-  
-  div > p:nth-child(2){
-    font-size: pixRem(18);
-    color: $fontGrey;
-   }
-
- }       
-
-  .content_container{
-    display: flex;
-    align-items: top;
-    gap: pixRem(20);
-    position: relative;
-  }
-  
-  
-  .our_history_img{  
-   order: 2;
-   display: flex;
-   flex-direction: column;
-   gap: 10px; 
-   z-index: 1;   
-  }
-   
-  .our_history_sm{
-    display: none
-  }
-  @include sm() {
-    margin: pixRem(90) auto pixRem(32);
-    width: 90vw;
-
-
-    h2{
-      text-align: center;
-    }
-    
-    .writeUp{
-      max-width: 100%;
-      order: 2;
+    @include md() {
     }
 
-    .our_history_img{
-      order: 1;
-    }
-
-    .content_container{
+    @include sm() {
       display: flex;
       flex-direction: column;
+      width: 90%;
+      margin: 0 auto;
+      row-gap: pixRem(20);
+      text-align: center;
     }
 
-    h2:nth-child(4) {
-      font-size: pixRem(24);
+    h3 {
+      @include md() {
+      }
+
+      @include sm() {
+        font-style: normal;
+        font-weight: 400;
+        font-size: pixRem(18);
+      }
     }
 
-   .yearsPlayed {
+    h1{
+      @include md() {
+      }
 
-     div > p:first-child{
-      font-size: pixRem(48);
-      display: flex;
-      align-items: center; 
-      width: pixRem(420);   
-      color: $fontGrey;
+      @include sm() {
+        font-style: normal;
+        font-weight: 400;
+        font-size: pixRem(24);
+        letter-spacing: pixRem(1);
+      }
+    }
+    span {
 
-      .plus_sign{
-        width: pixRem(10);
+      @include md(){
+
+      }
+
+      @include sm(){
+        color: $secondary;
       }
     }
   }
 
-  .imageOne{
-    display: none;
-  }
+  .AboutHistory_Content {
+    display: flex;
+    column-gap: pixRem(20);
 
-  .imageTwo{
-    width: pixRem(400);
-    position: absolute;
-    top: pixRem(1900);
-    right: 0;
-    z-index: 0;
-  }  
-  
-  .our_history_sm{
-    display: block;
-    position: absolute;
-    left: 0;
-    top: pixRem(1350);
-    z-index: 0;
-  }
+    @include md() {
+      align-items: center;
+    }
+
+    @include sm() {
+      display: flex;
+      flex-direction: column-reverse;
+      padding: pixRem(50) 0;
+    }
+
+    .AboutHistory_Left {
+      width: 50%;
+
+      @include md() {
+        text-align: justify;
+      }
+
+      @include sm() {
+        width: 100%;
+      }
+
+      .Left_Header {
+
+        @include md() {
+          display: flex;
+          flex-direction: column;
+          width: 90%;
+          margin: 0 auto;
+          row-gap: pixRem(20);
+        }
+
+        @include sm() {
+          display: none;
+        }
+
+        h3 {
+          font-style: normal;
+          font-weight: 500;
+          font-size: pixRem(36);
+          color: $darkModeFontSecondary;
+          line-height: pixRem(60);
+
+          @include md(){
+            font-style: normal;
+            font-weight: 400;
+            font-size: pixRem(18);
+            line-height: pixRem(30);
+          }
+        }
+
+        h1 {
+          font-style: normal;
+          font-weight: 500;
+          font-size: pixRem(45);
+          line-height: pixRem(60);
+          color: $darkModeFontSecondary;
+
+          @include md(){
+            font-style: normal;
+            font-weight: 400;
+            font-size: pixRem(24);
+            letter-spacing: pixRem(1);
+          }
+        }
+
+        span {
+          color: $secondary;
+
+          @include md(){
+            color: $secondary;
+          }
+        }
+      }
+
+      .Left_Capital {
+        display: flex;
+        column-gap: pixRem(30);
+        margin-top: pixRem(10);
+
+        @include md() {
+          column-gap: pixRem(20);
+          align-items: center;
+        }
+
+        @include sm() {
+          column-gap: pixRem(20);
+          align-items: center;
+        }
+
+        .Left_Capital_Left {
+          width: 30%;
+
+          @include md() {
+          }
+
+          @include sm() {
+          }
+
+          h1 {
+            display: flex;
+            align-items: center;
+            font-style: normal;
+            font-weight: 500;
+            font-size: pixRem(96);
+            color: $darkModeFontSecondary;
+
+            @include md() {
+              text-align: justify;
+              font-size: pixRem(50);
+            }
+
+            @include sm() {
+              text-align: justify;
+              font-size: pixRem(50);
+            }
+          }
+
+          span {
+            font-style: normal;
+            font-weight: 500;
+            font-size: pixRem(64);
+            color: $secondary;
+
+            @include md() {
+              text-align: justify;
+              font-size: pixRem(30);
+            }
+
+            @include sm() {
+              text-align: justify;
+              font-size: pixRem(30);
+            }
+          }
+          p {
+            text-align: justify;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: pixRem(2);
+            color: $darkModeFontSecondary;
+
+            @include md() {
+             
+            }
+
+            @include sm() {
+              text-align: center;
+              font-size: pixRem(10);
+            }
+          }
+        }
+
+        .Left_Capital_Right {
+          span {
+            width: 70%;
+            text-align: justify;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: pixRem(30);
+            color: $darkModeFontSecondary;
+
+            @include md() {
+              text-align: justify;
+              font-size: pixRem(17);
+            }
+
+            @include sm() {
+              text-align: justify;
+              font-size: pixRem(16);
+            }
+          }
+        }
+      }
+
+      p {
+        text-align: justify;
+        margin-top: pixRem(15);
+        font-style: normal;
+        font-weight: 400;
+        font-size: pixRem(20);
+        line-height: pixRem(30);
+        color: $darkModeFontSecondary;
+
+        @include md() {
+          display: none;
+        }
+
+        @include sm() {
+          text-align: justify;
+          font-size: pixRem(16);
+        }
+      }
+    }
+
+    .AboutHistory_Right {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      row-gap: pixRem(10);
+
+      @include md() {
+      }
+
+      @include sm() {
+        width: 100%;
+      }
+
+      .ImageUnderCarousel {
+        width: 90%;
+        margin: 0 auto;
+
+        @include md() {
+        }
+
+        @include sm() {
+          width: 100%;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 }
