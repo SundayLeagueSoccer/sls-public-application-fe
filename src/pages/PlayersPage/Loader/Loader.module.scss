@@ -9,7 +9,6 @@
   justify-items: center;
   align-items: center;
   padding: pixRem(42) 0;
-  border: red 1px solid;
 
   @include md() {
     grid-template-columns: 33% 33% 33%;
