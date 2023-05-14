@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
 type AppContextProviderProps = {
   children: React.ReactNode;
@@ -20,12 +20,34 @@ export const AppContextProvider = ({ children }: AppContextProviderProps) => {
   );
 
   const toggleTheme = () => {
+    darkMode
+      ? document.documentElement.style.setProperty(
+          "--scrollbar-track-color",
+          "#e7e7e7"
+        )
+      : document.documentElement.style.setProperty(
+          "--scrollbar-track-color",
+          "#02142d"
+        );
+
     setDarkMode((darkMode) => !darkMode);
   };
 
   const toggleMobileNavbar = () => {
     setMobileNavbarOpen((mobileNavbarOpen) => !mobileNavbarOpen);
   };
+
+  useEffect(() => {
+    darkMode
+      ? document.documentElement.style.setProperty(
+          "--scrollbar-track-color",
+          "#02142d"
+        )
+      : document.documentElement.style.setProperty(
+          "--scrollbar-track-color",
+          "#e7e7e7"
+        );
+  }, []);
 
   return (
     <AppContext.Provider

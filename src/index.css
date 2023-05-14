@@ -19,3 +19,24 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
+/* width and height of the scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* background of the scrollbar */
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-color);
+}
+
+/* color of the scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background: #0a4aaa;
+  border-radius: 9px;
+}
+
+/* color of the scrollbar handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3965a7;
+}
