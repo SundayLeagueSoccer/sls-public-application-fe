@@ -2,35 +2,40 @@
 
 .AboutMetrics {
   padding: 0 pixRem(112) pixRem(96);
-  background-image: url('../images/MetricsSectionLg.png');
-  background-position: top;
+  background-image: url('../images/MetricsBgDesign.svg');
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center; 
-
+  
 
   p{
     color: #ffffff;
   }
   
   .container{
+    background-image: url('../images/MetricsContainerImg.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     padding: pixRem(64);
     align-items: center;
     gap: pixRem(32);
-   justify-content: center;
+    justify-content: center;
   }
 
   .Metrics_NumberBox{
     display: flex;
     flex-direction: column;
-    gap: pixRem(20);
+    align-items: center;
+    justify-content: center;
+    padding: pixRem(10);
+    gap: pixRem(10);
     background-color: rgba(255, 255, 255, 0.3);
-    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
-    padding: pixRem(32) pixRem(24);
     border-radius: pixRem(8);
-    width: pixRem(341);
+    flex-basis: pixRem(341);
     border: pixRem(1) solid rgba(255, 255, 255, 0.5);
     
     .number{  
@@ -46,30 +51,52 @@
     }
     
     .desc{
-      font-size: pixRem(16);
+      font-size: pixRem(14);
       font-weight: 400;
     }
   } 
 
+  @include md() {
+   
+    // background-image: url('../images/MetricsBgDesignSm.svg'); 
+
+    .container{
+      display: flex;
+      flex-direction: column;
+      background-image: url('../images/MetricsContainerImgSm.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .Metrics_NumberBox{
+      width: pixRem(350);
+      gap: pixRem(20);
+    }
+
+  }
+
   @include sm() {
     padding: pixRem(64) pixRem(20);
-    background-image: url('../images/MetricsSectionSm.png');
+    background-image: url('../images/MetricsBgDesignSm.svg');
     
     .container{
       display: flex;
       flex-direction: column;
-      padding: pixRem(32) pixRem(24);
-      align-items: center;
+      background-image: url('../images/MetricsContainerImgSm.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
       gap: pixRem(32);
-     justify-content: center;
+      padding: pixRem(32) pixRem(24);
     }
 
     .Metrics_NumberBox{     
-      width: pixRem(287);
+      flex-basis: pixRem(287);
       
-      .number{  
-        font-size: pixRem(48);
-      }    
     } 
+    .number{  
+      font-size: pixRem(48);
+    }    
   }
 }
