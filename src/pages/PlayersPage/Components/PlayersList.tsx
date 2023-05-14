@@ -6,6 +6,7 @@ import axios from "../../../api/axios";
 import Loader from "../Loader";
 import { dummyPlayers } from "../dummyPlayers";
 // import axios from "axios";
+import Notification from "../../../utils/Notifications";
 
 const PlayersList = () => {
   const {
@@ -19,6 +20,7 @@ const PlayersList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const [openNotification, setOpenNotification] = useState(false);
 
   function getSecondWord(str: string) {
     const words = str.split(" ");
@@ -56,6 +58,7 @@ const PlayersList = () => {
         setLoading(false);
         setSuccess(true);
         setError("");
+        setOpenNotification(false);
         isMounted && setAllPlayers(response.data);
         isMounted && setPlayersToDisplay(response.data);
         const playersListLength: number = response.data.length;
@@ -63,11 +66,13 @@ const PlayersList = () => {
       } catch (error: any) {
         setLoading(false);
         setSuccess(false);
+        setOpenNotification(true);
         if (error && error.message) {
           setError(error.message);
         } else {
           setError("An error occurred.");
         }
+        console.log(error);
       }
     };
 
@@ -96,7 +101,19 @@ const PlayersList = () => {
 
   return (
     <>
-      {!loading && !success ? <Loader /> : <div></div>}
+      {!loading && !success ? (
+        <>
+          <Notification
+            setNotification={() => setOpenNotification}
+            notificationHeader="Server Error."
+            notificationBody="Our servers are not working right now. Try again later."
+            selfClosing={false}
+          />
+          <Loader />
+        </>
+      ) : (
+        <div></div>
+      )}
       {loading ? (
         <Loader />
       ) : (
