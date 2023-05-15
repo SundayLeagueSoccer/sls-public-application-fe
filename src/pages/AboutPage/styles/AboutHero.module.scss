@@ -5,16 +5,12 @@
     flex-direction: column;
     padding: pixRem(96) pixRem(80);
     text-align: center;
-    background-image: url('../images/HeaderSectionLg.svg');
+    background-image: url('../images/HeaderSectionLg.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;     
-    width: 101%;gt
-  
-    
-    p, h1{
-      color: #ffffff;
-    }
+    width: 101%;
+
 
     .container{
       display: flex;
@@ -34,12 +30,14 @@
     .heading{
       font-size: pixRem(48);
       font-weight: 500;
+      color: #ffffff;
     }
 
     .support_text{
       padding: 0 pixRem(35.5);
       font-weight: 400;
       line-height: pixRem(30);
+      color: #ffffff;
     }
   
 
@@ -49,7 +47,7 @@
        
     
   @include sm() {
-    background-image: url('../images/HeaderSectionSm.svg');
+    background-image: url('../images/HeaderSectionSm.png');
     padding: pixRem(57) pixRem(20) pixRem(96);
 
     .container{
