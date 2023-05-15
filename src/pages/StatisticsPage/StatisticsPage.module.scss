@@ -1,13 +1,27 @@
 @use "../../assets/styles/" as *;
 
 .StatisticsPage {
-  display: flex;
-  font-family: "Solway", serif;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
+  // background-image: url("../images/bg_hero_desktop.svg");
+  // background-size: cover;
+  // background-position: center;
 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: pixRem(48) pixRem(120);
+  width: 100%;
+  font-family: "Solway", serif;
+  row-gap: pixRem(48);
+
+  @include md() {
+    padding: pixRem(32) pixRem(72);
+  }
   @include sm() {
+    // background-image: url("../images/bg_hero_mobile.svg");
+
+    align-items: center;
+    padding: pixRem(32) pixRem(18);
+    text-align: center;
+    row-gap: pixRem(64);
   }
 }

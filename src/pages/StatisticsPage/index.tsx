@@ -1,12 +1,20 @@
 import styles from "./StatisticsPage.module.scss";
 import AnimatedFadeInPage from "../../utils/AnimatedFadeInPage";
+import StatisticsHeader from "./Components/StatisticsHeader";
+import StatisticsCollection from "./Components/StatisticsCollection";
+import StatisticsPageContext from "./context/StatisticsPageContext";
 
 const StatisticsPage = () => {
   return (
     <>
-      <AnimatedFadeInPage>
-        <main className={styles.StatisticsPage}>StatisticsPage</main>
-      </AnimatedFadeInPage>
+      <StatisticsPageContext>
+        <AnimatedFadeInPage>
+          <main className={styles.StatisticsPage}>
+            <StatisticsHeader />
+            <StatisticsCollection />
+          </main>
+        </AnimatedFadeInPage>
+      </StatisticsPageContext>
     </>
   );
 };
