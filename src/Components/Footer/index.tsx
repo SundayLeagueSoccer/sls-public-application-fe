@@ -1,9 +1,9 @@
 import styles from "./Footer.module.scss";
 import useApp from "../../hooks/useApp";
 import { Link } from "react-router-dom";
-import whatsapp_icon from "./images/whatsapp.png";
-import instagram_icon from "./images/instagram.png";
-import youtube_icon from "./images/youtube.png";
+import Whatsapp from "./images/whatsapp.png";
+import Instagram from "./images/instagram.png";
+import Youtube from "./images/youtube.png";
 
 const Footer = () => {
   const { darkMode } = useApp();
@@ -17,14 +17,14 @@ const Footer = () => {
   ];
 
   const socialMediaLinks = [
-    { link: "https://wa.me/qr/OBTAOV36SJ7VI1", image: whatsapp_icon },
+    { link: "https://wa.me/qr/OBTAOV36SJ7VI1", image: Whatsapp },
     {
       link: "https://instagram.com/sls.ng?igshid=ZDdkNTZiNTM=",
-      image: instagram_icon,
+      image: Instagram,
     },
     {
       link: "https://www.youtube.com/channel/UCXo2dJMVLukdliFi7-HgNDQ",
-      image: youtube_icon,
+      image: Youtube,
     },
   ];
 
@@ -78,7 +78,7 @@ const Footer = () => {
                   key={elem.image}
                   className={styles.socialMedia_link}
                 >
-                  <img src={elem.image} alt={`${elem.image}icon`} />
+                  <img src={elem.image} alt={`${elem.image} Button`} />
                 </Link>
               );
             })}

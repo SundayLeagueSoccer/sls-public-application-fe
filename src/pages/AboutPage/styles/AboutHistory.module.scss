@@ -1,8 +1,293 @@
 @use "../../../assets/styles/" as *;
 
 .AboutHistory {
-  display: flex;
+  width: 100%;
+  padding: pixRem(100) pixRem(120);
 
-  @include sm() {
+  @include md(){
+    padding: pixRem(65) pixRem(72);
+  }
+
+  @include sm(){
+    padding: pixRem(50) pixRem(18);
+  }
+
+  .Mobile_Header {
+    display: none;
+
+    @include md() {
+    }
+
+    @include sm() {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto;
+      row-gap: pixRem(20);
+      text-align: center;
+    }
+
+    h3 {
+      @include md() {
+      }
+
+      @include sm() {
+        font-style: normal;
+        font-weight: 400;
+        font-size: pixRem(18);
+      }
+    }
+
+    h1{
+      @include md() {
+      }
+
+      @include sm() {
+        font-style: normal;
+        font-weight: 400;
+        font-size: pixRem(24);
+        letter-spacing: pixRem(1);
+      }
+    }
+    span {
+
+      @include md(){
+
+      }
+
+      @include sm(){
+        color: $secondary;
+      }
+    }
+  }
+
+  .AboutHistory_Content {
+    display: flex;
+    column-gap: pixRem(20);
+
+    @include md() {
+      align-items: center;
+    }
+
+    @include sm() {
+      display: flex;
+      flex-direction: column-reverse;
+      padding: pixRem(50) 0;
+    }
+
+    .AboutHistory_Left {
+      width: 50%;
+
+      @include md() {
+        text-align: justify;
+      }
+
+      @include sm() {
+        width: 100%;
+      }
+
+      .Left_Header {
+
+        @include md() {
+          display: flex;
+          flex-direction: column;
+          width: 90%;
+          margin: 0 auto;
+          row-gap: pixRem(20);
+        }
+
+        @include sm() {
+          display: none;
+        }
+
+        h3 {
+          font-style: normal;
+          font-weight: 500;
+          font-size: pixRem(36);
+          color: $darkModeFontSecondary;
+          line-height: pixRem(60);
+
+          @include md(){
+            font-style: normal;
+            font-weight: 400;
+            font-size: pixRem(18);
+            line-height: pixRem(30);
+          }
+        }
+
+        h1 {
+          font-style: normal;
+          font-weight: 500;
+          font-size: pixRem(45);
+          line-height: pixRem(60);
+          color: $darkModeFontSecondary;
+
+          @include md(){
+            font-style: normal;
+            font-weight: 400;
+            font-size: pixRem(24);
+            letter-spacing: pixRem(1);
+          }
+        }
+
+        span {
+          color: $secondary;
+
+          @include md(){
+            color: $secondary;
+          }
+        }
+      }
+
+      .Left_Capital {
+        display: flex;
+        column-gap: pixRem(30);
+        margin-top: pixRem(10);
+
+        @include md() {
+          column-gap: pixRem(20);
+          align-items: center;
+        }
+
+        @include sm() {
+          column-gap: pixRem(20);
+          align-items: center;
+        }
+
+        .Left_Capital_Left {
+          width: 30%;
+
+          @include md() {
+          }
+
+          @include sm() {
+          }
+
+          h1 {
+            display: flex;
+            align-items: center;
+            font-style: normal;
+            font-weight: 500;
+            font-size: pixRem(96);
+            color: $darkModeFontSecondary;
+
+            @include md() {
+              text-align: justify;
+              font-size: pixRem(50);
+            }
+
+            @include sm() {
+              text-align: justify;
+              font-size: pixRem(50);
+            }
+          }
+
+          span {
+            font-style: normal;
+            font-weight: 500;
+            font-size: pixRem(64);
+            color: $secondary;
+
+            @include md() {
+              text-align: justify;
+              font-size: pixRem(30);
+            }
+
+            @include sm() {
+              text-align: justify;
+              font-size: pixRem(30);
+            }
+          }
+          p {
+            text-align: justify;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: pixRem(2);
+            color: $darkModeFontSecondary;
+
+            @include md() {
+             
+            }
+
+            @include sm() {
+              text-align: center;
+              font-size: pixRem(10);
+            }
+          }
+        }
+
+        .Left_Capital_Right {
+          span {
+            width: 70%;
+            text-align: justify;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: pixRem(30);
+            color: $darkModeFontSecondary;
+
+            @include md() {
+              text-align: justify;
+              font-size: pixRem(17);
+            }
+
+            @include sm() {
+              text-align: justify;
+              font-size: pixRem(16);
+            }
+          }
+        }
+      }
+
+      p {
+        text-align: justify;
+        margin-top: pixRem(15);
+        font-style: normal;
+        font-weight: 400;
+        font-size: pixRem(20);
+        line-height: pixRem(30);
+        color: $darkModeFontSecondary;
+
+        @include md() {
+          display: none;
+        }
+
+        @include sm() {
+          text-align: justify;
+          font-size: pixRem(16);
+        }
+      }
+    }
+
+    .AboutHistory_Right {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      row-gap: pixRem(10);
+
+      @include md() {
+      }
+
+      @include sm() {
+        width: 100%;
+      }
+
+      .ImageUnderCarousel {
+        width: 90%;
+        margin: 0 auto;
+
+        @include md() {
+        }
+
+        @include sm() {
+          width: 100%;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 }

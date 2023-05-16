@@ -1,0 +1,22 @@
+@use "../../../assets/styles/" as *;
+
+.PlayersList {
+  width: 100%;
+  min-height: pixRem(1280);
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  row-gap: 24px;
+  justify-items: center;
+  padding: pixRem(42) 0 pixRem(100) 0;
+
+  @include md() {
+    grid-template-columns: 33% 33% 33%;
+    justify-items: center;
+    min-height: pixRem(920);
+  }
+  @include sm() {
+    grid-template-columns: 100%;
+    justify-items: center;
+    min-height: pixRem(920);
+  }
+}

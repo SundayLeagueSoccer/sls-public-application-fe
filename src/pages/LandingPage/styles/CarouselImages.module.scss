@@ -1,0 +1,50 @@
+@use "../../../assets/styles/" as *;
+
+.Carousel {
+  position: relative;
+
+  .Carousel_Container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .Carousel_Slide {
+      display: flex;
+      justify-content: center;
+      width: 90%;
+      @include sm() {
+        width: 98%;
+      }
+      overflow: hidden;
+
+      .Carousel_Slide_Screen img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 50px;
+      cursor: pointer;
+      @include md() {
+        width: 40px;
+      }
+      @include sm() {
+        width: 35px;
+      }
+    }
+  }
+}

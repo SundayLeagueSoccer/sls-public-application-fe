@@ -1,8 +1,80 @@
 @use "../../../assets/styles/" as *;
 
 .AboutHero {
-  display: flex;
+  background-image: url("../images/HeaderSectionLg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
+  width: 101%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: pixRem(88) pixRem(120);
+  text-align: center;
+  row-gap: 24px;
+
+  @include md() {
+    padding: pixRem(32) pixRem(72);
+    row-gap: 18px;
+  }
   @include sm() {
+    background-image: url("../images/HeaderSectionSm.png");
+    padding: pixRem(57) pixRem(18) pixRem(80) pixRem(18);
+    width: 100%;
+    row-gap: 17px;
+  }
+
+  .header_text_box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    .subheading {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 24px;
+      color: $extended;
+
+      @include md() {
+        font-size: 16px;
+      }
+      @include sm() {
+        font-size: 16px;
+      }
+    }
+
+    .heading {
+      font-weight: 500;
+      font-size: 48px;
+      line-height: 60px;
+      color: #ffffff;
+
+      @include md() {
+        font-size: 32px;
+      }
+      @include sm() {
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 120%;
+      }
+    }
+  }
+
+  .support_text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #ffffff;
+    width: 90%;
+
+    @include md() {
+      font-size: 14px;
+      line-height: 22px;
+    }
+    @include sm() {
+      font-size: 18px;
+    }
   }
 }

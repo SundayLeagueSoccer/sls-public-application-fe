@@ -3,9 +3,23 @@
 .AboutPage {
   display: flex;
   flex-direction: column;
+  font-family: "Solway", serif;
   width: 100%;
   height: auto;
+  justify-content: center;
+  align-items: center;
+  // box-sizing: border-box;
 
   @include sm() {
+  }
+
+  .AboutPage_Features {
+    width: 100%;
+    background-image: url("./images/features_bg_desktop.svg");
+    background-size: cover;
+    background-position: center;
+    @include sm() {
+      background-image: url("./images/features_bg_mobile.svg");
+    }
   }
 }
