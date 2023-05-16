@@ -18,6 +18,7 @@
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  /* overflow: hidden; */
 }
 
 /* width and height of the scrollbar */
