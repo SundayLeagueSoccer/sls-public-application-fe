@@ -1,0 +1,98 @@
+@use "../../../assets/styles/" as *;
+
+.StatisticsHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: pixRem(16);
+
+  h1 {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 120%;
+    color: $tertiary;
+  }
+
+  .statistics_inputs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include sm() {
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      row-gap: 8px;
+    }
+
+    .statistics_buttons {
+      display: flex;
+      column-gap: 64px;
+
+      @include sm() {
+        align-items: center;
+        justify-content: center;
+        column-gap: 0;
+        width: 100%;
+      }
+
+      button {
+        border: none;
+        background: none;
+        font-family: "Solway";
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 8px 64px 8px 2px;
+        cursor: pointer;
+        border-bottom: 4px solid transparent;
+        transition: all ease 0.4s;
+
+        @include md() {
+          padding: 2px 20px 2px 0;
+        }
+
+        @include sm() {
+          text-align: center;
+          padding: 8px 0;
+          width: 100%;
+          border-bottom: 3px solid transparent;
+        }
+      }
+
+      button:hover {
+        background: $primaryHover;
+        color: $tertiary;
+        border-bottom: 4px solid $tertiary;
+        font-weight: 500;
+
+        @include sm() {
+          border-bottom: 3px solid $tertiary;
+        }
+      }
+
+      .activeTab {
+        // background: $primaryHover;
+        color: $tertiary;
+        border-bottom: 4px solid $tertiary;
+        font-weight: 500;
+
+        @include sm() {
+          text-align: center;
+          padding: 8px 0;
+          width: 100%;
+          border-bottom: 3px solid $tertiary;
+        }
+      }
+    }
+
+    .dropdown_container {
+      width: 128px;
+
+      @include sm() {
+        width: 100%;
+      }
+    }
+  }
+}

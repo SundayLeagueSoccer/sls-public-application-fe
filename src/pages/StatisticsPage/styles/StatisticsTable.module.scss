@@ -1,0 +1,124 @@
+@use "../../../assets/styles/" as *;
+
+.StatisticsTable {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Sora", sans-serif;
+
+  .Top_Performer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px 16px 12px 16px;
+    row-gap: pixRem(80);
+    background: red;
+
+    h4 {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 170%;
+      color: #fbfbfb;
+      font-family: "Sora", sans-serif;
+      text-align: start;
+    }
+
+    .Top_Performer_details {
+      display: grid;
+      grid-template-columns: 8% 68% 24%;
+      align-items: center;
+
+      p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 170%;
+        width: 100%;
+        color: #fbfbfb;
+        text-align: start;
+      }
+
+      h4 {
+        font-weight: 400;
+        font-size: 14px;
+        width: 100%;
+        line-height: 170%;
+        color: #fbfbfb;
+        text-align: start;
+
+        span {
+          font-weight: 700;
+          font-size: 16px;
+        }
+      }
+
+      h2 {
+        font-weight: 700;
+        font-size: 32px;
+        width: 100%;
+        line-height: 140%;
+        text-align: end;
+        color: #fbfbfb;
+      }
+    }
+  }
+
+  .Other_Performers {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1px;
+    width: 100%;
+    text-align: start;
+
+    .single_performer_details {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 8% 84% 8%;
+      align-items: center;
+      padding: 12px 12px;
+
+      p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 170%;
+        width: 100%;
+      }
+
+      h4 {
+        font-weight: 400;
+        font-size: 14px;
+        width: 100%;
+        line-height: 170%;
+
+        span {
+          font-weight: 700;
+        }
+      }
+
+      .single_performer_value {
+        font-weight: 700;
+        font-size: 14px;
+        width: 100%;
+        line-height: 170%;
+        text-align: end;
+      }
+    }
+
+    .showMore {
+      width: 100%;
+      text-align: center;
+      border: none;
+      padding: 12px 12px;
+
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 170%;
+      font-family: "Sora", sans-serif;
+      cursor: pointer;
+    }
+
+    .showMore:hover {
+      background-color: $test;
+    }
+  }
+}
