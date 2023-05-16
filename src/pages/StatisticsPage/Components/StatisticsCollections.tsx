@@ -1,4 +1,4 @@
-import styles from "../styles/StatisticsCollection.module.scss";
+import styles from "../styles/StatisticsCollections.module.scss";
 import StatisticsTable from "./StatisticsTable";
 import { StatisticsPageContext } from "../context/StatisticsPageContext";
 import { useContext, useEffect, useState } from "react";
