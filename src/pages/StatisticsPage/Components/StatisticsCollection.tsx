@@ -3,7 +3,6 @@ import StatisticsTable from "./StatisticsTable";
 import { StatisticsPageContext } from "../context/StatisticsPageContext";
 import { useContext, useEffect, useState } from "react";
 import axios from "../../../api/axios";
-import { m } from "framer-motion";
 
 const StatisticsCollection = () => {
   const { isOverview, dropDownChoice, setSeasonStats, seasonStats } =
