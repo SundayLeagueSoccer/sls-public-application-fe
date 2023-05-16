@@ -15,16 +15,11 @@
 
   .AboutPage_Features {
     width: 100%;
-    background-image: url("./images/features_background_desktop.png");
+    background-image: url("./images/features_bg_desktop.svg");
     background-size: cover;
     background-position: center;
-
-    @include md() {
-
-    }
-
     @include sm() {
-      background-image: url("./images/features_background_mobile.png");
+      background-image: url("./images/features_bg_mobile.svg");
     }
   }
 }
