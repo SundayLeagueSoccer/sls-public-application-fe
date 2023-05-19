@@ -83,7 +83,8 @@ const CustomDropdown = ({
           onClick={() => setOpenOptions(!openOptions)}
           ref={selectionRef}
         >
-          <p>{selectedChoice}</p>
+          <p className={styles.season_text}>Season</p>
+          <p className={styles.selected_option}>{selectedChoice}</p>
         </div>
         {openOptions ? (
           <div className={styles.Options} style={Options_Style}>

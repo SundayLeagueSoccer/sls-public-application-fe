@@ -129,7 +129,7 @@ const Navbar = () => {
                   <div className={styles.mobile_NavLink_container}>
                     <NavLink
                       to={elem.link}
-                      key={`${elem.name}_mobile`}
+                      key={`${elem.link}_mobile`}
                       className={({ isActive, isPending }) =>
                         isPending
                           ? styles.mobile_NavLink

@@ -99,7 +99,6 @@ const StatisticsCollection = () => {
         setLoading(false);
         setSuccess(true);
         setError("");
-        console.log(response.data);
         isMounted && setSeasonStats(response.data);
       } catch (error: any) {
         setLoading(false);
@@ -122,31 +121,38 @@ const StatisticsCollection = () => {
 
   return (
     <>
+      {!loading && !success ? (
+        <>
+          <section className={styles.Stats}>
+            {isOverview ? (
+              <>
+                <div className={styles.container}>
+                  <StatisticsLoader />
+                </div>
+                <div className={styles.container}>
+                  <StatisticsLoader />
+                </div>
+                <div className={styles.container}>
+                  <StatisticsLoader />
+                </div>
+              </>
+            ) : (
+              <>
+                <div className={styles.container}>
+                  <StatisticsLoader />
+                </div>
+                <div className={styles.container}>
+                  <StatisticsLoader />
+                </div>
+              </>
+            )}
+          </section>
+        </>
+      ) : (
+        <></>
+      )}
       {loading ? (
-        <section className={styles.Stats}>
-          {isOverview ? (
-            <>
-              <div className={styles.container}>
-                <StatisticsLoader />
-              </div>
-              <div className={styles.container}>
-                <StatisticsLoader />
-              </div>
-              <div className={styles.container}>
-                <StatisticsLoader />
-              </div>
-            </>
-          ) : (
-            <>
-              <div className={styles.container}>
-                <StatisticsLoader />
-              </div>
-              <div className={styles.container}>
-                <StatisticsLoader />
-              </div>
-            </>
-          )}
-        </section>
+        <></>
       ) : (
         <section className={styles.Stats}>
           {isOverview ? (
