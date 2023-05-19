@@ -112,7 +112,7 @@ const PlayersList = () => {
           <Loader />
         </>
       ) : (
-        <div></div>
+        <></>
       )}
       {loading ? (
         <Loader />

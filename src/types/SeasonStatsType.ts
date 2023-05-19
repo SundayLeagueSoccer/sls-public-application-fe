@@ -3,6 +3,13 @@ type imageType = {
   url: string;
 };
 
+export type statsQueryType =
+  | "goals"
+  | "assists"
+  | "cleanSheets"
+  | "yellowCards"
+  | "redCards";
+
 type seasonStatsType = {
   season: string;
   goals: number;
