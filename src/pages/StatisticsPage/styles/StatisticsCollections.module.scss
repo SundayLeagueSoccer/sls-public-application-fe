@@ -1,0 +1,31 @@
+@use "../../../assets/styles/" as *;
+
+.Stats {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+  @include md() {
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: start;
+    row-gap: 96px;
+  }
+  @include sm() {
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: start;
+    row-gap: 96px;
+  }
+}
+
+.container {
+  width: 340px;
+
+  @include md() {
+    width: 100%;
+  }
+  @include sm() {
+    width: 100%;
+  }
+}

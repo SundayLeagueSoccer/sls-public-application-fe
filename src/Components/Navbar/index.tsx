@@ -98,17 +98,19 @@ const Navbar = () => {
               onClick={() => toggleMobileNavbar()}
               className={styles.hamburger}
             >
-              {mobileNavbarOpen ? (
-                <img
-                  src={darkMode ? darkCloseBurger : lightCloseBurger}
-                  alt="Hamburger Menu Button"
-                />
-              ) : (
-                <img
-                  src={darkMode ? darkHamburger : lightHamburger}
-                  alt="Hamburger Menu Button"
-                />
-              )}
+              <button>
+                {mobileNavbarOpen ? (
+                  <img
+                    src={darkMode ? darkCloseBurger : lightCloseBurger}
+                    alt="Hamburger Menu Button"
+                  />
+                ) : (
+                  <img
+                    src={darkMode ? darkHamburger : lightHamburger}
+                    alt="Hamburger Menu Button"
+                  />
+                )}
+              </button>
             </div>
           </section>
         </div>
@@ -127,7 +129,7 @@ const Navbar = () => {
                   <div className={styles.mobile_NavLink_container}>
                     <NavLink
                       to={elem.link}
-                      key={`${elem.name}_mobile`}
+                      key={`${elem.link}_mobile`}
                       className={({ isActive, isPending }) =>
                         isPending
                           ? styles.mobile_NavLink

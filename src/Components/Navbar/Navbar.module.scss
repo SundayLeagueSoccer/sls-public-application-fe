@@ -139,6 +139,11 @@
       @include sm() {
         display: block;
       }
+
+      button {
+        border: none;
+        background: none;
+      }
     }
   }
 

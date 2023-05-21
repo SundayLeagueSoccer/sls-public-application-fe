@@ -66,6 +66,7 @@
       .Navbar_Child_Container {
         width: 100%;
         max-width: 1920px;
+        // border: solid 1px yellow;
       }
     }
 
@@ -73,12 +74,16 @@
       //this matches the height of the navbar and required to make it fixed
       margin-top: pixRem(80);
       width: 100%;
+      // border: solid 1px red;
+      overflow: hidden;
 
       @include md() {
         margin-top: pixRem(68);
+        overflow: hidden;
       }
       @include sm() {
         margin-top: pixRem(72);
+        overflow: hidden;
       }
     }
   }

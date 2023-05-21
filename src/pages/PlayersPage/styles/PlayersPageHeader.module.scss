@@ -18,6 +18,10 @@
     padding: pixRem(66) pixRem(72);
   }
   @include sm() {
+    background-image: url("../images/HeaderSectionSm.png");
+    background-size: cover;
+    background-position: center;
+
     padding: pixRem(56) pixRem(18) pixRem(80) pixRem(18);
     row-gap: pixRem(18);
   }
