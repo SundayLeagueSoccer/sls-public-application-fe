@@ -21,7 +21,7 @@ const CustomDropdown = ({
   let optionRef = useRef<HTMLDivElement>(null);
 
   const Options_Style = {
-    background: darkMode ? "#001530" : "#fbfbfb",
+    background: darkMode ? "#001128" : "#efefef",
   };
 
   const updateSelection = (choice: string) => {
