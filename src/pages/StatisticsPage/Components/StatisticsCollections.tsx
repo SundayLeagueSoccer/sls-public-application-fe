@@ -4,7 +4,6 @@ import { StatisticsPageContext } from "../context/StatisticsPageContext";
 import { useContext, useEffect, useState } from "react";
 import axios from "../../../api/axios";
 import { statsQueryType } from "../../../types/SeasonStatsType";
-import StatisticsLoader from "./StatisticsLoader";
 
 const StatisticsCollection = () => {
   const { isOverview, dropDownChoice, setSeasonStats, seasonStats } =
