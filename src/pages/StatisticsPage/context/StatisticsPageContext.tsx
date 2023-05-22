@@ -31,9 +31,7 @@ export default function StatisticsPageContextProvider({
     return `${year}${seasonPart}`;
   };
 
-  const [dropDownChoice, setDropDownChoice] = useState<string>(
-    getCurrentSeason()
-  );
+  const [dropDownChoice, setDropDownChoice] = useState<string>("2023B");
 
   const [seasonStats, setSeasonStats] = useState<playerSeasonStatsType[]>([]);
 

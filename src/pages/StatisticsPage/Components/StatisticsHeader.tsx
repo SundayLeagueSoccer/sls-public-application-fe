@@ -6,7 +6,7 @@ import { useContext, useEffect } from "react";
 const StatisticsHeader = () => {
   const { setIsOverview, setDropDownChoice, isOverview, dropDownChoice } =
     useContext(StatisticsPageContext);
-  const dummy = ["2023A", "2023B", "2023C", "2023D"];
+  const dropDownOptions = ["2023B", "2024A", "2024B", "2025A", "2025B"];
 
   return (
     <>
@@ -29,8 +29,8 @@ const StatisticsHeader = () => {
           </div>
           <div className={styles.dropdown_container}>
             <CustomDropdown
-              defaultSelection={dummy[0]}
-              possibleOptions={dummy}
+              defaultSelection={dropDownChoice}
+              possibleOptions={dropDownOptions}
               customOnChange={setDropDownChoice}
             />
           </div>
