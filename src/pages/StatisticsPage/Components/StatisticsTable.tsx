@@ -69,13 +69,13 @@ const StatisticsTable = ({ statsData }: StatisticsTablePropsType) => {
             );
           })}
 
-          <button
+          {/* <button
             className={styles.showMore}
             style={show_more_button_style}
             onClick={() => setShowmore(!showmore)}
           >
             {showmore ? `Collapse List` : `Show full list`}
-          </button>
+          </button> */}
         </div>
       </section>
     </>
