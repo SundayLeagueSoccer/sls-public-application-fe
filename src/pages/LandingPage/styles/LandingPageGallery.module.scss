@@ -1,5 +1,69 @@
 @use "../../../assets/styles/" as *;
 
 .LandingPageGallery {
+  background-image: url("../images/bg_gallery_desktop.svg");
+  background-size: cover;
+  background-position: center;
+
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: pixRem(120) pixRem(120) pixRem(0) pixRem(120);
+
+  width: 100%;
+  row-gap: 80px;
+  @include md() {
+    padding: pixRem(72) pixRem(72) pixRem(0) pixRem(72);
+    row-gap: 54px;
+  }
+  @include sm() {
+    background-image: url("../images/bg_gallery_mobile.svg");
+    align-items: center;
+    padding: pixRem(80) pixRem(18) pixRem(60) pixRem(18);
+    row-gap: 60px;
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 120%;
+    text-align: center;
+
+    @include md() {
+      font-size: 28px;
+      line-height: 30px;
+    }
+    @include sm() {
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: -0.333333px;
+    }
+  }
+
+  .PictureGallery {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    column-gap: 10px;
+
+    @include sm() {
+      justify-content: flex-start;
+    }
+
+    .PictureGallery_Container_A,
+    .PictureGallery_Container_B {
+      width: 50%;
+    }
+
+    .PictureGallery_Container_A {
+      @include sm() {
+        width: 100%;
+      }
+    }
+    .PictureGallery_Container_B {
+      @include sm() {
+        display: none;
+      }
+    }
+  }
 }

@@ -1,0 +1,68 @@
+@use "../../../assets/styles/" as *;
+
+.PictureGallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 40% 1fr;
+  column-gap: 10px;
+
+  .column_one,
+  .column_two,
+  .column_three {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    row-gap: 10px;
+  }
+
+  .column_one {
+    .image_container_one {
+      border: 1px green solid;
+      aspect-ratio: 75/100;
+      width: 100%;
+    }
+    .image_container_two {
+      border: 1px peru solid;
+      aspect-ratio: 116/100;
+      width: 100%;
+    }
+  }
+
+  .column_two {
+    .image_container_three {
+      border: 1px green solid;
+      aspect-ratio: 80/100;
+      width: 100%;
+    }
+    .image_container_four {
+      border: 1px peru solid;
+      aspect-ratio: 15/10;
+      width: 100%;
+    }
+  }
+
+  .column_three {
+    .image_container_five {
+      border: 1px green solid;
+      aspect-ratio: 12/10;
+      width: 100%;
+    }
+    .image_container_six {
+      border: 1px peru solid;
+      aspect-ratio: 75/100;
+      width: 100%;
+    }
+  }
+
+  .image_container_one,
+  .image_container_two,
+  .image_container_three,
+  .image_container_four,
+  .image_container_five,
+  .image_container_six {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

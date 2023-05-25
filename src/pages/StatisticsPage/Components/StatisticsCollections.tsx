@@ -4,15 +4,13 @@ import { StatisticsPageContext } from "../context/StatisticsPageContext";
 import { useContext, useEffect, useState } from "react";
 import axios from "../../../api/axios";
 import { statsQueryType } from "../../../types/SeasonStatsType";
-import StatisticsLoader from "./StatisticsLoader";
 
 const StatisticsCollection = () => {
   const { isOverview, dropDownChoice, setSeasonStats, seasonStats } =
     useContext(StatisticsPageContext);
 
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<null | string>(null);
 
   const getStatTitle = (title: string) => {
     let statsTitle;
@@ -70,7 +68,7 @@ const StatisticsCollection = () => {
       statLine: number;
     }[] = [];
     sortedArray.forEach((item, index) => {
-      if (index !== 0) {
+      if (index !== 0 && item.stats[0][statsQuery] !== 0) {
         const singlePerformer = {
           fullName: item.name,
           alias: item.alias,
@@ -90,95 +88,74 @@ const StatisticsCollection = () => {
   useEffect(() => {
     let isMounted = true;
     const controller = new AbortController();
+    setLoading(true);
 
     const getAllSeasonStats = async () => {
       try {
         const response = await axios.get(`/statistics/${dropDownChoice}`, {
           signal: controller.signal,
         });
-        setLoading(false);
-        setSuccess(true);
-        setError("");
         isMounted && setSeasonStats(response.data);
       } catch (error: any) {
-        setLoading(false);
-        setSuccess(false);
         if (error && error.message) {
           setError(error.message);
         } else {
           setError("An error occurred.");
         }
+      } finally {
+        setLoading(false);
       }
     };
-
     getAllSeasonStats();
 
     return () => {
       isMounted = false;
-      controller.abort();
+      isMounted && controller.abort();
     };
   }, [dropDownChoice]);
 
+  if (loading) {
+    return (
+      <div className={styles.Stats}>
+        <h2 className={styles.loading_text}>Loading...</h2>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className={styles.Stats}>
+        <h2 className={styles.error_text}>ServerSide Error</h2>
+      </div>
+    );
+  }
+
   return (
     <>
-      {!loading && !success ? (
-        <>
-          <section className={styles.Stats}>
-            {isOverview ? (
-              <>
-                <div className={styles.container}>
-                  <StatisticsLoader />
-                </div>
-                <div className={styles.container}>
-                  <StatisticsLoader />
-                </div>
-                <div className={styles.container}>
-                  <StatisticsLoader />
-                </div>
-              </>
-            ) : (
-              <>
-                <div className={styles.container}>
-                  <StatisticsLoader />
-                </div>
-                <div className={styles.container}>
-                  <StatisticsLoader />
-                </div>
-              </>
-            )}
-          </section>
-        </>
-      ) : (
-        <></>
-      )}
-      {loading ? (
-        <></>
-      ) : (
-        <section className={styles.Stats}>
-          {isOverview ? (
-            <>
-              <div className={styles.container}>
-                <StatisticsTable statsData={sortingLogic("goals")} />
-              </div>
-              <div className={styles.container}>
-                <StatisticsTable statsData={sortingLogic("assists")} />
-              </div>
-              <div className={styles.container}>
-                <StatisticsTable statsData={sortingLogic("cleanSheets")} />
-              </div>
-            </>
-          ) : (
-            <>
-              <div className={styles.container}>
-                <StatisticsTable statsData={sortingLogic("yellowCards")} />
-              </div>
-              <div className={styles.container}>
-                <StatisticsTable statsData={sortingLogic("redCards")} />
-              </div>
-            </>
-          )}
-        </section>
-      )}
+      <section className={styles.Stats}>
+        {isOverview ? (
+          <>
+            <div className={styles.container}>
+              <StatisticsTable statsData={sortingLogic("goals")} />
+            </div>
+            <div className={styles.container}>
+              <StatisticsTable statsData={sortingLogic("assists")} />
+            </div>
+            <div className={styles.container}>
+              <StatisticsTable statsData={sortingLogic("cleanSheets")} />
+            </div>
+          </>
+        ) : (
+          <>
+            <div className={styles.container}>
+              <StatisticsTable statsData={sortingLogic("yellowCards")} />
+            </div>
+            <div className={styles.container}>
+              <StatisticsTable statsData={sortingLogic("redCards")} />
+            </div>
+          </>
+        )}
+      </section>
     </>
   );
 };

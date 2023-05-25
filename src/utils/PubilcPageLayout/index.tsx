@@ -27,7 +27,9 @@ const PublicPageLayout = () => {
               </div>
             </div>
             <div className={styles.Outlet_container}>
-              <Outlet />
+              <div className={styles.Outlet_Child_Container}>
+                <Outlet />
+              </div>
             </div>
             <Footer />
           </section>
