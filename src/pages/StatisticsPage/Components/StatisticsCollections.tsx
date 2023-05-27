@@ -85,6 +85,14 @@ const StatisticsCollection = () => {
     };
   };
 
+  const getCurrentSeason = () => {
+    const currentTime = new Date();
+    const year = currentTime.getFullYear();
+    const month = currentTime.getMonth();
+    const seasonPart = month < 6 ? `A` : `B`;
+    return `${year}${seasonPart}`;
+  };
+
   useEffect(() => {
     let isMounted = true;
     const controller = new AbortController();
@@ -113,6 +121,16 @@ const StatisticsCollection = () => {
       isMounted && controller.abort();
     };
   }, [dropDownChoice]);
+
+  if (dropDownChoice > getCurrentSeason()) {
+    return (
+      <div className={styles.Stats}>
+        <h2 className={styles.loading_text}>
+          No Stats available. Season incoming...
+        </h2>
+      </div>
+    );
+  }
 
   if (loading) {
     return (

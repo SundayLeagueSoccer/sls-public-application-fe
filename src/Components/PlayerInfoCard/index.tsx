@@ -59,6 +59,10 @@ const PlayerInfoCard = ({
     backgroundColor: triangleColor,
   };
 
+  const playerPosition_style = {
+    color: triangleColor,
+  };
+
   const disableLink = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
@@ -67,7 +71,7 @@ const PlayerInfoCard = ({
   };
 
   const doNothing = () => {
-    console.log("lll");
+    return;
   };
   const openModal = () => {};
 
@@ -78,7 +82,7 @@ const PlayerInfoCard = ({
           <div className={styles.PlayerCard_details}>
             <h3>{playerName}</h3>
             <div className={styles.PlayerCard_details_info}>
-              <h4>{playerPosition}</h4>
+              <h4 style={playerPosition_style}>{playerPosition}</h4>
               <p>{playerText}</p>
             </div>
             <div className={styles.PlayerCard_details_bottom}>

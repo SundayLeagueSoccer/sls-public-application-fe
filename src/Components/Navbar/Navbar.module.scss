@@ -200,8 +200,8 @@
     }
   }
 
-  //to set background color based on darkMoade
-  .Mobile_Nav_Dark {
+  .Mobile_Nav_Dark,
+  .Mobile_Nav_Light {
     display: none;
     @include md() {
       display: none;
@@ -211,8 +211,9 @@
       flex-direction: column;
       z-index: 20;
       width: 100%;
-      background-color: $darkModeBackground;
+      height: 100vh;
 
+      transition: all ease 0.2s;
       opacity: 0;
 
       animation-name: slideDown;
@@ -220,25 +221,17 @@
       animation-fill-mode: forwards;
     }
   }
-  //to set background color based on darkMoade
-  .Mobile_Nav_Light {
-    display: none;
-    transition: all ease 0.2s;
-    @include md() {
-      display: none;
-    }
+
+  //to set background color based on darkMode
+  .Mobile_Nav_Dark {
     @include sm() {
-      display: flex;
-      flex-direction: column;
-      z-index: 20;
-      width: 100%;
+      background-color: $darkModeBackground;
+    }
+  }
+  //to set background color based on lightMode
+  .Mobile_Nav_Light {
+    @include sm() {
       background-color: $lightModeBackground;
-
-      opacity: 0;
-
-      animation-name: slideDown;
-      animation-duration: 0.5s;
-      animation-fill-mode: forwards;
     }
   }
 }

@@ -1,7 +1,7 @@
 import styles from "../styles/StatisticsHeader.module.scss";
-import CustomDropdown from "./CustomDropdown";
+import CustomDropdown from "../../../utils/CustomDropdown/CustomDropdown";
 import { StatisticsPageContext } from "../context/StatisticsPageContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 const StatisticsHeader = () => {
   const { setIsOverview, setDropDownChoice, isOverview, dropDownChoice } =
@@ -32,6 +32,7 @@ const StatisticsHeader = () => {
               defaultSelection={dropDownChoice}
               possibleOptions={dropDownOptions}
               customOnChange={setDropDownChoice}
+              customDropdownTitle={"Season"}
             />
           </div>
         </div>
