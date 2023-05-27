@@ -1,12 +1,13 @@
 import styles from "./LandingPage.module.scss";
 import AnimatedFadeInPage from "../../utils/AnimatedFadeInPage";
-import { useEffect, useState } from "react";
 import LandingPageHero from "./Components/LandingPageHero";
 import LandingPageCountDown from "./Components/LandingPageCountDown";
-import LandingPageFeatures from "./Components/LandingPageFeatures";
+// import LandingPageFeatures from "./Components/LandingPageFeatures";
 import LandingPageGallery from "./Components/LandingPageGallery";
 import LandingPageHistory from "./Components/LandingPageHistory";
 import LandingPageSLSPlayers from "./Components/LandingPageSLSPlayers";
+import LandingPageAwards from "./Components/LandingPageAwards";
+import LandingPageBecomeMember from "./Components/LandingPageBecomeMember";
 
 const LandingPage = () => {
   return (
@@ -17,7 +18,9 @@ const LandingPage = () => {
           <LandingPageCountDown />
           <LandingPageHistory />
           <LandingPageSLSPlayers />
-          <LandingPageFeatures />
+          {/* <LandingPageFeatures /> */}
+          <LandingPageAwards />
+          <LandingPageBecomeMember />
           <LandingPageGallery />
         </main>
       </AnimatedFadeInPage>
