@@ -1,17 +1,19 @@
 import { useEffect, useRef, useState } from "react";
-import styles from "../styles/CustomDropdown.module.scss";
-import useApp from "../../../hooks/useApp";
+import styles from "./CustomDropdown.module.scss";
+import useApp from "../../hooks/useApp";
 
 type CustomDropdownProps = {
   defaultSelection: string;
-  possibleOptions: string[];
-  customOnChange: React.Dispatch<React.SetStateAction<string>>;
+  possibleOptions: any[];
+  customOnChange: React.Dispatch<React.SetStateAction<any>>;
+  customDropdownTitle?: string;
 };
 
 const CustomDropdown = ({
   defaultSelection,
   possibleOptions,
   customOnChange,
+  customDropdownTitle = "",
 }: CustomDropdownProps) => {
   const { darkMode } = useApp();
 
@@ -83,7 +85,11 @@ const CustomDropdown = ({
           onClick={() => setOpenOptions(!openOptions)}
           ref={selectionRef}
         >
-          <p className={styles.season_text}>Season</p>
+          {customDropdownTitle?.length > 0 ? (
+            <p className={styles.season_text}>{customDropdownTitle}</p>
+          ) : (
+            <></>
+          )}
           <p className={styles.selected_option}>{selectedChoice}</p>
         </div>
         {openOptions ? (

@@ -1,4 +1,4 @@
-@use "../../../assets/styles/" as *;
+@use "../../assets/styles/" as *;
 
 .CustomDropdown {
   display: flex;
@@ -53,6 +53,7 @@
     position: absolute;
     top: calc(100%);
     left: 0;
+    z-index: 400;
 
     animation: dropDown 0.5s ease forwards;
 
