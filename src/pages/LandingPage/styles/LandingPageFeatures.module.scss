@@ -3,8 +3,8 @@
 .LandingPageFeatures {
   display: flex;
   flex-direction: column;
-  // justify-content: center;
-  // align-items: center;  
+  justify-content: center;
+  align-items: center;  
 
   .section_heading{
     font-weight: 500;
@@ -54,13 +54,11 @@
     
     @include sm(){
       row-gap: pixRem(13.08);
-      padding: pixRem(15.3514) 20px;
-      background-color: red;
+     padding: pixRem(15.3514) 20px;
       width:100vw;
     }
 
     @include md(){
-      background-color: red;
       max-width: 900px;
       margin: 0 auto
    }
@@ -165,6 +163,7 @@
     gap: pixRem(126);
     justify-content: center;
     align-items: start;
+    width: 101%;
 
     display: flex;
     flex-direction: row;
@@ -185,9 +184,8 @@
     }
 
     .top_playerImg_container{
-      margin: pixRem(134) 0 pixRem(134) pixRem(48);
-      // padding: 0 0 pixRem(134) 0;
-      width: pixRem(800);
+      padding: pixRem(134) 0 pixRem(134) pixRem(48);
+      width: pixRem(544);
       height: pixRem(482);
 
       @include sm(){
@@ -256,6 +254,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     gap: pixRem(46);
+    width: 101%;
 
     @include sm(){
       background-image: url('../images/membership_sm_bg_design.png');
@@ -267,21 +266,21 @@
     }
 
     .membership_text_container{
-      margin: pixRem(150) 0 pixRem(132) 0;
+      padding: pixRem(150) 0 pixRem(132) 0;
       display: flex;
       order: 1;
       flex-direction: column;
       align-items: center;
-      width: 600px;
-      height: 477px;
       // background-color: red;
 
       @include sm(){
-        padding: 0;
+        padding: pixRem(0) 0 pixRem(0) 0;
+        width: 100vw;
         order: 2;
       }
 
       @include md(){
+        width: 100vw;
         padding: pixRem(0) pixRem(50);
         order: 2;
       }
