@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react";
 import { PlayerPageContext } from "../context/PlayersPageContext";
 import useApp from "../../../hooks/useApp";
 import { playerType } from "../../../types/PlayerType";
+import CustomDropdown from "../../../utils/CustomDropdown/CustomDropdown";
 
 type selectedPlayerTabType =
   | "All Players"
@@ -61,6 +62,14 @@ const PlayersPageNavbar = () => {
               </button>
             );
           })}
+        </div>
+        <div className={styles.Mobile_DropdownMenu}>
+          <CustomDropdown
+            defaultSelection={selectedPlayersTab}
+            possibleOptions={navItems}
+            customOnChange={setSelectedPlayersTab}
+            customDropdownTitle={"Positions"}
+          />
         </div>
       </section>
     </>

@@ -3,10 +3,6 @@ import { PlayerPageContext } from "../context/PlayersPageContext";
 import { useContext, useEffect, useState } from "react";
 import PlayerInfoCard from "../../../Components/PlayerInfoCard";
 import axios from "../../../api/axios";
-import Loader from "../Loader";
-import { dummyPlayers } from "../dummyPlayers";
-// import axios from "axios";
-import Notification from "../../../utils/Notifications";
 
 const PlayersList = () => {
   const {
@@ -18,61 +14,36 @@ const PlayersList = () => {
   } = useContext(PlayerPageContext);
 
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState(false);
-  const [openNotification, setOpenNotification] = useState(false);
+  const [error, setError] = useState<null | string>(null);
 
   function getSecondWord(str: string) {
     const words = str.split(" ");
-    return words[1];
+    const finalName = words.length < 2 ? str : words[1];
+    return finalName.charAt(0).toUpperCase() + finalName.slice(1);
   }
-
-  // useEffect(() => {
-  //   const dummyUseEffect = () => {
-  //     setAllPlayers(dummyPlayers);
-  //     setLoading(false);
-  //     setSuccess(true);
-  //     setError("");
-  //     setPlayersToDisplay(dummyPlayers);
-  //   };
-
-  //   dummyUseEffect();
-
-  //   const handlePageList = () => {
-  //     const totalPlayers = playersToDisplay.length;
-  //     setPaginationLimit(Math.floor(totalPlayers / 12) + 1);
-  //   };
-
-  //   handlePageList();
-  // });
 
   useEffect(() => {
     let isMounted = true;
     const controller = new AbortController();
+    setLoading(true);
 
     const getAllPlayers = async () => {
       try {
         const response = await axios.get("/players", {
           signal: controller.signal,
         });
-        setLoading(false);
-        setSuccess(true);
-        setError("");
-        setOpenNotification(false);
         isMounted && setAllPlayers(response.data);
         isMounted && setPlayersToDisplay(response.data);
         const playersListLength: number = response.data.length;
         setPaginationLimit(Math.floor(playersListLength / 12) + 1);
       } catch (error: any) {
-        setLoading(false);
-        setSuccess(false);
-        setOpenNotification(true);
         if (error && error.message) {
           setError(error.message);
         } else {
           setError("An error occurred.");
         }
-        console.log(error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -80,59 +51,43 @@ const PlayersList = () => {
 
     return () => {
       isMounted = false;
-      controller.abort();
+      isMounted && controller.abort();
     };
   }, []);
 
-  // useEffect(() => {
-  //   const getAllPlayers = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         "https://sunday-soccer-api.up.railway.app/players"
-  //       );
-  //       console.log(response.data);
-  //     } catch (error: any) {
-  //       console.log(error);
-  //     }
-  //   };
+  if (loading) {
+    return (
+      <div className={styles.PlayersList}>
+        <h2 className={styles.loading_text}>Loading...</h2>
+      </div>
+    );
+  }
 
-  //   getAllPlayers();
-  // }, []);
+  if (error) {
+    return (
+      <div className={styles.PlayersList}>
+        <h2 className={styles.error_text}>ServerSide Error</h2>
+      </div>
+    );
+  }
 
   return (
     <>
-      {!loading && !success ? (
-        <>
-          <Notification
-            setNotification={() => setOpenNotification}
-            notificationHeader="Server Error."
-            notificationBody="Our servers are not working right now. Try again later."
-            selfClosing={false}
-          />
-          <Loader />
-        </>
-      ) : (
-        <></>
-      )}
-      {loading ? (
-        <Loader />
-      ) : (
-        <section className={styles.PlayersList}>
-          {playersToDisplay
-            .slice(currentPage * 12 - 12, currentPage * 12)
-            .map((player) => {
-              return (
-                <PlayerInfoCard
-                  key={player.name}
-                  playerPosition={player.favoritePosition}
-                  playerText={player.playerQuote}
-                  playerName={getSecondWord(player.name)}
-                  playerSocials={player.socialMedia}
-                />
-              );
-            })}
-        </section>
-      )}
+      <section className={styles.PlayersList}>
+        {playersToDisplay
+          .slice(currentPage * 12 - 12, currentPage * 12)
+          .map((player) => {
+            return (
+              <PlayerInfoCard
+                key={player.name}
+                playerPosition={player.favoritePosition}
+                playerText={player.playerQuote}
+                playerName={getSecondWord(player.name)}
+                playerSocials={player.socialMedia}
+              />
+            );
+          })}
+      </section>
     </>
   );
 };
