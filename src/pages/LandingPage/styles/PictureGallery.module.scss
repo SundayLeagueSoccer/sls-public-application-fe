@@ -1,0 +1,63 @@
+@use "../../../assets/styles/" as *;
+
+.PictureGallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 40% 1fr;
+  column-gap: 10px;
+
+  .column_one,
+  .column_two,
+  .column_three {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    row-gap: 10px;
+  }
+
+  .column_one {
+    .image_container_one {
+      aspect-ratio: 3/4;
+      width: 100%;
+    }
+    .image_container_two {
+      aspect-ratio: 116/100;
+      width: 100%;
+    }
+  }
+
+  .column_two {
+    .image_container_three {
+      aspect-ratio: 4/5;
+      width: 100%;
+    }
+    .image_container_four {
+      aspect-ratio: 3/2;
+      width: 100%;
+    }
+  }
+
+  .column_three {
+    .image_container_five {
+      aspect-ratio: 6/5;
+      width: 100%;
+    }
+    .image_container_six {
+      aspect-ratio: 3/4;
+      width: 100%;
+    }
+  }
+
+  .image_container_one,
+  .image_container_two,
+  .image_container_three,
+  .image_container_four,
+  .image_container_five,
+  .image_container_six {
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

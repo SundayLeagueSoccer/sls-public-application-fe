@@ -3,11 +3,17 @@
 .darkLine {
   width: 100%;
   border-bottom: 1px #33363a solid;
+  @include sm() {
+    border-bottom: none;
+  }
 }
 
 .lightLine {
   width: 100%;
   border-bottom: 1px #eaecf0 solid;
+  @include sm() {
+    border-bottom: none;
+  }
 }
 
 .PlayersPageNavbar {
@@ -16,6 +22,9 @@
   grid-template-columns: 20% 20% 20% 20% 20%;
   justify-content: center;
   font-family: "Solway";
+  @include sm() {
+    display: none;
+  }
 
   button {
     border: none;
@@ -47,5 +56,13 @@
     color: $tertiary;
     border-bottom: 4px solid $tertiary;
     font-weight: 500;
+  }
+}
+
+.Mobile_DropdownMenu {
+  display: none;
+  @include sm() {
+    display: block;
+    width: 100%;
   }
 }

@@ -1,17 +1,21 @@
 import { useEffect, useRef, useState } from "react";
-import styles from "../styles/CustomDropdown.module.scss";
-import useApp from "../../../hooks/useApp";
+import styles from "./CustomDropdown.module.scss";
+import dropdown_icon_opened from "./images/dropdown_icon_opened.png";
+import dropdown_icon_closed from "./images/dropdown_icon_closed.png";
+import useApp from "../../hooks/useApp";
 
 type CustomDropdownProps = {
   defaultSelection: string;
-  possibleOptions: string[];
-  customOnChange: React.Dispatch<React.SetStateAction<string>>;
+  possibleOptions: any[];
+  customOnChange: React.Dispatch<React.SetStateAction<any>>;
+  customDropdownTitle?: string;
 };
 
 const CustomDropdown = ({
   defaultSelection,
   possibleOptions,
   customOnChange,
+  customDropdownTitle = "",
 }: CustomDropdownProps) => {
   const { darkMode } = useApp();
 
@@ -21,7 +25,7 @@ const CustomDropdown = ({
   let optionRef = useRef<HTMLDivElement>(null);
 
   const Options_Style = {
-    background: darkMode ? "#001530" : "#fbfbfb",
+    background: darkMode ? "#001128" : "#efefef",
   };
 
   const updateSelection = (choice: string) => {
@@ -83,8 +87,18 @@ const CustomDropdown = ({
           onClick={() => setOpenOptions(!openOptions)}
           ref={selectionRef}
         >
-          <p className={styles.season_text}>Season</p>
-          <p className={styles.selected_option}>{selectedChoice}</p>
+          <div className={styles.text_header}>
+            {customDropdownTitle?.length > 0 ? (
+              <p className={styles.season_text}>{customDropdownTitle}</p>
+            ) : (
+              <></>
+            )}
+            <p className={styles.selected_option}>{selectedChoice}</p>
+          </div>
+          <img
+            src={openOptions ? dropdown_icon_opened : dropdown_icon_closed}
+            alt="dropdown icon"
+          />
         </div>
         {openOptions ? (
           <div className={styles.Options} style={Options_Style}>

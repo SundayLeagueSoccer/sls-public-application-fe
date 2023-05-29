@@ -18,6 +18,7 @@ const AwardsPage = lazy(() => import("./pages/AwardsPage/"));
 const PlayersPage = lazy(() => import("./pages/PlayersPage/"));
 const StatisticsPage = lazy(() => import("./pages/StatisticsPage/"));
 const AboutPage = lazy(() => import("./pages/AboutPage/"));
+const DevelopmentTeamPage = lazy(() => import("./pages/DevelopmentTeamPage/"));
 
 const App = () => {
   const location = useLocation();
@@ -35,6 +36,10 @@ const App = () => {
               <Route path="/players" element={<PlayersPage />} />
               <Route path="/statistics" element={<StatisticsPage />} />
               <Route path="/about-us" element={<AboutPage />} />
+              <Route
+                path="/development-team"
+                element={<DevelopmentTeamPage />}
+              />
             </Route>
           </Routes>
         </AnimatePresence>

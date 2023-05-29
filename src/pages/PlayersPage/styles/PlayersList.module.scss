@@ -5,8 +5,10 @@
   min-height: pixRem(1280);
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
+  grid-auto-rows: minmax(200px, auto);
   row-gap: 24px;
   justify-items: center;
+  // align-items: start;
   padding: pixRem(42) 0 pixRem(100) 0;
 
   @include md() {
@@ -18,5 +20,32 @@
     grid-template-columns: 100%;
     justify-items: center;
     min-height: pixRem(920);
+    padding: pixRem(42) 0 pixRem(40) 0;
+  }
+}
+
+.loading_text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 170%;
+
+  @include md() {
+    font-size: 16px;
+  }
+
+  text-align: center;
+  animation-name: load_in_out;
+  animation-duration: 1.2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.error_text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 170%;
+  text-align: center;
+  @include md() {
+    font-size: 16px;
   }
 }

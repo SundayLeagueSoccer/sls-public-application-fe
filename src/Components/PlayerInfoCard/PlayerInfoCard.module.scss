@@ -53,7 +53,12 @@
       .PlayerCard_details_info {
         row-gap: 7px;
 
-        h4,
+        h4 {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 16px;
+        }
+
         p {
           font-weight: 400;
           font-size: 12px;

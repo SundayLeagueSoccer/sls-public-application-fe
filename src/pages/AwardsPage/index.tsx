@@ -1,14 +1,13 @@
 import styles from "./AwardsPage.module.scss";
 import AnimatedFadeInPage from "../../utils/AnimatedFadeInPage";
+import ComingSoonLayout from "../../utils/ComingSoonLayout";
 
 const AwardsPage = () => {
   return (
     <>
       <AnimatedFadeInPage>
         <main className={styles.AwardsPage}>
-          <h1>AwardPage</h1>
-          <p>Awards</p>
-          <p>Awards333</p>
+          <ComingSoonLayout headerText="We are tirelessly working on this feature." />
         </main>
       </AnimatedFadeInPage>
     </>

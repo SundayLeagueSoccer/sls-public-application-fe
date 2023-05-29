@@ -6,6 +6,7 @@ type AppContextProviderProps = {
 
 type AppContextType = {
   mobileNavbarOpen: boolean;
+  setMobileNavbarOpen: React.Dispatch<React.SetStateAction<boolean>>;
   toggleTheme: () => void;
   darkMode: boolean;
   toggleMobileNavbar: () => void;
@@ -53,6 +54,7 @@ export const AppContextProvider = ({ children }: AppContextProviderProps) => {
     <AppContext.Provider
       value={{
         mobileNavbarOpen,
+        setMobileNavbarOpen,
         toggleTheme,
         darkMode,
         toggleMobileNavbar,

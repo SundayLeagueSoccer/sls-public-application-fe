@@ -6,7 +6,7 @@ import useApp from "../../hooks/useApp";
 import { useEffect } from "react";
 
 const PublicPageLayout = () => {
-  const { darkMode } = useApp();
+  const { darkMode, setMobileNavbarOpen } = useApp();
 
   useEffect(() => {
     window.scrollTo({
@@ -14,6 +14,8 @@ const PublicPageLayout = () => {
       left: 0,
       behavior: "smooth",
     });
+
+    setMobileNavbarOpen(false);
   }, []);
 
   return (
@@ -27,7 +29,9 @@ const PublicPageLayout = () => {
               </div>
             </div>
             <div className={styles.Outlet_container}>
-              <Outlet />
+              <div className={styles.Outlet_Child_Container}>
+                <Outlet />
+              </div>
             </div>
             <Footer />
           </section>
