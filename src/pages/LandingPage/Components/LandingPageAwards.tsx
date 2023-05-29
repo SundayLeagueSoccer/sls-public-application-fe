@@ -3,6 +3,7 @@ import styles from "../styles/LandingPageAwards.module.scss";
 import firstIcon from "../images/team_icon.png";
 import secondIcon from "../images/player icon.png";
 import AwardImage from "../images/landing_page_award_image.png";
+import useApp from "../../../hooks/useApp";
 
 type cardItemProp = {
   icon: string;
@@ -12,8 +13,15 @@ type cardItemProp = {
 
 // CARD ITEM COMPONENT
 const CardItem = ({ icon, mainText, secondaryText }: cardItemProp) => {
+  const { darkMode } = useApp();
+  const cardItemStyles = {
+    boxShadow: darkMode
+      ? "0px 2px 4px rgba(255, 255, 255, 0.1)"
+      : " 0px 2px 4px rgba(0, 0, 0, 0.1)",
+  };
+
   return (
-    <div className={styles.cardItem}>
+    <div className={styles.cardItem} style={cardItemStyles}>
       <img src={icon} alt="sls team of the season icon" />
       <div className={styles.cardItem_textContent}>
         <h6>{mainText}</h6>
@@ -27,12 +35,11 @@ const LandingPageAwards = () => {
   return (
     <>
       <section className={styles.LandingPageAwards}>
-
         {/* LEFT SIDE DESKTOP IMAGE */}
         <div className={styles.image_container}>
           <img src={AwardImage} alt="sls team of the season" />
         </div>
-        
+
         {/* RIGHT SIDE TEXT CONTENT */}
         <div className={styles.text_container}>
           <div>
@@ -43,14 +50,14 @@ const LandingPageAwards = () => {
               monthly awards given out to members with excellent performances.
             </p>
           </div>
-         
-         {/* MOBILE IMAGE */}
+
+          {/* MOBILE IMAGE */}
           <img
             className={styles.mobile_image}
             src={AwardImage}
             alt="sls team of the season"
           />
-          
+
           {/* CARD ITEMS */}
           <div className={styles.card_item_container}>
             <CardItem
