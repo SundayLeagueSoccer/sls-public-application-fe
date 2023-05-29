@@ -54,6 +54,7 @@
     }
 
     @include sm() {
+      width: 100%;
       padding: pixRem(56) 0;
       row-gap: pixRem(26);
     }
