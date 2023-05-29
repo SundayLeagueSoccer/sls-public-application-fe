@@ -4,11 +4,11 @@
   width: 100%;
   padding: pixRem(100) pixRem(120);
 
-  @include md(){
+  @include md() {
     padding: pixRem(65) pixRem(72);
   }
 
-  @include sm(){
+  @include sm() {
     padding: pixRem(50) pixRem(18);
   }
 
@@ -38,7 +38,7 @@
       }
     }
 
-    h1{
+    h1 {
       @include md() {
       }
 
@@ -50,12 +50,10 @@
       }
     }
     span {
-
-      @include md(){
-
+      @include md() {
       }
 
-      @include sm(){
+      @include sm() {
         color: $secondary;
       }
     }
@@ -63,6 +61,8 @@
 
   .AboutHistory_Content {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     column-gap: pixRem(20);
 
     @include md() {
@@ -87,7 +87,6 @@
       }
 
       .Left_Header {
-
         @include md() {
           display: flex;
           flex-direction: column;
@@ -107,7 +106,7 @@
           color: $darkModeFontSecondary;
           line-height: pixRem(60);
 
-          @include md(){
+          @include md() {
             font-style: normal;
             font-weight: 400;
             font-size: pixRem(18);
@@ -122,7 +121,7 @@
           line-height: pixRem(60);
           color: $darkModeFontSecondary;
 
-          @include md(){
+          @include md() {
             font-style: normal;
             font-weight: 400;
             font-size: pixRem(24);
@@ -133,7 +132,7 @@
         span {
           color: $secondary;
 
-          @include md(){
+          @include md() {
             color: $secondary;
           }
         }
@@ -207,7 +206,6 @@
             color: $darkModeFontSecondary;
 
             @include md() {
-             
             }
 
             @include sm() {
@@ -261,7 +259,7 @@
     }
 
     .AboutHistory_Right {
-      width: 50%;
+      width: 40%;
       display: flex;
       flex-direction: column;
       row-gap: pixRem(10);

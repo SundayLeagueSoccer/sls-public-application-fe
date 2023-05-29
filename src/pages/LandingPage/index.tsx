@@ -1,4 +1,6 @@
 import styles from "./LandingPage.module.scss";
+import { Link } from "react-router-dom";
+import dev_team_icon from "./images/dev_icon.png";
 import AnimatedFadeInPage from "../../utils/AnimatedFadeInPage";
 import LandingPageHero from "./Components/LandingPageHero";
 import LandingPageCountDown from "./Components/LandingPageCountDown";
@@ -22,6 +24,14 @@ const LandingPage = () => {
           <LandingPageAwards />
           <LandingPageBecomeMember />
           <LandingPageGallery />
+          <Link
+            to={"/development-team"}
+            className={styles.dev_team_btn}
+            tabIndex={0}
+          >
+            {/* <h4>View Development Team</h4> */}
+            <img src={dev_team_icon} alt="deveveloper team icon" />
+          </Link>
         </main>
       </AnimatedFadeInPage>
     </>

@@ -1,25 +1,50 @@
 import styles from "../styles/PictureGallery.module.scss";
-import image_one from "../images/Rectangle 4593.png";
-import image_two from "../images/Rectangle 4596.png";
-import image_three from "../images/Rectangle 4599.png";
 
-const PictureGallery = () => {
+type PictureGalleryProps = {
+  image_one: string;
+  image_two: string;
+  image_three: string;
+  image_four: string;
+  image_five: string;
+  image_six: string;
+  general_image_alt: string;
+};
+
+const PictureGallery = ({
+  image_one,
+  image_two,
+  image_three,
+  image_four,
+  image_five,
+  image_six,
+  general_image_alt,
+}: PictureGalleryProps) => {
   return (
     <>
       <div className={styles.PictureGallery}>
         <div className={styles.column_one}>
           <div className={styles.image_container_one}>
-            <img src={image_one} alt="" />
+            <img src={image_one} alt={general_image_alt} />
           </div>
-          <div className={styles.image_container_two}></div>
+          <div className={styles.image_container_two}>
+            <img src={image_two} alt={general_image_alt} />
+          </div>
         </div>
         <div className={styles.column_two}>
-          <div className={styles.image_container_three}></div>
-          <div className={styles.image_container_four}></div>
+          <div className={styles.image_container_three}>
+            <img src={image_three} alt={general_image_alt} />
+          </div>
+          <div className={styles.image_container_four}>
+            <img src={image_four} alt={general_image_alt} />
+          </div>
         </div>
         <div className={styles.column_three}>
-          <div className={styles.image_container_five}></div>
-          <div className={styles.image_container_six}></div>
+          <div className={styles.image_container_five}>
+            <img src={image_five} alt={general_image_alt} />
+          </div>
+          <div className={styles.image_container_six}>
+            <img src={image_six} alt={general_image_alt} />
+          </div>
         </div>
       </div>
     </>

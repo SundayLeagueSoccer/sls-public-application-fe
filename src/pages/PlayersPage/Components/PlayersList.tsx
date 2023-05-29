@@ -55,6 +55,14 @@ const PlayersList = () => {
     };
   }, []);
 
+  if (playersToDisplay.length < 1) {
+    return (
+      <div className={styles.PlayersList}>
+        <h2 className={styles.loading_text}>No Players match the criteria</h2>
+      </div>
+    );
+  }
+
   if (loading) {
     return (
       <div className={styles.PlayersList}>

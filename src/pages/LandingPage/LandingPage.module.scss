@@ -8,7 +8,70 @@
   height: auto;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   @include sm() {
+  }
+
+  .dev_team_btn {
+    position: fixed;
+    bottom: 5vh;
+    right: 5vw;
+
+    width: 70px;
+    height: 70px;
+
+    background-color: rgba(0, 21, 48, 0.2);
+    border: 1px solid rgba(0, 20, 45, 0.2);
+    border-radius: 50%;
+    z-index: 999;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0.8;
+    transition: ease all 0.5s;
+
+    @include sm() {
+      width: 60px;
+      height: 60px;
+    }
+
+    img {
+      width: 50%;
+      height: auto;
+      @include sm() {
+        width: 50%;
+      }
+    }
+  }
+
+  .dev_team_btn_hover {
+    position: fixed;
+    bottom: 5vh;
+    right: 5vw;
+
+    width: 180px;
+    height: 70px;
+
+    background-color: rgba(0, 21, 48, 0.2);
+    border: 1px solid rgba(0, 20, 45, 0.2);
+    border-radius: 25%;
+    z-index: 9999;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    opacity: 0.8;
+    transition: ease all 0.5s;
+
+    @include sm() {
+      width: 60px;
+      height: 60px;
+    }
   }
 }
