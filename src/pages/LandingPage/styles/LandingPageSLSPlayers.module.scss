@@ -13,7 +13,7 @@
 
   width: 100%;
   @include md() {
-    padding: pixRem(80) pixRem(60) pixRem(0) pixRem(60);
+    padding: pixRem(80) pixRem(40) pixRem(0) pixRem(40);
     row-gap: pixRem(48);
   }
   @include sm() {
@@ -78,12 +78,9 @@
 
   .playersCards {
     display: flex;
-    width: 90%;
+    width: 100%;
     justify-content: space-between;
 
-    @include md() {
-      width: 100%;
-    }
     @include sm() {
       flex-direction: column;
       justify-content: center;
