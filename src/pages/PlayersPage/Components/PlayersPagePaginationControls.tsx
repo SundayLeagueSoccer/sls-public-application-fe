@@ -33,9 +33,6 @@ const PlayersPagePaginationControls = () => {
     }
   };
 
-  console.log(currentPage);
-  console.log(paginationLimit);
-
   return (
     <>
       <section className={styles.PaginationControls}>

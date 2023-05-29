@@ -17,12 +17,10 @@
 
   .column_one {
     .image_container_one {
-      border: 1px green solid;
-      aspect-ratio: 75/100;
+      aspect-ratio: 3/4;
       width: 100%;
     }
     .image_container_two {
-      border: 1px peru solid;
       aspect-ratio: 116/100;
       width: 100%;
     }
@@ -30,26 +28,22 @@
 
   .column_two {
     .image_container_three {
-      border: 1px green solid;
-      aspect-ratio: 80/100;
+      aspect-ratio: 4/5;
       width: 100%;
     }
     .image_container_four {
-      border: 1px peru solid;
-      aspect-ratio: 15/10;
+      aspect-ratio: 3/2;
       width: 100%;
     }
   }
 
   .column_three {
     .image_container_five {
-      border: 1px green solid;
-      aspect-ratio: 12/10;
+      aspect-ratio: 6/5;
       width: 100%;
     }
     .image_container_six {
-      border: 1px peru solid;
-      aspect-ratio: 75/100;
+      aspect-ratio: 3/4;
       width: 100%;
     }
   }
@@ -60,6 +54,7 @@
   .image_container_four,
   .image_container_five,
   .image_container_six {
+    overflow: hidden;
     img {
       width: 100%;
       height: auto;

@@ -2,8 +2,8 @@ import { playerType } from "../../../types/PlayerType";
 
 export const playersData: playerType[] = [
   {
-    name: "Sanni Yusuf",
-    alias: "Buch",
+    name: "Esedere Oghenetega",
+    alias: "Tega",
     playerQuote: "Get your head in the game",
     positions: ["RW", "DM", "FWD"],
     favoritePosition: "Goal Keeper",
@@ -28,9 +28,9 @@ export const playersData: playerType[] = [
     },
   },
   {
-    name: "Qudus Ibrahim",
-    alias: "Buch",
-    playerQuote: "Get your head in the game",
+    name: "Dimieji Victor",
+    alias: "IQ",
+    playerQuote: "Only here for the fun and goals.",
     positions: ["RW", "DM", "FWD"],
     favoritePosition: "Defender",
     image: { public_id: "No Image", url: "No Image" },
@@ -54,9 +54,9 @@ export const playersData: playerType[] = [
     },
   },
   {
-    name: "Qudus Ibrahim",
-    alias: "Buch",
-    playerQuote: "Get your head in the game",
+    name: "Omoleye Jordan",
+    alias: "Jordan",
+    playerQuote: "Time your tackles to perfection.",
     positions: ["RW", "DM", "FWD"],
     favoritePosition: "Midfielder",
     image: { public_id: "No Image", url: "No Image" },
@@ -80,9 +80,9 @@ export const playersData: playerType[] = [
     },
   },
   {
-    name: "Qudus Ibrahim",
-    alias: "Buch",
-    playerQuote: "Get your head in the game",
+    name: "Noah Owotori",
+    alias: "Noah",
+    playerQuote: "Off to the top.",
     positions: ["RW", "DM", "FWD"],
     favoritePosition: "Forward",
     image: { public_id: "No Image", url: "No Image" },
