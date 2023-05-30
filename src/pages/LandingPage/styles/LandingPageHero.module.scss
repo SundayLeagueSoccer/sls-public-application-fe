@@ -14,13 +14,6 @@
   @include md() {
     padding: 0 pixRem(72);
   }
-  @include sm() {
-    background-image: url("../images/bg_hero_mobile.svg");
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: pixRem(56) pixRem(18) pixRem(42) pixRem(18);
-  }
 
   .left {
     display: flex;
@@ -82,7 +75,6 @@
       .sls_history {
         padding: 14px 0;
         width: 192px;
-        background: none;
         border-radius: 8px;
         border: 1px solid $tertiary;
         font-family: "Solway";
@@ -110,7 +102,7 @@
 
       .players_stats:hover {
         color: white;
-        background-color: $tertiary;
+        background-color: $tertiary !important;
       }
 
       .sls_history:hover {
@@ -157,7 +149,6 @@
 
       .players_stats,
       .sls_history {
-        background: none;
         border: 1px solid $tertiary;
         font-family: "Solway";
         font-weight: 700;

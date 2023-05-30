@@ -139,7 +139,6 @@
   .text_container_sm_screen{
     display: none;
 
-
      @include sm(){
        display: block;
        padding: pixRem(80) 0 0;
@@ -173,7 +172,7 @@
       background-image: url('../images/top_player_mobie_bg_design.png');
       gap: pixRem(32);
       display: flex;
-       flex-direction: column;
+      flex-direction: column;
     }
 
     @include md(){
@@ -219,7 +218,6 @@
           width: 100%;
           height: 100%;
           margin: 0 auto;
-
           }
       }
     }
@@ -234,8 +232,7 @@
 
       @include sm(){
         padding: 0;
-      }
-      
+      }      
 
       @include md(){
         padding: pixRem(0) pixRem(50);
