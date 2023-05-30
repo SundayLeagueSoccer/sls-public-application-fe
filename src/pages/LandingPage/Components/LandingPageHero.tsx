@@ -10,20 +10,30 @@ const LandingPageHero = () => {
   const playerStats_btn_styles = {
     backgroundColor: darkMode ? "#001530" : "#fbfbfb",
   };
+
   return (
     <>
       <section className={styles.LandingPageHero}>
         <div className={styles.left}>
-          <h1>
+          <h1 data-aos="fade-up" data-aos-duration="1000">
             Welcome to the Home of <span>Champs</span>{" "}
           </h1>
           <div>
-            <h4>
+            <h4
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="800"
+            >
               Don’t miss the chance to train with the best. Game on Champions!
             </h4>
             {/* <h4>Game on Champions!</h4> */}
           </div>
-          <div className={styles.hero_buttons}>
+          <div
+            className={styles.hero_buttons}
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="1400"
+          >
             <Link
               to={"/statistics"}
               style={playerStats_btn_styles}
@@ -40,11 +50,16 @@ const LandingPageHero = () => {
           src={hero_image_desktop}
           alt="A picture Illustration of an avatar kicking a ball"
           className={styles.hero_image}
+          data-aos="fade-up"
+          data-aos-duration="1000"
         />
         <img
           src={hero_image_mobile}
           alt="A picture Illustration of an avatar kicking a ball"
           className={styles.mobile_hero_image}
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="1400"
         />
         <div className={styles.mobile_hero_buttons}>
           <Link
