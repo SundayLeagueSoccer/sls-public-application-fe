@@ -14,7 +14,10 @@
   @include md() {
     padding: 0 pixRem(72);
   }
+<<<<<<< HEAD
   
+=======
+>>>>>>> f15381f371ee10738faa5f762b7474d04e55afdf
 
   .left {
     display: flex;
@@ -76,7 +79,6 @@
       .sls_history {
         padding: 14px 0;
         width: 192px;
-        background: none;
         border-radius: 8px;
         border: 1px solid $tertiary;
         font-family: "Solway";
@@ -104,7 +106,7 @@
 
       .players_stats:hover {
         color: white;
-        background-color: $tertiary;
+        background-color: $tertiary !important;
       }
 
       .sls_history:hover {
@@ -151,7 +153,6 @@
 
       .players_stats,
       .sls_history {
-        background: none;
         border: 1px solid $tertiary;
         font-family: "Solway";
         font-weight: 700;

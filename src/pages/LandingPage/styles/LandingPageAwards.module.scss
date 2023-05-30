@@ -9,6 +9,7 @@
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   @include md() {
     padding: 0 pixRem(72);
@@ -21,10 +22,10 @@
   }
 
   .image_container {
-    padding-top: pixRem(239);
-    width: 50%;
+    // padding-top: pixRem(239);
+    width: 40%;
     height: auto;
-    
+
     @include md() {
       width: 40%;
     }
@@ -45,7 +46,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    row-gap: pix(45);
+    row-gap: pixRem(45);
 
     @include md() {
       width: 60%;
@@ -86,6 +87,7 @@
       letter-spacing: -0.3333333432674408px;
       text-align: left;
       color: $fontGrey;
+      font-family: "Sora" sans-serif !important;
 
       @include md() {
         font-size: pixRem(17);
@@ -118,10 +120,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 36px 35px;
-        gap: 37px;
+        padding: 36px 28px;
+        column-gap: 37px;
 
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        // box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
         border-radius: 20px;
 
         @include md() {

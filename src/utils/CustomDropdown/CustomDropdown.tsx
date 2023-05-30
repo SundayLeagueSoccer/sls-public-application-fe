@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./CustomDropdown.module.scss";
+import dropdown_icon_opened from "./images/dropdown_icon_opened.png";
+import dropdown_icon_closed from "./images/dropdown_icon_closed.png";
 import useApp from "../../hooks/useApp";
 
 type CustomDropdownProps = {
@@ -85,12 +87,18 @@ const CustomDropdown = ({
           onClick={() => setOpenOptions(!openOptions)}
           ref={selectionRef}
         >
-          {customDropdownTitle?.length > 0 ? (
-            <p className={styles.season_text}>{customDropdownTitle}</p>
-          ) : (
-            <></>
-          )}
-          <p className={styles.selected_option}>{selectedChoice}</p>
+          <div className={styles.text_header}>
+            {customDropdownTitle?.length > 0 ? (
+              <p className={styles.season_text}>{customDropdownTitle}</p>
+            ) : (
+              <></>
+            )}
+            <p className={styles.selected_option}>{selectedChoice}</p>
+          </div>
+          <img
+            src={openOptions ? dropdown_icon_opened : dropdown_icon_closed}
+            alt="dropdown icon"
+          />
         </div>
         {openOptions ? (
           <div className={styles.Options} style={Options_Style}>

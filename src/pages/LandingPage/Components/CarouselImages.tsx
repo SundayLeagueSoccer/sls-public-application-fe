@@ -1,14 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "../styles/CarouselImages.module.scss";
-import test from "../images/test01.png";
-import test1 from "../images/military_flares-wallpaper-1920x1080.jpg";
-import test2 from "../images/vintage_car_hd-wallpaper-1920x1080.jpg";
-import test3 from "../images/sniper_rifle_2-wallpaper-1920x1080.jpg";
 import next_icon from "../images/next_icon.png";
 import previous_icon from "../images/previous_icon.png";
 
+//images for carousel
+import image_one from "../images/Carousel_images/image_one.jpg";
+import image_two from "../images/Carousel_images/image_two.jpg";
+import image_three from "../images/Carousel_images/image_three.jpg";
+import image_four from "../images/Carousel_images/image_four.jpg";
+import image_five from "../images/Carousel_images/image_five.jpg";
+
 const CarouselImages = () => {
-  const images = [test, test1, test2, test3];
+  const images = [image_one, image_two, image_three, image_four, image_five];
   const [width, setWidth] = useState<number>(0);
   const [distance, setDistance] = useState<number>(0);
   const [counter, setCounter] = useState<number>(0);
@@ -47,7 +50,7 @@ const CarouselImages = () => {
     if (timerRef.current) clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
       goToNext();
-    }, 2000);
+    }, 3000);
 
     return () => clearTimeout(timerRef.current);
   });
@@ -70,6 +73,7 @@ const CarouselImages = () => {
               />
               <img src={images[2]} alt="Players at SLS playing together." />
               <img src={images[3]} alt="Players at SLS playing together." />
+              <img src={images[4]} alt="Players at SLS playing together." />
             </div>
           </div>
         </div>
