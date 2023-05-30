@@ -7,27 +7,45 @@ const AboutHistory = () => {
     <>
       <section className={styles.AboutHistory}>
         <div className={styles.Mobile_Header}>
-          <h3>Our History</h3>
-          <h1>
+          <h3 data-aos="fade-up" data-aos-duration="800">
+            Our History
+          </h3>
+          <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
             <span>SLS</span> WAS ESTABLISHED IN 2021
           </h1>
         </div>
         <div className={styles.AboutHistory_Content}>
           <div className={styles.AboutHistory_Left}>
             <div className={styles.Left_Header}>
-              <h3>Our History</h3>
-              <h1>
+              <h3 data-aos="fade-up" data-aos-duration="800">
+                Our History
+              </h3>
+              <h1
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay="300"
+              >
                 <span>SLS</span> WAS ESTABLISHED IN 2021
               </h1>
             </div>
             <div className={styles.Left_Capital}>
-              <div className={styles.Left_Capital_Left}>
-                <h1>
+              <div
+                className={styles.Left_Capital_Left}
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay="500"
+              >
+                <h2>
                   02<span>+</span>
-                </h1>
+                </h2>
                 <p>years of gaming </p>
               </div>
-              <div className={styles.Left_Capital_Right}>
+              <div
+                className={styles.Left_Capital_Right}
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay="500"
+              >
                 <span>
                   spawned in 2021 in response to the effects & aftermath of the
                   COVID-19 lockdown, where obesity, physical unfitness & lack of
@@ -35,7 +53,7 @@ const AboutHistory = () => {
                 </span>
               </div>
             </div>
-            <p>
+            <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
               We all agreed that we needed to break out of our boring routines
               and kick-start some excitement by playing football together on
               Sundays. It's the one day of the week when we can forget about our
@@ -47,7 +65,12 @@ const AboutHistory = () => {
           </div>
           <div className={styles.AboutHistory_Right}>
             <CarouselImages />
-            <div className={styles.ImageUnderCarousel}>
+            <div
+              className={styles.ImageUnderCarousel}
+              data-aos="fade-up"
+              data-aos-duration="800"
+              data-aos-delay="500"
+            >
               <img src={OurHistoryPictureTwo} alt="OurHistoryPicture" />
             </div>
           </div>

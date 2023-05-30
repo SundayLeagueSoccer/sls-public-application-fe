@@ -140,8 +140,11 @@
 
       .Left_Capital {
         display: flex;
+        align-items: center;
+        justify-content: space-around;
         column-gap: pixRem(30);
         margin-top: pixRem(10);
+        margin-bottom: pixRem(50);
 
         @include md() {
           column-gap: pixRem(20);
@@ -151,6 +154,7 @@
         @include sm() {
           column-gap: pixRem(20);
           align-items: center;
+          margin-bottom: pixRem(35);
         }
 
         .Left_Capital_Left {
@@ -162,7 +166,7 @@
           @include sm() {
           }
 
-          h1 {
+          h2 {
             display: flex;
             align-items: center;
             font-style: normal;

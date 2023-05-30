@@ -1,6 +1,8 @@
-import { lazy } from "react";
+import { lazy, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 //Layout
 import PublicPageLayout from "./utils/PubilcPageLayout";
@@ -22,6 +24,11 @@ const DevelopmentTeamPage = lazy(() => import("./pages/DevelopmentTeamPage/"));
 
 const App = () => {
   const location = useLocation();
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
       <AppContextProvider>
