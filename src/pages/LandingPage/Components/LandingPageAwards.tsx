@@ -39,7 +39,6 @@ const LandingPageAwards = () => {
         <div className={styles.image_container}>
           <img src={AwardImage} alt="sls team of the season" />
         </div>
-
         {/* RIGHT SIDE TEXT CONTENT */}
         <div className={styles.text_container}>
           <div>
@@ -57,7 +56,6 @@ const LandingPageAwards = () => {
             src={AwardImage}
             alt="sls team of the season"
           />
-
           {/* CARD ITEMS */}
           <div className={styles.card_item_container}>
             <CardItem

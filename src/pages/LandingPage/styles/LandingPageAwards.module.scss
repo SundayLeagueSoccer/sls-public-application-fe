@@ -22,7 +22,6 @@
   }
 
   .image_container {
-    // padding-top: pixRem(239);
     width: 40%;
     height: auto;
 
@@ -65,16 +64,17 @@
       font-weight: 500;
       line-height: 43px;
       letter-spacing: -0.3333333432674408px;
-      text-align: left;
+      text-align: start;
       color: $fontGrey;
 
       @include md() {
         font-size: pixRem(20);
-        // text-align: center;
+        line-height: pixRem(24);
       }
 
       @include sm() {
         font-size: pixRem(20);
+        line-height: pixRem(24);
         text-align: center;
       }
     }
@@ -90,7 +90,7 @@
       font-family: "Sora" sans-serif !important;
 
       @include md() {
-        font-size: pixRem(17);
+        font-size: pixRem(16);
         line-height: 27px;
       }
 
@@ -123,7 +123,6 @@
         padding: 36px 28px;
         column-gap: 37px;
 
-        // box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
         border-radius: 20px;
 
         @include md() {
@@ -162,33 +161,32 @@
           font-weight: 500;
           font-size: pixRem(20);
           line-height: pixRem(24);
-          letter-spacing: 0.666667px;
+          // letter-spacing: 0.666667px;
           color: $fontGrey;
 
           @include sm() {
             font-weight: 500;
             font-size: pixRem(12);
-            line-height: pixRem(24);
+            line-height: pixRem(14);
             letter-spacing: 0.666667px;
             color: $fontGrey;
           }
         }
 
         p {
-          padding-top: pixRem(15.5);
           font-weight: 400;
-          font-size: 14px;
-          line-height: pixRem(24.4);
-          letter-spacing: -0.333333px;
-          text-align: start;
+          font-size: pixRem(14);
+          line-height: pixRem(22);
+          letter-spacing: pixRem(-0.333333);
+          padding-top: pixRem(15.5);
+          color: $fontGrey;
 
           @include sm() {
-            font-weight: 400;
-            padding-top: pixRem(8.46);
-            font-size: pixRem(8);
-            line-height: pixRem(12.8);
-            letter-spacing: -0.333333px;
             text-align: start;
+            font-size: pixRem(8);
+            line-height: pixRem(13);
+            padding-top: pixRem(8.42);
+            letter-spacing: pixRem(-0.189524);
           }
         }
       }
