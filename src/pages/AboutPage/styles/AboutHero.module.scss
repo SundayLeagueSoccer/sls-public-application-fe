@@ -14,6 +14,7 @@
   padding: pixRem(88) pixRem(120);
   text-align: center;
   row-gap: 24px;
+  
 
   @include md() {
     padding: pixRem(32) pixRem(72);
