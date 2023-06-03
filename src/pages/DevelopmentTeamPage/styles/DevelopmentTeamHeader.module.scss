@@ -1,5 +1,116 @@
 @use "../../../assets/styles/" as *;
 
 .DevelopmentTeamHeader {
+  width: 100%;
+  background-image: url("../images/header_image.png");
+  background-size: cover;
+  background-position: center;
+  padding: pixRem(58) pixRem(120) pixRem(100);
+  gap: pixRem(24);
+
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include md() {
+    padding: pixRem(32) pixRem(72);
+    row-gap: 18px;
+  }
+  @include sm() {
+    padding: pixRem(52) pixRem(18) pixRem(80) pixRem(18);
+    row-gap: 17px;
+  }
+
+  .close_button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    // top: 5vh; 
+    top: 100px;
+    right: 5vw;
+    cursor: pointer;
+
+    @include sm() {
+      top: 80px;
+      width: 60px;
+      height: 60px;
+    }
+
+    img {
+      width: 50%;
+      height: auto;
+      @include sm() {
+        width: 50%;
+      }
+    }
+  }
+
+  .heading_text_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 16px;
+    padding: 0 pixRem(120);
+
+    @include sm() {
+      padding: 0;
+    }
+
+    .subheading {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 24px;
+      color: $extended;
+
+      @include md() {
+        font-size: 16px;
+      }
+
+      @include sm() {
+        text-align: center;
+        font-size: 16px;
+      }
+    }
+
+    .heading {
+      font-weight: 500;
+      font-size: 48px;
+      line-height: 60px;
+      text-align: center;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+
+      @include md() {
+        font-size: 32px;
+      }
+
+      @include sm() {
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 120%;
+      }
+    }
+  }
+
+  .supporting_text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+
+    @include md() {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    @include sm() {
+      font-size: 18px;
+    }
+  }
 }

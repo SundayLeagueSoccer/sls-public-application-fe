@@ -122,7 +122,6 @@
         align-items: center;
         padding: 36px 28px;
         column-gap: 37px;
-
         border-radius: 20px;
 
         @include md() {
@@ -161,15 +160,18 @@
           font-weight: 500;
           font-size: pixRem(20);
           line-height: pixRem(24);
-          // letter-spacing: 0.666667px;
           color: $fontGrey;
 
-          @include sm() {
-            font-weight: 500;
+          @include md() {
             font-size: pixRem(12);
             line-height: pixRem(14);
-            letter-spacing: 0.666667px;
-            color: $fontGrey;
+            letter-spacing: pixRem(0.379048);
+          }
+
+          @include sm() {
+            font-size: pixRem(12);
+            line-height: pixRem(14);
+            letter-spacing: pixRem(0.379048);
           }
         }
 
@@ -180,6 +182,14 @@
           letter-spacing: pixRem(-0.333333);
           padding-top: pixRem(15.5);
           color: $fontGrey;
+
+          @include md() {
+            text-align: start;
+            font-size: pixRem(8);
+            line-height: pixRem(13);
+            padding-top: pixRem(8.42);
+            letter-spacing: pixRem(-0.189524);
+          }
 
           @include sm() {
             text-align: start;
