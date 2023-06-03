@@ -17,18 +17,22 @@ type PhotoCardProp = {
   index: number;
 };
 
+// PHOTO CARD COMPONENT
 const PhotoCard = ({ img, name, role, desc, index }: PhotoCardProp) => {
   return (
     <div key={index} className={styles.photo_card}>
       <img src={img} alt="a person's photo" />
       <div className={styles.attribution_container}>
         <div className={styles.attribution_card}>
+
+          {/* MEMBER NAME, ROLE, AND JOB DESC. CONTAINER */}
           <div>
             <p className={styles.person_name}>{name}</p>
             <p className={styles.person_role}>{role}</p>
             <p className={styles.person_desc}>{desc}</p>
           </div>
-
+          
+          {/* SOCIAL ICONS CONTAINER */}
           <div className={styles.social_icons}>
             <img src={TwitterIcon} />
             <img src={LinkedInIcon} />
@@ -46,6 +50,7 @@ const SingleTeamMember = () => {
     borderBottomColor: darkMode ? "$test" : "#eaecf0",
   };
 
+  // AN ARRAY OF EACH TEAM MEMBER INFORMATION
   const DevTeam = [
     {
       img: MargaretPhoto,
@@ -105,6 +110,8 @@ const SingleTeamMember = () => {
   return (
     <>
       <div className={styles.SingleTeamMember}>
+
+        {/* HORIZONTAL TAB STARTS HERE */}
         <div className={styles.horizontal_tab} style={TabBorderStyle}>
           <NavLink
             className={({ isActive }) =>
@@ -140,6 +147,8 @@ const SingleTeamMember = () => {
           </NavLink>
         </div>
 
+
+       {/* DEV TEAM MEMBERS INFO STARTS HERE */}
         <div className={styles.gallery_container}>
           {DevTeam.map(({ img, name, role, desc }, index) => (
             <PhotoCard index={index} img={img} name={name} role={role} desc={desc} />
