@@ -40,7 +40,9 @@ const Footer = () => {
         <section className={styles.Footer_quote}>
           <h3>Soccer is life, the rest is just details.</h3>
           <h4>Join us to put the “kick” in kick-off.</h4>
-          <button>Become a Member</button>
+          <Link to="/home#memberSection" className={styles.become_member_btn}>
+            Become a Member
+          </Link>
         </section>
         <section
           className={

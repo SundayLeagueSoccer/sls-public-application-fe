@@ -1,132 +1,84 @@
 @use "../../../assets/styles/" as *;
 
 .SingleTeamMember {
-  width: 100%;
-  background-image: url("../images/team_member_section_bg_design.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: pixRem(330);
+  height: auto;
+  border-radius: 8px;
+  position: relative;
+  font-family: "Solway", sans-serif;
 
-  display: flex;
-  flex-direction: column;
-  padding: pixRem(90) pixRem(120) pixRem(119);
-  gap: 24px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
-  @include md() {
-    padding: pixRem(32) pixRem(72);
-    row-gap: 18px;
-  }
-  @include sm() {
-    padding: pixRem(57) pixRem(18) pixRem(80) pixRem(18);
+  img {
     width: 100%;
-    row-gap: 17px;
   }
 
-  .horizontal_tab {
+  .attribution_container {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: pixRem(16);
-    border-bottom: 1px solid;
-    // border-bottom-width: 1px;
-    // border-bottom-style: solid;
+    width: 100%;
+    padding: 96px 24px 24px;
 
-    @include sm(){
-      justify-content: center;
-    }
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
 
-    .not_active {
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 20px;
-      padding-bottom: pixRem(17);
-      text-decoration: none;
-      color: $test;
-    }
+    .attribution_card {
+      display: flex;
+      flex-direction: column;
+      padding: 24px 16px;
+      row-gap: 28px;
+      width: 100%;
 
-    .active{
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 20px;
-      padding-bottom: pixRem(17);
-      text-decoration: none;
-      color: $tertiary;
-      border-bottom: 2px solid $tertiary;
-    }
-  }
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.5);
 
-  .gallery_container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    row-gap: pixRem(24);
+      backdrop-filter: blur(12px);
 
-    @include sm(){
-      justify-content: center;
-    }
-
-    .photo_card {
-      width: pixRem(330);
-      border-radius: 8px;
-      position: relative;
-      
-      img {
-        width: 100%;
-      }
-      
-      .attribution_container {
+      .name_and_roles_container {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        row-gap: 4px;
+
+        .person_name {
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 26px;
+          color: #ffffff;
+        }
+
+        .person_role {
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 18px;
+          color: #ffffff;
+          font-style: italic;
+          font-family: "Inter", sans-serif;
+        }
+      }
+
+      .social_icons {
+        display: flex;
         align-items: center;
-        padding: 96px 24px 24px;
+        gap: pixRem(20);
 
-        position: absolute;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
-
-        .attribution_card {
+        .socialMedia_link {
+          cursor: pointer;
           display: flex;
-          flex-direction: column;
-          padding: 24px 16px;
-          row-gap: 32px;
+          align-items: center;
+          justify-self: center;
+        }
 
-          background: rgba(255, 255, 255, 0.3);
-          border: 1px solid rgba(255, 255, 255, 0.5);
+        .socialMedia_link:hover {
+          transform: scale(1.1);
+        }
 
-          backdrop-filter: blur(12px);
-
-          .person_name {
-            font-weight: 600;
-            font-size: 24px;
-            line-height: 38px;
-            color: #ffffff;
-          }
-
-          .person_role {
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 28px;
-            color: #ffffff;
-          }
-          .person_desc {
-            font-weight: 400;
-            font-size: 13px;
-            line-height: 24px;
-            color: #ffffff;
-          }
-
-          .social_icons{
-            display: flex;
-            align-items: center;
-            gap: pixRem(20);
-
-            img{
-              width: 24px;
-              height: 24px;
-            }
-          }
+        img {
+          width: 24px;
+          height: 24px;
         }
       }
     }

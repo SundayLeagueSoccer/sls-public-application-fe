@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import useApp from "../../hooks/useApp";
 import styles from "./Navbar.module.scss";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import lightModeIcon from "./images/lightModeIcon.png";
 import darkModeIcon from "./images/darkModeIcon.png";
 import lightHamburger from "./images/lightHamburger.png";
@@ -76,9 +76,9 @@ const Navbar = () => {
           </section>
 
           <section className={styles.NavLinks_Controls}>
-            <button className={styles.become_member_btn}>
+            <Link to="/home#memberSection" className={styles.become_member_btn}>
               Become a Member
-            </button>
+            </Link>
             {mobileNavbarOpen ? (
               <></>
             ) : (
@@ -145,7 +145,12 @@ const Navbar = () => {
               })}
             </section>
             <section className={styles.become_a_member_btn_mobile}>
-              <button>Become a Member</button>
+              <Link
+                to="/home#memberSection"
+                className={styles.become_member_btn_mobile}
+              >
+                Become a Member
+              </Link>
             </section>
           </div>
         ) : (

@@ -41,7 +41,6 @@ const TestimonialCarousel = () => {
   useEffect(() => {
     if (testimonialRef.current) {
       setWidth(testimonialRef.current.getBoundingClientRect().width);
-      // setWidth(testimonialRef.current.clientWidth);
     }
   }, []);
 

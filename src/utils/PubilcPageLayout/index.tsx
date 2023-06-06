@@ -9,11 +9,13 @@ const PublicPageLayout = () => {
   const { darkMode, setMobileNavbarOpen } = useApp();
 
   useEffect(() => {
-    window.scrollTo({
-      top: -200,
-      left: 0,
-      behavior: "smooth",
-    });
+    if (window.location.hash !== "#memberSection") {
+      window.scrollTo({
+        top: -200,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
 
     setMobileNavbarOpen(false);
   }, []);

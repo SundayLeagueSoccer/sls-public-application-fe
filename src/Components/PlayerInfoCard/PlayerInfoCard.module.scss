@@ -78,6 +78,13 @@
           column-gap: 8px;
           transition: all ease-in 0.5s;
 
+          .not_avail_text {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            color: #ffffff;
+          }
+
           .socialMedia_link:hover {
             transform: scale(1.1);
           }

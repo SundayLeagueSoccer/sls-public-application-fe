@@ -5,13 +5,14 @@
   background-image: url("../images/header_image.png");
   background-size: cover;
   background-position: center;
-  padding: pixRem(58) pixRem(120) pixRem(100);
-  gap: pixRem(24);
+  padding: pixRem(58) pixRem(120) pixRem(100) pixRem(120);
+  row-gap: pixRem(24);
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+
+  position: relative;
 
   @include md() {
     padding: pixRem(32) pixRem(72);
@@ -22,40 +23,12 @@
     row-gap: 17px;
   }
 
-  .close_button {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 70px;
-    height: 70px;
-    // top: 5vh; 
-    top: 100px;
-    right: 5vw;
-    cursor: pointer;
-
-    @include sm() {
-      top: 80px;
-      width: 60px;
-      height: 60px;
-    }
-
-    img {
-      width: 50%;
-      height: auto;
-      @include sm() {
-        width: 50%;
-      }
-    }
-  }
-
   .heading_text_box {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     row-gap: 16px;
-    padding: 0 pixRem(120);
 
     @include sm() {
       padding: 0;
@@ -84,15 +57,18 @@
       text-align: center;
       letter-spacing: -0.02em;
       color: #ffffff;
+      width: 75%;
 
       @include md() {
         font-size: 32px;
+        width: 90%;
       }
 
       @include sm() {
-        font-weight: 400;
-        font-size: 36px;
+        font-weight: 500;
+        font-size: 30px;
         line-height: 120%;
+        width: 100%;
       }
     }
   }
@@ -110,7 +86,54 @@
     }
 
     @include sm() {
-      font-size: 18px;
+      font-size: 16px;
     }
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 5vh;
+    right: 120px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+    img {
+      width: 40%;
+      height: auto;
+    }
+
+    @include md() {
+      top: 4vh;
+      right: 72px;
+
+      width: 40px;
+      height: 40px;
+      img {
+        width: 40%;
+        height: auto;
+      }
+    }
+
+    @include sm() {
+      top: 2vh;
+      right: 18px;
+
+      width: 32px;
+      height: 32px;
+      img {
+        width: 40%;
+        height: auto;
+      }
+    }
+  }
+
+  .closeButton:hover {
+    background-color: #a9a9a9;
   }
 }
