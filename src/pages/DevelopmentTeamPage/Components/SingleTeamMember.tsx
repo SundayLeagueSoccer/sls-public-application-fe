@@ -1,158 +1,115 @@
 import styles from "../styles/SingleTeamMember.module.scss";
-import MargaretPhoto from "../images/Team_member_margaret.png";
-import DamilolaPhoto from "../images/Team_member_damilola.png";
-import TegaPhoto from "../images/Team_member_Tega.png";
-import AbisolaPhoto from "../images/Team_member_abisola.png";
 import LinkedInIcon from "../images/LinkedIn_icon.svg";
 import TwitterIcon from "../images/Twitter_icon.svg";
 import DribbleIcon from "../images/Dribble_icon.svg";
-import { NavLink } from "react-router-dom";
-import useApp from "../../../hooks/useApp";
+import githubIcon from "../images/github_icon.png";
+import { Link } from "react-router-dom";
 
-type PhotoCardProp = {
-  img: string;
-  name: string;
-  role: string;
-  desc: string;
-  index: number;
+type social = {
+  twitterLink?: string;
+  portfolioLink?: string;
+  linkedinLink?: string;
+  githubLink?: string;
 };
 
-// PHOTO CARD COMPONENT
-const PhotoCard = ({ img, name, role, desc, index }: PhotoCardProp) => {
-  return (
-    <div key={index} className={styles.photo_card}>
-      <img src={img} alt="a person's photo" />
-      <div className={styles.attribution_container}>
-        <div className={styles.attribution_card}>
-
-          {/* MEMBER NAME, ROLE, AND JOB DESC. CONTAINER */}
-          <div>
-            <p className={styles.person_name}>{name}</p>
-            <p className={styles.person_role}>{role}</p>
-            <p className={styles.person_desc}>{desc}</p>
-          </div>
-          
-          {/* SOCIAL ICONS CONTAINER */}
-          <div className={styles.social_icons}>
-            <img src={TwitterIcon} />
-            <img src={LinkedInIcon} />
-            <img src={DribbleIcon} />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+type SingleTeamMemberProp = {
+  memberStack: string;
+  memberName: string;
+  memberSocials?: social;
+  memberImage?: string;
 };
-const SingleTeamMember = () => {
-  const { darkMode } = useApp();
 
-  const TabBorderStyle = {
-    borderBottomColor: darkMode ? "$test" : "#eaecf0",
-  };
-
-  // AN ARRAY OF EACH TEAM MEMBER INFORMATION
-  const DevTeam = [
-    {
-      img: MargaretPhoto,
-      name: "Margaret Okpani",
-      role: "Product Designer",
-      desc: "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    },
-    {
-      img: TegaPhoto,
-      name: "Oghenetega Esedere",
-      role: "Frontend Engineer",
-      desc: "Lead engineering teams at Figma, Pitch, and Protocol Labs.",
-    },
-    {
-      img: TegaPhoto,
-      name: "Bobby Osagie",
-      role: "Product Designer",
-      desc: "Lead engineering teams at Figma, Pitch, and Protocol Labs.",
-    },
-    {
-      img: AbisolaPhoto,
-      name: "Abisola Okesiji",
-      role: "Product Designer",
-      desc: "Lead engineering teams at Figma, Pitch, and Protocol Labs.",
-    },
-    {
-      img: DamilolaPhoto,
-      name: "Damilola Ibiyeye",
-      role: "Product Designer",
-      desc: "Lead engineering teams at Figma, Pitch, and Protocol Labs.",
-    },
-    {
-      img: TegaPhoto,
-      name: "Bobby Osagie",
-      role: "Product Designer",
-      desc: "Lead engineering teams at Figma, Pitch, and Protocol Labs.",
-    },
-    {
-      img: MargaretPhoto,
-      name: "Margaret Okpani",
-      role: "Product Designer",
-      desc: "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
-    },
-    {
-      img: TegaPhoto,
-      name: "Oghenetega Esedere",
-      role: "Frontend Engineer",
-      desc: "Lead engineering teams at Figma, Pitch, and Protocol Labs.",
-    },
-    {
-      img: TegaPhoto,
-      name: "Bobby Osagie",
-      role: "Product Designer",
-      desc: "Lead engineering teams at Figma, Pitch, and Protocol Labs.",
-    },
-  ];
+const SingleTeamMember = ({
+  memberStack,
+  memberName,
+  memberSocials,
+  memberImage,
+}: SingleTeamMemberProp) => {
   return (
     <>
       <div className={styles.SingleTeamMember}>
+        <img src={memberImage} alt={`${memberName} photo`} />
+        <div className={styles.attribution_container}>
+          <div
+            className={styles.attribution_card}
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="500"
+          >
+            {/* MEMBER NAME, ROLE, AND JOB DESC. CONTAINER */}
+            <div className={styles.name_and_roles_container}>
+              <p className={styles.person_name}>{memberName}</p>
+              <p className={styles.person_role}>{memberStack}</p>
+            </div>
 
-        {/* HORIZONTAL TAB STARTS HERE */}
-        <div className={styles.horizontal_tab} style={TabBorderStyle}>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? styles.active : styles.not_active
-            }
-            to="/development-team"
-          >
-            Dev Team
-          </NavLink>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? styles.active : styles.not_active
-            }
-            to="/"
-          >
-            Designers
-          </NavLink>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? styles.active : styles.not_active
-            }
-            to="/"
-          >
-            Frontend
-          </NavLink>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? styles.active : styles.not_active
-            }
-            to="/"
-          >
-            Backend
-          </NavLink>
-        </div>
+            {/* SOCIAL ICONS CONTAINER */}
+            <div
+              className={styles.social_icons}
+              data-aos="fade-up"
+              data-aos-duration="800"
+              data-aos-delay="500"
+            >
+              {/* linkedinLink */}
+              {memberSocials?.linkedinLink ? (
+                <Link
+                  to={memberSocials?.linkedinLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={memberSocials?.linkedinLink}
+                  className={styles.socialMedia_link}
+                >
+                  <img src={LinkedInIcon} alt={`linkedinLink Button`} />
+                </Link>
+              ) : (
+                <></>
+              )}
 
+              {/* githubLink */}
+              {memberSocials?.githubLink ? (
+                <Link
+                  to={memberSocials?.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={memberSocials?.githubLink}
+                  className={styles.socialMedia_link}
+                >
+                  <img src={githubIcon} alt={`githubLink Button`} />
+                </Link>
+              ) : (
+                <></>
+              )}
 
-       {/* DEV TEAM MEMBERS INFO STARTS HERE */}
-        <div className={styles.gallery_container}>
-          {DevTeam.map(({ img, name, role, desc }, index) => (
-            <PhotoCard index={index} img={img} name={name} role={role} desc={desc} />
-          ))}
+              {/* portfolioLink */}
+              {memberSocials?.portfolioLink ? (
+                <Link
+                  to={memberSocials?.portfolioLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={memberSocials?.portfolioLink}
+                  className={styles.socialMedia_link}
+                >
+                  <img src={DribbleIcon} alt={`Dribble Button`} />
+                </Link>
+              ) : (
+                <></>
+              )}
+
+              {/* twitterLink */}
+              {memberSocials?.twitterLink ? (
+                <Link
+                  to={memberSocials?.twitterLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={memberSocials?.twitterLink}
+                  className={styles.socialMedia_link}
+                >
+                  <img src={TwitterIcon} alt={`twitterLink Button`} />
+                </Link>
+              ) : (
+                <></>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -33,7 +33,7 @@ const AboutHistory = () => {
                 className={styles.Left_Capital_Left}
                 data-aos="fade-up"
                 data-aos-duration="800"
-                data-aos-delay="500"
+                data-aos-delay="300"
               >
                 <h2>
                   02<span>+</span>
@@ -44,7 +44,7 @@ const AboutHistory = () => {
                 className={styles.Left_Capital_Right}
                 data-aos="fade-up"
                 data-aos-duration="800"
-                data-aos-delay="500"
+                data-aos-delay="300"
               >
                 <span>
                   spawned in 2021 in response to the effects & aftermath of the
@@ -53,7 +53,7 @@ const AboutHistory = () => {
                 </span>
               </div>
             </div>
-            <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+            <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
               We all agreed that we needed to break out of our boring routines
               and kick-start some excitement by playing football together on
               Sundays. It's the one day of the week when we can forget about our
@@ -69,7 +69,7 @@ const AboutHistory = () => {
               className={styles.ImageUnderCarousel}
               data-aos="fade-up"
               data-aos-duration="800"
-              data-aos-delay="500"
+              data-aos-delay="300"
             >
               <img src={OurHistoryPictureTwo} alt="OurHistoryPicture" />
             </div>

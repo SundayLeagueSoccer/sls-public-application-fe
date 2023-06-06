@@ -5,7 +5,7 @@
   background-image: url("../images/become_a_member_desktop_bg_design.png");
   background-size: cover;
   background-position: center;
-  padding: pixRem(150) pixRem(120) pixRem(42);
+  padding: pixRem(54) pixRem(120);
 
   display: flex;
   align-items: center;
@@ -23,7 +23,7 @@
   }
 
   .text_container {
-    width: 55%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -192,7 +192,7 @@
   }
 
   .desktop_image {
-    width: 45%;
+    width: 40%;
     height: auto;
 
     @include sm() {

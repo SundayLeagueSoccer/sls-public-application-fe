@@ -55,7 +55,8 @@
       }
     }
 
-    button {
+    .become_member_btn {
+      text-decoration: none;
       border-radius: 8px;
       background-color: $tertiary;
       color: $darkModeFontPrimary;
@@ -67,13 +68,14 @@
       font-size: 16px;
       line-height: 24px;
       cursor: pointer;
+      text-decoration: none;
 
       @include sm() {
         width: 100%;
       }
     }
 
-    button:hover {
+    .become_member_btn:hover {
       background-color: #3167b8;
     }
   }

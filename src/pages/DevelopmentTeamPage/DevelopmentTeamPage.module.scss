@@ -1,6 +1,134 @@
 @use "../../assets/styles/" as *;
 
+//setting styles for dark and light mode
+.Dark {
+  background-color: $darkModeBackground;
+
+  h1,
+  h2,
+  h3,
+  a,
+  button {
+    color: $darkModeFontPrimary;
+  }
+
+  h4,
+  h5,
+  h6,
+  p {
+    color: $darkModeFontSecondary;
+  }
+}
+
+.Light {
+  background-color: $lightModeBackground;
+
+  h1,
+  h2,
+  h3,
+  a,
+  button {
+    color: $lightModeFontPrimary;
+  }
+
+  h4,
+  h5,
+  h6,
+  p {
+    color: $lightModeFontSecondary;
+  }
+}
+
 .DevelopmentTeamPage {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+
+  .page_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1720px;
+  }
+
+  footer {
+    width: 100%;
+    padding: 40px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dev_team_section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1720px;
+    padding: pixRem(120) pixRem(100);
+    row-gap: pixRem(60);
+    background-image: url("./images/dev_team_background_desktop.svg");
+    background-size: cover;
+    background-position: center;
+
+    @include md() {
+      padding: pixRem(40) pixRem(72);
+      row-gap: pixRem(60);
+    }
+    @include sm() {
+      padding: pixRem(72) pixRem(18);
+      row-gap: pixRem(24);
+      background-image: url("./images/dev_team_background_mobile.svg");
+    }
+
+    .row_one,
+    .row_two,
+    .row_three {
+      display: flex;
+      justify-content: center;
+      column-gap: pixRem(40);
+      align-items: center;
+      width: 100%;
+    }
+
+    .row_two {
+      @include md() {
+        display: none;
+      }
+    }
+
+    .row_one,
+    .row_two,
+    .row_three {
+      @include sm() {
+        display: grid;
+        justify-items: center;
+        gap: pixRem(30);
+        width: 100%;
+        grid-template-columns: 100%;
+      }
+    }
+  }
+}
+
+.last_row_tablet_only {
+  display: none;
+  @include sm() {
+    display: none;
+  }
+
+  @include md() {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 40px;
+
+    .mid_row_tablet_only {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: pixRem(40);
+      width: 100%;
+    }
+  }
 }
