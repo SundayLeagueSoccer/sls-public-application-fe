@@ -35,6 +35,7 @@ const PlayerInfoCard = ({
 }: PlayerInfoCardProp) => {
   let triangleColor;
   let ornamentImage;
+
   const getBorderColor = (_playerPosition: string) => {
     if (_playerPosition === "Midfielder") {
       triangleColor = "#fd8a3c";
@@ -63,6 +64,18 @@ const PlayerInfoCard = ({
     color: triangleColor,
   };
 
+  const getPlayerQuote = (paragraph: string) => {
+    const words = paragraph.trim().split(/\s+/);
+    if (words.length >= 9) {
+      const first9Words = words.slice(0, 9);
+      const result = first9Words.join(" ");
+      const finalQuote = `${result}...`;
+      return finalQuote;
+    } else {
+      return paragraph;
+    }
+  };
+
   const disableLink = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
@@ -83,10 +96,17 @@ const PlayerInfoCard = ({
             <h3>{playerName}</h3>
             <div className={styles.PlayerCard_details_info}>
               <h4 style={playerPosition_style}>{playerPosition}</h4>
-              <p>{playerText}</p>
+              <p>{getPlayerQuote(playerText)}</p>
             </div>
             <div className={styles.PlayerCard_details_bottom}>
               <div className={styles.PlayerCard_details_socials}>
+                {!playerSocials?.facebook &&
+                !playerSocials?.twitter &&
+                !playerSocials?.instagram ? (
+                  <p className={styles.not_avail_text}>N/A</p>
+                ) : (
+                  <></>
+                )}
                 {playerSocials?.facebook ? (
                   <Link
                     to={playerSocials?.facebook}

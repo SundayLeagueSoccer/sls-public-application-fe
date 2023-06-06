@@ -33,15 +33,22 @@ const PlayersPageNavbar = () => {
   useEffect(() => {
     if (selectedPlayersTab === "All Players") {
       setPlayersToDisplay(allPlayers);
-      setPaginationLimit(Math.floor(allPlayers.length / 12) + 1);
+      const numberOfPagesFloat = allPlayers.length / 12;
+      numberOfPagesFloat % 1 === 0
+        ? setPaginationLimit(numberOfPagesFloat)
+        : setPaginationLimit(Math.floor(numberOfPagesFloat) + 1);
       setcurrentPage(1);
       return;
     }
+
     const chosenPlayers: playerType[] = allPlayers.filter(
       (player) => player.favoritePosition === selectedPlayersTab.slice(0, -1)
     );
     setPlayersToDisplay(chosenPlayers);
-    setPaginationLimit(Math.floor(chosenPlayers.length / 12) + 1);
+    const numberOfPagesFloat = chosenPlayers.length / 12;
+    numberOfPagesFloat % 1 === 0
+      ? setPaginationLimit(numberOfPagesFloat)
+      : setPaginationLimit(Math.floor(numberOfPagesFloat) + 1);
     setcurrentPage(1);
   }, [selectedPlayersTab]);
 

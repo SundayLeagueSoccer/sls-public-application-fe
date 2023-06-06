@@ -1,17 +1,35 @@
+import { useRef, useEffect } from "react";
 import styles from "./LandingPage.module.scss";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import dev_team_icon from "./images/dev_icon.png";
 import AnimatedFadeInPage from "../../utils/AnimatedFadeInPage";
 import LandingPageHero from "./Components/LandingPageHero";
 import LandingPageCountDown from "./Components/LandingPageCountDown";
-// import LandingPageFeatures from "./Components/LandingPageFeatures";
 import LandingPageGallery from "./Components/LandingPageGallery";
 import LandingPageHistory from "./Components/LandingPageHistory";
 import LandingPageSLSPlayers from "./Components/LandingPageSLSPlayers";
 import LandingPageAwards from "./Components/LandingPageAwards";
 import LandingPageBecomeMember from "./Components/LandingPageBecomeMember";
+import useApp from "../../hooks/useApp";
 
 const LandingPage = () => {
+  const memberSectionRef = useRef<HTMLDivElement>(null);
+  const { setMobileNavbarOpen } = useApp();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (window.location.hash === "#memberSection" && memberSectionRef.current) {
+      memberSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (window.location.hash === "#memberSection" && memberSectionRef.current) {
+      memberSectionRef.current.scrollIntoView({ behavior: "smooth" });
+      setMobileNavbarOpen(false);
+    }
+  }, [location]);
+
   return (
     <>
       <AnimatedFadeInPage>
@@ -20,9 +38,10 @@ const LandingPage = () => {
           <LandingPageCountDown />
           <LandingPageHistory />
           <LandingPageSLSPlayers />
-          {/* <LandingPageFeatures /> */}
           <LandingPageAwards />
-          <LandingPageBecomeMember />
+          <div id="memberSection" ref={memberSectionRef}>
+            <LandingPageBecomeMember />
+          </div>
           <LandingPageGallery />
           <Link
             to={"/development-team"}

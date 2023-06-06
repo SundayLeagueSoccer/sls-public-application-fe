@@ -3,13 +3,12 @@ import useApp from "../../../hooks/useApp";
 import BackwardIconLink from "../../../assets/svgs/BarckwardIconLink";
 import ForwardIconLink from "../../../assets/svgs/ForwardIconLink";
 import { PlayerPageContext } from "../context/PlayersPageContext";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 const PlayersPagePaginationControls = () => {
   const { darkMode } = useApp();
   const { currentPage, setcurrentPage, paginationLimit } =
     useContext(PlayerPageContext);
-  const currentPageDummy = false;
 
   const pageNumbers: number[] = [];
   for (let i = 1; i < paginationLimit + 1; i++) {

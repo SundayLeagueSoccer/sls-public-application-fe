@@ -114,6 +114,7 @@
       border: none;
       cursor: pointer;
       transition: all ease 0.2s;
+      text-decoration: none;
 
       @include md() {
         display: none;
@@ -185,8 +186,10 @@
   .become_a_member_btn_mobile {
     width: 100%;
     padding: pixRem(24) pixRem(20);
+    display: flex;
+    justify-content: center;
 
-    button {
+    .become_member_btn_mobile {
       width: 100%;
       border: none;
       border-radius: 8px;
@@ -197,6 +200,8 @@
       font-family: "Solway";
       padding: pixRem(10) 0;
       color: #ffffff;
+      text-decoration: none;
+      text-align: center;
     }
   }
 
@@ -238,11 +243,9 @@
 
 @keyframes slideDown {
   0% {
-    // transform: translateX(0);
     opacity: 0;
   }
   100% {
-    // transform: translateX(-22vw);
     opacity: 1;
   }
 }

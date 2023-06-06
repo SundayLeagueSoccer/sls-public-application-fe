@@ -26,7 +26,7 @@ const AboutHero = () => {
           className={styles.support_text}
           data-aos="fade-up"
           data-aos-duration="800"
-          data-aos-delay="500"
+          data-aos-delay="400"
         >
           We believe that football is not just a game, but a way of life. That's
           why our league is more than just drills and exercises. They're a way

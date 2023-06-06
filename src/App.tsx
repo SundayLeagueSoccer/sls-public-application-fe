@@ -35,6 +35,7 @@ const App = () => {
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<SplashPage />} />
+            <Route path="/development-team" element={<DevelopmentTeamPage />} />
 
             {/* public routes */}
             <Route element={<PublicPageLayout />}>
@@ -43,10 +44,6 @@ const App = () => {
               <Route path="/players" element={<PlayersPage />} />
               <Route path="/statistics" element={<StatisticsPage />} />
               <Route path="/about-us" element={<AboutPage />} />
-              <Route
-                path="/development-team"
-                element={<DevelopmentTeamPage />}
-              />
             </Route>
           </Routes>
         </AnimatePresence>

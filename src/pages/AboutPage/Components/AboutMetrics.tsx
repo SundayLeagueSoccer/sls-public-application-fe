@@ -21,10 +21,10 @@ const MetricSectionDetailCard = ({
         {mainText}
       </h2>
       <div className={styles.subText_container}>
-        <h5 data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+        <h5 data-aos="fade-up" data-aos-duration="800" data-aos-delay="450">
           {secondaryText}
         </h5>
-        <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
+        <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
           {tertiaryText}
         </p>
       </div>

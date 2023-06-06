@@ -1,5 +1,86 @@
 @use "../../../assets/styles/" as *;
 
 .SingleTeamMember {
-  display: flex;
+  width: pixRem(330);
+  height: auto;
+  border-radius: 8px;
+  position: relative;
+  font-family: "Solway", sans-serif;
+
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 100%;
+  }
+
+  .attribution_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 96px 24px 24px;
+
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
+    .attribution_card {
+      display: flex;
+      flex-direction: column;
+      padding: 24px 16px;
+      row-gap: 28px;
+      width: 100%;
+
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+
+      backdrop-filter: blur(12px);
+
+      .name_and_roles_container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+
+        .person_name {
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 26px;
+          color: #ffffff;
+        }
+
+        .person_role {
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 18px;
+          color: #ffffff;
+          font-style: italic;
+          font-family: "Inter", sans-serif;
+        }
+      }
+
+      .social_icons {
+        display: flex;
+        align-items: center;
+        gap: pixRem(20);
+
+        .socialMedia_link {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-self: center;
+        }
+
+        .socialMedia_link:hover {
+          transform: scale(1.1);
+        }
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
 }

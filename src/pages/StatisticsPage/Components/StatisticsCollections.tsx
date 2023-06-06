@@ -122,15 +122,16 @@ const StatisticsCollection = () => {
     };
   }, [dropDownChoice]);
 
-  if (dropDownChoice > getCurrentSeason()) {
-    return (
-      <div className={styles.Stats}>
-        <h2 className={styles.loading_text}>
-          No Stats available. Season incoming...
-        </h2>
-      </div>
-    );
-  }
+  // season has not yet happened. Future season.
+  // if (dropDownChoice > getCurrentSeason()) {
+  //   return (
+  //     <div className={styles.Stats}>
+  //       <h2 className={styles.loading_text}>
+  //         No Stats available. Season incoming...
+  //       </h2>
+  //     </div>
+  //   );
+  // }
 
   if (loading) {
     return (

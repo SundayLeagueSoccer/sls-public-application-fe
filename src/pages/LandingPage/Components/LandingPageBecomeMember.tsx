@@ -27,6 +27,7 @@ const CardItem = ({ icon, mainText, secondaryText }: CardItemProps) => {
     </div>
   );
 };
+
 const LandingPageBecomeMember = () => {
   return (
     <>
