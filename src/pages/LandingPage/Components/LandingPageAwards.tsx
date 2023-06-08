@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom";
 import styles from "../styles/LandingPageAwards.module.scss";
 import firstIcon from "../images/team_icon.png";
 import secondIcon from "../images/player icon.png";
-import AwardImage from "../images/landing_page_award_image.png";
+import AwardImageDark from "../images/best_player_dark.png";
+import AwardImageLight from "../images/best_player_light.png";
 import useApp from "../../../hooks/useApp";
 
 type cardItemProp = {
@@ -32,12 +32,17 @@ const CardItem = ({ icon, mainText, secondaryText }: cardItemProp) => {
 };
 
 const LandingPageAwards = () => {
+  const { darkMode } = useApp();
+
   return (
     <>
       <section className={styles.LandingPageAwards}>
         {/* LEFT SIDE DESKTOP IMAGE */}
         <div className={styles.image_container}>
-          <img src={AwardImage} alt="sls team of the season" />
+          <img
+            src={darkMode ? AwardImageDark : AwardImageLight}
+            alt="sls player of the season"
+          />
         </div>
         {/* RIGHT SIDE TEXT CONTENT */}
         <div className={styles.text_container}>
@@ -53,8 +58,8 @@ const LandingPageAwards = () => {
           {/* MOBILE IMAGE */}
           <img
             className={styles.mobile_image}
-            src={AwardImage}
-            alt="sls team of the season"
+            src={darkMode ? AwardImageDark : AwardImageLight}
+            alt="sls player of the season"
           />
           {/* CARD ITEMS */}
           <div className={styles.card_item_container}>
