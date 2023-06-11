@@ -12,7 +12,7 @@ import HenryPhoto from "./images/memberImages/Team_member_henry.png";
 import OsagiePhoto from "./images/memberImages/Team_Member_Osagie.png";
 import DammyPhoto from "./images/memberImages/Team_member_damilola.png";
 import OkesijiPhoto from "./images/memberImages/Team_member_abisola.png";
-import MinePhoto from "./images/memberImages/Team_member_margaret.png";
+import FavourPhoto from "./images/memberImages/Team member_favour.png";
 
 const DevelopmentTeamPage = () => {
   const { darkMode } = useApp();
@@ -20,7 +20,7 @@ const DevelopmentTeamPage = () => {
     TegaPhoto,
     MargaretPhoto,
     HenryPhoto,
-    MinePhoto,
+    FavourPhoto,
     OsagiePhoto,
     DammyPhoto,
     OkesijiPhoto,
@@ -40,16 +40,6 @@ const DevelopmentTeamPage = () => {
             <div className={styles.page_container}>
               <DevelopmentTeamHeader />
               <section className={styles.dev_team_section}>
-                {/* {developmentTeam.map((devMember, index) => (
-                  <SingleTeamMember
-                    memberName={devMember.fullName}
-                    memberStack={devMember.role}
-                    memberSocials={devMember.socials}
-                    memberImage={memberImages[index]}
-                    key={devMember.fullName}
-                  />
-                ))} */}
-
                 {/* row one */}
                 <div className={styles.row_one}>
                   {/* Tega */}
