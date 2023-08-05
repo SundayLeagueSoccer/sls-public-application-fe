@@ -8,6 +8,7 @@ import lightHamburger from "./images/lightHamburger.png";
 import darkHamburger from "./images/darkHamburger.png";
 import lightCloseBurger from "./images/lightCloseBurger.png";
 import darkCloseBurger from "./images/darkCloseBurger.png";
+import SlsLogo from "../SlsLogo";
 
 const Navbar = () => {
   const { darkMode, toggleTheme, mobileNavbarOpen, toggleMobileNavbar } =
@@ -53,7 +54,7 @@ const Navbar = () => {
           }
           ref={navHeaderRef}
         >
-          <h1>Logo</h1>
+          <SlsLogo />
 
           <section className={styles.NavLinks_Desktop}>
             {navElements.map((elem) => {

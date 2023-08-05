@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Whatsapp from "./images/whatsapp.png";
 import Instagram from "./images/instagram.png";
 import Youtube from "./images/youtube.png";
+import SlsLogo from "../SlsLogo";
 
 const Footer = () => {
   const { darkMode } = useApp();
@@ -49,7 +50,7 @@ const Footer = () => {
             darkMode ? styles.Footer_links_dark : styles.Footer_links_light
           }
         >
-          <h4>Logo</h4>
+          <SlsLogo />
           <div className={styles.links}>
             {footerLinks.map((elem) => {
               return (
