@@ -16,6 +16,7 @@ export const developmentTeam: developmentTeamType[] = [
     socials: {
       linkedinLink: "https://www.linkedin.com/in/oghenetega-esedere/",
       githubLink: "https://github.com/arcteggzz",
+      portfolioLink: "https://my-portfolio-arcteggzz.vercel.app/",
     },
   },
   {
