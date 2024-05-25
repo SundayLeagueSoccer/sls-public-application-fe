@@ -23,7 +23,7 @@ export const developmentTeam: developmentTeamType[] = [
     fullName: "Okpani Margaret",
     role: "Product Designer, Design Lead",
     socials: {
-      twitterLink: "https://twitter.com/m3garchi",
+      // twitterLink: "https://twitter.com/m3garchi",
       linkedinLink: "https://www.linkedin.com/in/margaretokpani/",
       portfolioLink: "https://www.behance.net/search/projects/ ",
     },
